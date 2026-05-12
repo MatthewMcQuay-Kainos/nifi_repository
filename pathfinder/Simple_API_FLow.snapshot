@@ -16,19 +16,19 @@
         "flowFileConcurrency" : "UNBOUNDED",
         "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
         "funnels" : [ ],
-        "identifier" : "89c25f81-e975-3447-88df-1e30bff54ab2",
+        "identifier" : "5ddbecdf-8fa8-3f1e-9953-19edbf291dfe",
         "inputPorts" : [ ],
-        "instanceIdentifier" : "163b1fa7-019e-1000-7824-68f2b7c3d704",
+        "instanceIdentifier" : "1bcfa6a8-019e-1000-f098-6f0027290cfc",
         "labels" : [ ],
         "name" : "Simple API Group",
         "outputPorts" : [ ],
         "position" : {
-          "x" : 332.0,
-          "y" : 172.0
+          "x" : 352.0,
+          "y" : 72.0
         },
         "processGroups" : [ ],
         "processors" : [ {
-          "autoTerminatedRelationships" : [ "No Retry", "Retry", "Original", "Failure" ],
+          "autoTerminatedRelationships" : [ "Response", "No Retry", "Retry", "Original", "Failure" ],
           "backoffMechanism" : "PENALIZE_FLOWFILE",
           "bulletinLevel" : "WARN",
           "bundle" : {
@@ -40,15 +40,15 @@
           "componentType" : "PROCESSOR",
           "concurrentlySchedulableTaskCount" : 1,
           "executionNode" : "ALL",
-          "groupIdentifier" : "89c25f81-e975-3447-88df-1e30bff54ab2",
+          "groupIdentifier" : "5ddbecdf-8fa8-3f1e-9953-19edbf291dfe",
           "identifier" : "1e20f830-655f-3a19-9faa-91ca00e5ed15",
-          "instanceIdentifier" : "163b609a-019e-1000-07b4-a8c0c66a4922",
+          "instanceIdentifier" : "4b667168-819f-3cd5-8404-725bf00b99c5",
           "maxBackoffPeriod" : "10 mins",
           "name" : "InvokeHTTP",
           "penaltyDuration" : "30 sec",
           "position" : {
-            "x" : 472.0,
-            "y" : 320.0
+            "x" : 968.0,
+            "y" : 520.0
           },
           "properties" : {
             "use-etag" : "false",
