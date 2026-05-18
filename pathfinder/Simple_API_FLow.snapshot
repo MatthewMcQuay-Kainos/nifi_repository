@@ -16,16 +16,16 @@
           "destination" : {
             "comments" : "",
             "groupId" : "23f4406d-4326-334c-9467-fba52fdd4a85",
-            "id" : "e69e8b42-cc12-3e46-8b26-3fecc6fa3cdc",
-            "instanceIdentifier" : "b9cf2249-44e2-3057-c25d-4273a13a1f18",
-            "name" : "Write File",
+            "id" : "0a7c6272-4eb4-3aa5-a4a9-5557ba2be422",
+            "instanceIdentifier" : "3b7ce52b-019e-1000-640f-eae7f177b343",
+            "name" : "PutS3Object",
             "type" : "PROCESSOR"
           },
           "flowFileExpiration" : "0 sec",
           "groupIdentifier" : "23f4406d-4326-334c-9467-fba52fdd4a85",
-          "identifier" : "505b941f-0988-30e9-becb-eebbd196c4d5",
-          "instanceIdentifier" : "c43c6636-642e-3c0e-1a50-74976875ae75",
-          "labelIndex" : 1,
+          "identifier" : "1c88b581-805e-3642-a437-60d9e899fb8b",
+          "instanceIdentifier" : "3b7eed67-019e-1000-fd6f-16fc13eed882",
+          "labelIndex" : 0,
           "loadBalanceCompression" : "DO_NOT_COMPRESS",
           "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
           "name" : "",
@@ -40,7 +40,7 @@
             "name" : "Update Filename",
             "type" : "PROCESSOR"
           },
-          "zIndex" : 0
+          "zIndex" : 1
         }, {
           "backPressureDataSizeThreshold" : "1 GB",
           "backPressureObjectThreshold" : 10000,
@@ -108,7 +108,147 @@
           },
           "zIndex" : 0
         } ],
-        "controllerServices" : [ ],
+        "controllerServices" : [ {
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-aws-nar",
+            "group" : "org.apache.nifi",
+            "version" : "2.9.0"
+          },
+          "comments" : "",
+          "componentType" : "CONTROLLER_SERVICE",
+          "controllerServiceApis" : [ {
+            "bundle" : {
+              "artifact" : "nifi-aws-service-api-nar",
+              "group" : "org.apache.nifi",
+              "version" : "2.9.0"
+            },
+            "type" : "org.apache.nifi.processors.aws.credentials.provider.AwsCredentialsProviderService"
+          } ],
+          "groupIdentifier" : "23f4406d-4326-334c-9467-fba52fdd4a85",
+          "identifier" : "51be6303-0dec-3e58-8beb-9fecb42aa0a5",
+          "instanceIdentifier" : "f85883b8-5926-3f7f-ae5d-b78b2d8d565f",
+          "name" : "AWSCredentialsProviderControllerService",
+          "properties" : {
+            "Assume Role STS Region" : "us-west-2",
+            "Assume Role Session Time" : "3600",
+            "Use Default Credentials" : "false",
+            "Use Anonymous Credentials" : "true"
+          },
+          "propertyDescriptors" : {
+            "Assume Role STS Region" : {
+              "displayName" : "Assume Role STS Region",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Assume Role STS Region",
+              "sensitive" : false
+            },
+            "Assume Role Proxy Configuration Service" : {
+              "displayName" : "Assume Role Proxy Configuration Service",
+              "dynamic" : false,
+              "identifiesControllerService" : true,
+              "name" : "Assume Role Proxy Configuration Service",
+              "sensitive" : false
+            },
+            "Access Key ID" : {
+              "displayName" : "Access Key ID",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Access Key ID",
+              "sensitive" : true
+            },
+            "OAuth2 Access Token Provider" : {
+              "displayName" : "OAuth2 Access Token Provider",
+              "dynamic" : false,
+              "identifiesControllerService" : true,
+              "name" : "OAuth2 Access Token Provider",
+              "sensitive" : false
+            },
+            "Assume Role ARN" : {
+              "displayName" : "Assume Role ARN",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Assume Role ARN",
+              "sensitive" : false
+            },
+            "Assume Role Session Time" : {
+              "displayName" : "Assume Role Session Time",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Assume Role Session Time",
+              "sensitive" : false
+            },
+            "Assume Role Session Name" : {
+              "displayName" : "Assume Role Session Name",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Assume Role Session Name",
+              "sensitive" : false
+            },
+            "Use Default Credentials" : {
+              "displayName" : "Use Default Credentials",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Use Default Credentials",
+              "sensitive" : false
+            },
+            "Assume Role External ID" : {
+              "displayName" : "Assume Role External ID",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Assume Role External ID",
+              "sensitive" : false
+            },
+            "Assume Role STS Endpoint Override" : {
+              "displayName" : "Assume Role STS Endpoint Override",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Assume Role STS Endpoint Override",
+              "sensitive" : false
+            },
+            "Profile Name" : {
+              "displayName" : "Profile Name",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Profile Name",
+              "sensitive" : false
+            },
+            "Credentials File" : {
+              "displayName" : "Credentials File",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Credentials File",
+              "resourceDefinition" : {
+                "cardinality" : "SINGLE",
+                "resourceTypes" : [ "FILE" ]
+              },
+              "sensitive" : false
+            },
+            "Use Anonymous Credentials" : {
+              "displayName" : "Use Anonymous Credentials",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Use Anonymous Credentials",
+              "sensitive" : false
+            },
+            "Secret Access Key" : {
+              "displayName" : "Secret Access Key",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Secret Access Key",
+              "sensitive" : true
+            },
+            "Assume Role SSL Context Service" : {
+              "displayName" : "Assume Role SSL Context Service",
+              "dynamic" : false,
+              "identifiesControllerService" : true,
+              "name" : "Assume Role SSL Context Service",
+              "sensitive" : false
+            }
+          },
+          "scheduledState" : "DISABLED",
+          "type" : "org.apache.nifi.processors.aws.credentials.provider.service.AWSCredentialsProviderControllerService"
+        } ],
         "defaultBackPressureDataSizeThreshold" : "1 GB",
         "defaultBackPressureObjectThreshold" : 10000,
         "defaultFlowFileExpiration" : "0 sec",
@@ -537,7 +677,7 @@
           "backoffMechanism" : "PENALIZE_FLOWFILE",
           "bulletinLevel" : "WARN",
           "bundle" : {
-            "artifact" : "nifi-standard-nar",
+            "artifact" : "nifi-aws-nar",
             "group" : "org.apache.nifi",
             "version" : "2.9.0"
           },
@@ -546,75 +686,247 @@
           "concurrentlySchedulableTaskCount" : 1,
           "executionNode" : "ALL",
           "groupIdentifier" : "23f4406d-4326-334c-9467-fba52fdd4a85",
-          "identifier" : "e69e8b42-cc12-3e46-8b26-3fecc6fa3cdc",
-          "instanceIdentifier" : "b9cf2249-44e2-3057-c25d-4273a13a1f18",
+          "identifier" : "0a7c6272-4eb4-3aa5-a4a9-5557ba2be422",
+          "instanceIdentifier" : "3b7ce52b-019e-1000-640f-eae7f177b343",
           "maxBackoffPeriod" : "10 mins",
-          "name" : "Write File",
+          "name" : "PutS3Object",
           "penaltyDuration" : "30 sec",
           "position" : {
             "x" : 1120.0,
             "y" : 560.0
           },
           "properties" : {
-            "Create Missing Directories" : "true",
-            "Directory" : "/opt/nifi/output",
-            "Conflict Resolution Strategy" : "replace"
+            "FullControl User List" : "${s3.permissions.full.users}",
+            "Resource Transfer Source" : "FLOWFILE_CONTENT",
+            "Endpoint Override URL" : "http://dataset-store:8333",
+            "Multipart Upload Max Age Threshold" : "7 days",
+            "Canned ACL" : "${s3.permissions.cannedacl}",
+            "Use Path Style Access" : "false",
+            "Write ACL User List" : "${s3.permissions.writeacl.users}",
+            "Use Chunked Encoding" : "true",
+            "Read ACL User List" : "${s3.permissions.readacl.users}",
+            "Storage Class" : "STANDARD",
+            "Multipart Part Size" : "5 GB",
+            "Remove Tag Prefix" : "false",
+            "Object Key" : "${filename}",
+            "Multipart Threshold" : "5 GB",
+            "Temporary Directory Multipart State" : "${java.io.tmpdir}",
+            "Bucket" : "test",
+            "Multipart Upload AgeOff Interval" : "60 min",
+            "AWS Credentials Provider Service" : "51be6303-0dec-3e58-8beb-9fecb42aa0a5",
+            "Communications Timeout" : "30 secs",
+            "Region" : "eu-west-2",
+            "Read Permission User List" : "${s3.permissions.read.users}"
           },
           "propertyDescriptors" : {
-            "Group" : {
-              "displayName" : "Group",
+            "FullControl User List" : {
+              "displayName" : "FullControl User List",
               "dynamic" : false,
               "identifiesControllerService" : false,
-              "name" : "Group",
+              "name" : "FullControl User List",
               "sensitive" : false
             },
-            "Owner" : {
-              "displayName" : "Owner",
+            "Resource Transfer Source" : {
+              "displayName" : "Resource Transfer Source",
               "dynamic" : false,
               "identifiesControllerService" : false,
-              "name" : "Owner",
+              "name" : "Resource Transfer Source",
               "sensitive" : false
             },
-            "Create Missing Directories" : {
-              "displayName" : "Create Missing Directories",
+            "Cache Control" : {
+              "displayName" : "Cache Control",
               "dynamic" : false,
               "identifiesControllerService" : false,
-              "name" : "Create Missing Directories",
+              "name" : "Cache Control",
               "sensitive" : false
             },
-            "Permissions" : {
-              "displayName" : "Permissions",
+            "Endpoint Override URL" : {
+              "displayName" : "Endpoint Override URL",
               "dynamic" : false,
               "identifiesControllerService" : false,
-              "name" : "Permissions",
+              "name" : "Endpoint Override URL",
               "sensitive" : false
             },
-            "Maximum File Count" : {
-              "displayName" : "Maximum File Count",
+            "File Resource Service" : {
+              "displayName" : "File Resource Service",
               "dynamic" : false,
-              "identifiesControllerService" : false,
-              "name" : "Maximum File Count",
+              "identifiesControllerService" : true,
+              "name" : "File Resource Service",
               "sensitive" : false
             },
-            "Last Modified Time" : {
-              "displayName" : "Last Modified Time",
+            "Multipart Upload Max Age Threshold" : {
+              "displayName" : "Multipart Upload Max Age Threshold",
               "dynamic" : false,
               "identifiesControllerService" : false,
-              "name" : "Last Modified Time",
+              "name" : "Multipart Upload Max Age Threshold",
               "sensitive" : false
             },
-            "Directory" : {
-              "displayName" : "Directory",
+            "Proxy Configuration Service" : {
+              "displayName" : "Proxy Configuration Service",
               "dynamic" : false,
-              "identifiesControllerService" : false,
-              "name" : "Directory",
+              "identifiesControllerService" : true,
+              "name" : "Proxy Configuration Service",
               "sensitive" : false
             },
-            "Conflict Resolution Strategy" : {
-              "displayName" : "Conflict Resolution Strategy",
+            "Object Tags Prefix" : {
+              "displayName" : "Object Tags Prefix",
               "dynamic" : false,
               "identifiesControllerService" : false,
-              "name" : "Conflict Resolution Strategy",
+              "name" : "Object Tags Prefix",
+              "sensitive" : false
+            },
+            "Content Type" : {
+              "displayName" : "Content Type",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Content Type",
+              "sensitive" : false
+            },
+            "Canned ACL" : {
+              "displayName" : "Canned ACL",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Canned ACL",
+              "sensitive" : false
+            },
+            "Use Path Style Access" : {
+              "displayName" : "Use Path Style Access",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Use Path Style Access",
+              "sensitive" : false
+            },
+            "Encryption Service" : {
+              "displayName" : "Encryption Service",
+              "dynamic" : false,
+              "identifiesControllerService" : true,
+              "name" : "Encryption Service",
+              "sensitive" : false
+            },
+            "Write ACL User List" : {
+              "displayName" : "Write ACL User List",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Write ACL User List",
+              "sensitive" : false
+            },
+            "Use Chunked Encoding" : {
+              "displayName" : "Use Chunked Encoding",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Use Chunked Encoding",
+              "sensitive" : false
+            },
+            "Read ACL User List" : {
+              "displayName" : "Read ACL User List",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Read ACL User List",
+              "sensitive" : false
+            },
+            "Content Disposition" : {
+              "displayName" : "Content Disposition",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Content Disposition",
+              "sensitive" : false
+            },
+            "Storage Class" : {
+              "displayName" : "Storage Class",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Storage Class",
+              "sensitive" : false
+            },
+            "Multipart Part Size" : {
+              "displayName" : "Multipart Part Size",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Multipart Part Size",
+              "sensitive" : false
+            },
+            "Remove Tag Prefix" : {
+              "displayName" : "Remove Tag Prefix",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Remove Tag Prefix",
+              "sensitive" : false
+            },
+            "Object Key" : {
+              "displayName" : "Object Key",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Object Key",
+              "sensitive" : false
+            },
+            "Multipart Threshold" : {
+              "displayName" : "Multipart Threshold",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Multipart Threshold",
+              "sensitive" : false
+            },
+            "Temporary Directory Multipart State" : {
+              "displayName" : "Temporary Directory Multipart State",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Temporary Directory Multipart State",
+              "sensitive" : false
+            },
+            "SSL Context Service" : {
+              "displayName" : "SSL Context Service",
+              "dynamic" : false,
+              "identifiesControllerService" : true,
+              "name" : "SSL Context Service",
+              "sensitive" : false
+            },
+            "Bucket" : {
+              "displayName" : "Bucket",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Bucket",
+              "sensitive" : false
+            },
+            "Multipart Upload AgeOff Interval" : {
+              "displayName" : "Multipart Upload AgeOff Interval",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Multipart Upload AgeOff Interval",
+              "sensitive" : false
+            },
+            "AWS Credentials Provider Service" : {
+              "displayName" : "AWS Credentials Provider Service",
+              "dynamic" : false,
+              "identifiesControllerService" : true,
+              "name" : "AWS Credentials Provider Service",
+              "sensitive" : false
+            },
+            "Communications Timeout" : {
+              "displayName" : "Communications Timeout",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Communications Timeout",
+              "sensitive" : false
+            },
+            "Region" : {
+              "displayName" : "Region",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Region",
+              "sensitive" : false
+            },
+            "Read Permission User List" : {
+              "displayName" : "Read Permission User List",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Read Permission User List",
+              "sensitive" : false
+            },
+            "Custom Region" : {
+              "displayName" : "Custom Region",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Custom Region",
               "sensitive" : false
             }
           },
@@ -625,7 +937,7 @@
           "schedulingPeriod" : "0 sec",
           "schedulingStrategy" : "TIMER_DRIVEN",
           "style" : { },
-          "type" : "org.apache.nifi.processors.standard.PutFile",
+          "type" : "org.apache.nifi.processors.aws.s3.PutS3Object",
           "yieldDuration" : "1 sec"
         }, {
           "autoTerminatedRelationships" : [ ],
