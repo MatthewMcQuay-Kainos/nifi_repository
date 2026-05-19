@@ -49,36 +49,6 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "0a7c6272-4eb4-3aa5-a4a9-5557ba2be422",
-        "name" : "PutS3Object",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "1c88b581-805e-3642-a437-60d9e899fb8b",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "success" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "8317e273-ad37-314c-b085-f37f238829fe",
-        "name" : "Update Filename",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 1
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
         "id" : "8317e273-ad37-314c-b085-f37f238829fe",
         "name" : "Update Filename",
         "type" : "PROCESSOR"
@@ -101,6 +71,36 @@
         "type" : "PROCESSOR"
       },
       "zIndex" : 0
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "8db618cc-39dc-33eb-9938-6e892adb69a1",
+        "name" : "PutS3Object",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "b315c675-a4f8-3e71-8213-e5b670c546d1",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "8317e273-ad37-314c-b085-f37f238829fe",
+        "name" : "Update Filename",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 1
     } ],
     "controllerServices" : [ {
       "bulletinLevel" : "WARN",
@@ -126,7 +126,7 @@
         "Assume Role STS Region" : "us-west-2",
         "Assume Role Session Time" : "3600",
         "Use Default Credentials" : "false",
-        "Use Anonymous Credentials" : "true"
+        "Use Anonymous Credentials" : "false"
       },
       "propertyDescriptors" : {
         "Assume Role STS Region" : {
@@ -262,272 +262,6 @@
     },
     "processGroups" : [ ],
     "processors" : [ {
-      "autoTerminatedRelationships" : [ "failure", "success" ],
-      "backoffMechanism" : "PENALIZE_FLOWFILE",
-      "bulletinLevel" : "WARN",
-      "bundle" : {
-        "artifact" : "nifi-aws-nar",
-        "group" : "org.apache.nifi",
-        "version" : "2.9.0"
-      },
-      "comments" : "",
-      "componentType" : "PROCESSOR",
-      "concurrentlySchedulableTaskCount" : 1,
-      "executionNode" : "ALL",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "0a7c6272-4eb4-3aa5-a4a9-5557ba2be422",
-      "maxBackoffPeriod" : "10 mins",
-      "name" : "PutS3Object",
-      "penaltyDuration" : "30 sec",
-      "position" : {
-        "x" : 1120.0,
-        "y" : 560.0
-      },
-      "properties" : {
-        "FullControl User List" : "${s3.permissions.full.users}",
-        "Resource Transfer Source" : "FLOWFILE_CONTENT",
-        "Endpoint Override URL" : "http://dataset-store:8333",
-        "Multipart Upload Max Age Threshold" : "7 days",
-        "Canned ACL" : "${s3.permissions.cannedacl}",
-        "Use Path Style Access" : "false",
-        "Write ACL User List" : "${s3.permissions.writeacl.users}",
-        "Use Chunked Encoding" : "true",
-        "Read ACL User List" : "${s3.permissions.readacl.users}",
-        "Storage Class" : "STANDARD",
-        "Multipart Part Size" : "5 GB",
-        "Remove Tag Prefix" : "false",
-        "Object Key" : "${filename}",
-        "Multipart Threshold" : "5 GB",
-        "Temporary Directory Multipart State" : "${java.io.tmpdir}",
-        "Bucket" : "test",
-        "Multipart Upload AgeOff Interval" : "60 min",
-        "AWS Credentials Provider Service" : "51be6303-0dec-3e58-8beb-9fecb42aa0a5",
-        "Communications Timeout" : "30 secs",
-        "Region" : "eu-west-2",
-        "Read Permission User List" : "${s3.permissions.read.users}"
-      },
-      "propertyDescriptors" : {
-        "FullControl User List" : {
-          "displayName" : "FullControl User List",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "FullControl User List",
-          "sensitive" : false
-        },
-        "Resource Transfer Source" : {
-          "displayName" : "Resource Transfer Source",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Resource Transfer Source",
-          "sensitive" : false
-        },
-        "Cache Control" : {
-          "displayName" : "Cache Control",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Cache Control",
-          "sensitive" : false
-        },
-        "Endpoint Override URL" : {
-          "displayName" : "Endpoint Override URL",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Endpoint Override URL",
-          "sensitive" : false
-        },
-        "File Resource Service" : {
-          "displayName" : "File Resource Service",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "File Resource Service",
-          "sensitive" : false
-        },
-        "Multipart Upload Max Age Threshold" : {
-          "displayName" : "Multipart Upload Max Age Threshold",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Multipart Upload Max Age Threshold",
-          "sensitive" : false
-        },
-        "Proxy Configuration Service" : {
-          "displayName" : "Proxy Configuration Service",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "Proxy Configuration Service",
-          "sensitive" : false
-        },
-        "Object Tags Prefix" : {
-          "displayName" : "Object Tags Prefix",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Object Tags Prefix",
-          "sensitive" : false
-        },
-        "Content Type" : {
-          "displayName" : "Content Type",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Content Type",
-          "sensitive" : false
-        },
-        "Canned ACL" : {
-          "displayName" : "Canned ACL",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Canned ACL",
-          "sensitive" : false
-        },
-        "Use Path Style Access" : {
-          "displayName" : "Use Path Style Access",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Use Path Style Access",
-          "sensitive" : false
-        },
-        "Encryption Service" : {
-          "displayName" : "Encryption Service",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "Encryption Service",
-          "sensitive" : false
-        },
-        "Write ACL User List" : {
-          "displayName" : "Write ACL User List",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Write ACL User List",
-          "sensitive" : false
-        },
-        "Use Chunked Encoding" : {
-          "displayName" : "Use Chunked Encoding",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Use Chunked Encoding",
-          "sensitive" : false
-        },
-        "Read ACL User List" : {
-          "displayName" : "Read ACL User List",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Read ACL User List",
-          "sensitive" : false
-        },
-        "Content Disposition" : {
-          "displayName" : "Content Disposition",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Content Disposition",
-          "sensitive" : false
-        },
-        "Storage Class" : {
-          "displayName" : "Storage Class",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Storage Class",
-          "sensitive" : false
-        },
-        "Multipart Part Size" : {
-          "displayName" : "Multipart Part Size",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Multipart Part Size",
-          "sensitive" : false
-        },
-        "Remove Tag Prefix" : {
-          "displayName" : "Remove Tag Prefix",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Remove Tag Prefix",
-          "sensitive" : false
-        },
-        "Object Key" : {
-          "displayName" : "Object Key",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Object Key",
-          "sensitive" : false
-        },
-        "Multipart Threshold" : {
-          "displayName" : "Multipart Threshold",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Multipart Threshold",
-          "sensitive" : false
-        },
-        "Temporary Directory Multipart State" : {
-          "displayName" : "Temporary Directory Multipart State",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Temporary Directory Multipart State",
-          "sensitive" : false
-        },
-        "SSL Context Service" : {
-          "displayName" : "SSL Context Service",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "SSL Context Service",
-          "sensitive" : false
-        },
-        "Bucket" : {
-          "displayName" : "Bucket",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Bucket",
-          "sensitive" : false
-        },
-        "Multipart Upload AgeOff Interval" : {
-          "displayName" : "Multipart Upload AgeOff Interval",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Multipart Upload AgeOff Interval",
-          "sensitive" : false
-        },
-        "AWS Credentials Provider Service" : {
-          "displayName" : "AWS Credentials Provider Service",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "AWS Credentials Provider Service",
-          "sensitive" : false
-        },
-        "Communications Timeout" : {
-          "displayName" : "Communications Timeout",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Communications Timeout",
-          "sensitive" : false
-        },
-        "Region" : {
-          "displayName" : "Region",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Region",
-          "sensitive" : false
-        },
-        "Read Permission User List" : {
-          "displayName" : "Read Permission User List",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Read Permission User List",
-          "sensitive" : false
-        },
-        "Custom Region" : {
-          "displayName" : "Custom Region",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Custom Region",
-          "sensitive" : false
-        }
-      },
-      "retriedRelationships" : [ ],
-      "retryCount" : 10,
-      "runDurationMillis" : 0,
-      "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "0 sec",
-      "schedulingStrategy" : "TIMER_DRIVEN",
-      "style" : { },
-      "type" : "org.apache.nifi.processors.aws.s3.PutS3Object",
-      "yieldDuration" : "1 sec"
-    }, {
       "autoTerminatedRelationships" : [ "Failure", "No Retry", "Original", "Retry" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
@@ -914,6 +648,271 @@
       "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
       "yieldDuration" : "1 sec"
     }, {
+      "autoTerminatedRelationships" : [ "failure", "success" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-aws-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.9.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "8db618cc-39dc-33eb-9938-6e892adb69a1",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "PutS3Object",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 1120.0,
+        "y" : 560.0
+      },
+      "properties" : {
+        "FullControl User List" : "${s3.permissions.full.users}",
+        "Resource Transfer Source" : "FLOWFILE_CONTENT",
+        "Multipart Upload Max Age Threshold" : "7 days",
+        "Canned ACL" : "${s3.permissions.cannedacl}",
+        "Use Path Style Access" : "false",
+        "Write ACL User List" : "${s3.permissions.writeacl.users}",
+        "Use Chunked Encoding" : "true",
+        "Read ACL User List" : "${s3.permissions.readacl.users}",
+        "Storage Class" : "STANDARD",
+        "Multipart Part Size" : "5 GB",
+        "Remove Tag Prefix" : "false",
+        "Object Key" : "${filename}",
+        "Multipart Threshold" : "5 GB",
+        "Temporary Directory Multipart State" : "${java.io.tmpdir}",
+        "Bucket" : "test",
+        "Multipart Upload AgeOff Interval" : "60 min",
+        "AWS Credentials Provider Service" : "51be6303-0dec-3e58-8beb-9fecb42aa0a5",
+        "Communications Timeout" : "30 secs",
+        "Region" : "eu-west-2",
+        "Read Permission User List" : "${s3.permissions.read.users}"
+      },
+      "propertyDescriptors" : {
+        "FullControl User List" : {
+          "displayName" : "FullControl User List",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "FullControl User List",
+          "sensitive" : false
+        },
+        "Resource Transfer Source" : {
+          "displayName" : "Resource Transfer Source",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Resource Transfer Source",
+          "sensitive" : false
+        },
+        "Cache Control" : {
+          "displayName" : "Cache Control",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Cache Control",
+          "sensitive" : false
+        },
+        "Endpoint Override URL" : {
+          "displayName" : "Endpoint Override URL",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Endpoint Override URL",
+          "sensitive" : false
+        },
+        "File Resource Service" : {
+          "displayName" : "File Resource Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "File Resource Service",
+          "sensitive" : false
+        },
+        "Multipart Upload Max Age Threshold" : {
+          "displayName" : "Multipart Upload Max Age Threshold",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Multipart Upload Max Age Threshold",
+          "sensitive" : false
+        },
+        "Proxy Configuration Service" : {
+          "displayName" : "Proxy Configuration Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Proxy Configuration Service",
+          "sensitive" : false
+        },
+        "Object Tags Prefix" : {
+          "displayName" : "Object Tags Prefix",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Object Tags Prefix",
+          "sensitive" : false
+        },
+        "Content Type" : {
+          "displayName" : "Content Type",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Content Type",
+          "sensitive" : false
+        },
+        "Canned ACL" : {
+          "displayName" : "Canned ACL",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Canned ACL",
+          "sensitive" : false
+        },
+        "Use Path Style Access" : {
+          "displayName" : "Use Path Style Access",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Use Path Style Access",
+          "sensitive" : false
+        },
+        "Encryption Service" : {
+          "displayName" : "Encryption Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Encryption Service",
+          "sensitive" : false
+        },
+        "Write ACL User List" : {
+          "displayName" : "Write ACL User List",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Write ACL User List",
+          "sensitive" : false
+        },
+        "Use Chunked Encoding" : {
+          "displayName" : "Use Chunked Encoding",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Use Chunked Encoding",
+          "sensitive" : false
+        },
+        "Read ACL User List" : {
+          "displayName" : "Read ACL User List",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Read ACL User List",
+          "sensitive" : false
+        },
+        "Content Disposition" : {
+          "displayName" : "Content Disposition",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Content Disposition",
+          "sensitive" : false
+        },
+        "Storage Class" : {
+          "displayName" : "Storage Class",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Storage Class",
+          "sensitive" : false
+        },
+        "Multipart Part Size" : {
+          "displayName" : "Multipart Part Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Multipart Part Size",
+          "sensitive" : false
+        },
+        "Remove Tag Prefix" : {
+          "displayName" : "Remove Tag Prefix",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Remove Tag Prefix",
+          "sensitive" : false
+        },
+        "Object Key" : {
+          "displayName" : "Object Key",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Object Key",
+          "sensitive" : false
+        },
+        "Multipart Threshold" : {
+          "displayName" : "Multipart Threshold",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Multipart Threshold",
+          "sensitive" : false
+        },
+        "Temporary Directory Multipart State" : {
+          "displayName" : "Temporary Directory Multipart State",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Temporary Directory Multipart State",
+          "sensitive" : false
+        },
+        "SSL Context Service" : {
+          "displayName" : "SSL Context Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "SSL Context Service",
+          "sensitive" : false
+        },
+        "Bucket" : {
+          "displayName" : "Bucket",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Bucket",
+          "sensitive" : false
+        },
+        "Multipart Upload AgeOff Interval" : {
+          "displayName" : "Multipart Upload AgeOff Interval",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Multipart Upload AgeOff Interval",
+          "sensitive" : false
+        },
+        "AWS Credentials Provider Service" : {
+          "displayName" : "AWS Credentials Provider Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "AWS Credentials Provider Service",
+          "sensitive" : false
+        },
+        "Communications Timeout" : {
+          "displayName" : "Communications Timeout",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Communications Timeout",
+          "sensitive" : false
+        },
+        "Region" : {
+          "displayName" : "Region",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Region",
+          "sensitive" : false
+        },
+        "Read Permission User List" : {
+          "displayName" : "Read Permission User List",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Read Permission User List",
+          "sensitive" : false
+        },
+        "Custom Region" : {
+          "displayName" : "Custom Region",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Custom Region",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.aws.s3.PutS3Object",
+      "yieldDuration" : "1 sec"
+    }, {
       "autoTerminatedRelationships" : [ ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
@@ -1014,6 +1013,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Simple-API-Group",
-    "timestamp" : 1779179032028
+    "timestamp" : 1779189225131
   }
 }
