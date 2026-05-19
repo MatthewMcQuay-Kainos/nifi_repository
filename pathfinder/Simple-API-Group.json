@@ -120,8 +120,8 @@
         "type" : "org.apache.nifi.processors.aws.credentials.provider.AwsCredentialsProviderService"
       } ],
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "51be6303-0dec-3e58-8beb-9fecb42aa0a5",
-      "name" : "AWSCredentialsProviderControllerService",
+      "identifier" : "5a1e937b-1bb0-3b81-a760-620e26265698",
+      "name" : "Seaweed Creds",
       "properties" : {
         "Assume Role STS Region" : "us-west-2",
         "Assume Role Session Time" : "3600",
@@ -672,6 +672,7 @@
       "properties" : {
         "FullControl User List" : "${s3.permissions.full.users}",
         "Resource Transfer Source" : "FLOWFILE_CONTENT",
+        "Endpoint Override URL" : "http://dataset-store:8333",
         "Multipart Upload Max Age Threshold" : "7 days",
         "Canned ACL" : "${s3.permissions.cannedacl}",
         "Use Path Style Access" : "false",
@@ -686,7 +687,7 @@
         "Temporary Directory Multipart State" : "${java.io.tmpdir}",
         "Bucket" : "test",
         "Multipart Upload AgeOff Interval" : "60 min",
-        "AWS Credentials Provider Service" : "51be6303-0dec-3e58-8beb-9fecb42aa0a5",
+        "AWS Credentials Provider Service" : "5a1e937b-1bb0-3b81-a760-620e26265698",
         "Communications Timeout" : "30 secs",
         "Region" : "eu-west-2",
         "Read Permission User List" : "${s3.permissions.read.users}"
@@ -1013,6 +1014,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Simple-API-Group",
-    "timestamp" : 1779189225131
+    "timestamp" : 1779195650660
   }
 }
