@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1779359971487,
+    "description" : "",
+    "identifier" : "Write-to-Metadata-Index",
+    "lastModifiedTimestamp" : 1779359971487,
+    "name" : "Write to Metadata Index",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
