@@ -333,8 +333,147 @@
         "type" : "org.apache.nifi.processors.aws.credentials.provider.AwsCredentialsProviderService"
       } ],
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "5a1e937b-1bb0-3b81-a760-620e26265698",
-      "name" : "Seaweed Creds",
+      "identifier" : "26012ed4-2a2b-3b4e-acf0-cae11b365e9c",
+      "name" : "AWSCredentialsProviderControllerService",
+      "properties" : {
+        "Assume Role STS Region" : "us-west-2",
+        "Assume Role Session Time" : "3600",
+        "Use Default Credentials" : "false",
+        "Use Anonymous Credentials" : "false"
+      },
+      "propertyDescriptors" : {
+        "Assume Role STS Region" : {
+          "displayName" : "Assume Role STS Region",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Assume Role STS Region",
+          "sensitive" : false
+        },
+        "Assume Role Proxy Configuration Service" : {
+          "displayName" : "Assume Role Proxy Configuration Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Assume Role Proxy Configuration Service",
+          "sensitive" : false
+        },
+        "Access Key ID" : {
+          "displayName" : "Access Key ID",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Access Key ID",
+          "sensitive" : true
+        },
+        "OAuth2 Access Token Provider" : {
+          "displayName" : "OAuth2 Access Token Provider",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "OAuth2 Access Token Provider",
+          "sensitive" : false
+        },
+        "Assume Role ARN" : {
+          "displayName" : "Assume Role ARN",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Assume Role ARN",
+          "sensitive" : false
+        },
+        "Assume Role Session Time" : {
+          "displayName" : "Assume Role Session Time",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Assume Role Session Time",
+          "sensitive" : false
+        },
+        "Assume Role Session Name" : {
+          "displayName" : "Assume Role Session Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Assume Role Session Name",
+          "sensitive" : false
+        },
+        "Use Default Credentials" : {
+          "displayName" : "Use Default Credentials",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Use Default Credentials",
+          "sensitive" : false
+        },
+        "Assume Role External ID" : {
+          "displayName" : "Assume Role External ID",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Assume Role External ID",
+          "sensitive" : false
+        },
+        "Assume Role STS Endpoint Override" : {
+          "displayName" : "Assume Role STS Endpoint Override",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Assume Role STS Endpoint Override",
+          "sensitive" : false
+        },
+        "Profile Name" : {
+          "displayName" : "Profile Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Profile Name",
+          "sensitive" : false
+        },
+        "Credentials File" : {
+          "displayName" : "Credentials File",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Credentials File",
+          "resourceDefinition" : {
+            "cardinality" : "SINGLE",
+            "resourceTypes" : [ "FILE" ]
+          },
+          "sensitive" : false
+        },
+        "Use Anonymous Credentials" : {
+          "displayName" : "Use Anonymous Credentials",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Use Anonymous Credentials",
+          "sensitive" : false
+        },
+        "Secret Access Key" : {
+          "displayName" : "Secret Access Key",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Secret Access Key",
+          "sensitive" : true
+        },
+        "Assume Role SSL Context Service" : {
+          "displayName" : "Assume Role SSL Context Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "Assume Role SSL Context Service",
+          "sensitive" : false
+        }
+      },
+      "scheduledState" : "DISABLED",
+      "type" : "org.apache.nifi.processors.aws.credentials.provider.service.AWSCredentialsProviderControllerService"
+    }, {
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-aws-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.9.0"
+      },
+      "comments" : "",
+      "componentType" : "CONTROLLER_SERVICE",
+      "controllerServiceApis" : [ {
+        "bundle" : {
+          "artifact" : "nifi-aws-service-api-nar",
+          "group" : "org.apache.nifi",
+          "version" : "2.9.0"
+        },
+        "type" : "org.apache.nifi.processors.aws.credentials.provider.AwsCredentialsProviderService"
+      } ],
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "262ed805-9442-3381-b2e0-374fbf70a40b",
+      "name" : "Seaweed Credentials",
       "properties" : {
         "Assume Role STS Region" : "us-west-2",
         "Assume Role Session Time" : "3600",
@@ -1521,7 +1660,7 @@
         "Temporary Directory Multipart State" : "${java.io.tmpdir}",
         "Bucket" : "test",
         "Multipart Upload AgeOff Interval" : "60 min",
-        "AWS Credentials Provider Service" : "5a1e937b-1bb0-3b81-a760-620e26265698",
+        "AWS Credentials Provider Service" : "262ed805-9442-3381-b2e0-374fbf70a40b",
         "Communications Timeout" : "30 secs",
         "Region" : "eu-west-2",
         "Read Permission User List" : "${s3.permissions.read.users}"
@@ -2022,6 +2161,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Simple-API-Group",
-    "timestamp" : 1779445508702
+    "timestamp" : 1779449930895
   }
 }
