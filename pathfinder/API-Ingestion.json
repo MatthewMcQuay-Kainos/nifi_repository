@@ -17,16 +17,15 @@
       "bends" : [ ],
       "componentType" : "CONNECTION",
       "destination" : {
-        "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "8317e273-ad37-314c-b085-f37f238829fe",
-        "name" : "Update Filename",
-        "type" : "PROCESSOR"
+        "id" : "f2802afb-e08b-3fc4-a6e6-2d7ee6ac92d2",
+        "name" : "API Success",
+        "type" : "OUTPUT_PORT"
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "3b8d8c7d-6cd5-3223-a1f3-fa6ecd3ba61e",
-      "labelIndex" : 1,
+      "identifier" : "7b356783-0b47-3cc4-a0bc-556d3ec0da70",
+      "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
       "name" : "",
@@ -40,7 +39,7 @@
         "name" : "Invoke HTTP: Dummy Data ",
         "type" : "PROCESSOR"
       },
-      "zIndex" : 0
+      "zIndex" : 4
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
@@ -70,35 +69,6 @@
         "type" : "PROCESSOR"
       },
       "zIndex" : 3
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "groupId" : "flow-contents-group",
-        "id" : "f2802afb-e08b-3fc4-a6e6-2d7ee6ac92d2",
-        "name" : "API Success",
-        "type" : "OUTPUT_PORT"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "c1afab41-11d3-355b-8f8e-96f819bb445b",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "success" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "8317e273-ad37-314c-b085-f37f238829fe",
-        "name" : "Update Filename",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 2
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
@@ -181,7 +151,7 @@
       "portFunction" : "STANDARD",
       "position" : {
         "x" : 608.0,
-        "y" : 896.0
+        "y" : 648.0
       },
       "scheduledState" : "ENABLED",
       "type" : "OUTPUT_PORT"
@@ -504,79 +474,6 @@
       "style" : { },
       "type" : "org.apache.nifi.processors.standard.InvokeHTTP",
       "yieldDuration" : "1 sec"
-    }, {
-      "autoTerminatedRelationships" : [ ],
-      "backoffMechanism" : "PENALIZE_FLOWFILE",
-      "bulletinLevel" : "WARN",
-      "bundle" : {
-        "artifact" : "nifi-update-attribute-nar",
-        "group" : "org.apache.nifi",
-        "version" : "2.9.0"
-      },
-      "comments" : "",
-      "componentType" : "PROCESSOR",
-      "concurrentlySchedulableTaskCount" : 1,
-      "executionNode" : "ALL",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "8317e273-ad37-314c-b085-f37f238829fe",
-      "maxBackoffPeriod" : "10 mins",
-      "name" : "Update Filename",
-      "penaltyDuration" : "30 sec",
-      "position" : {
-        "x" : 552.0,
-        "y" : 648.0
-      },
-      "properties" : {
-        "filename" : "result__${now():format('yyyyMMddHHmm')}.json",
-        "Store State" : "Do not store state",
-        "Cache Value Lookup Cache Size" : "100"
-      },
-      "propertyDescriptors" : {
-        "Delete Attributes Expression" : {
-          "displayName" : "Delete Attributes Expression",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Delete Attributes Expression",
-          "sensitive" : false
-        },
-        "filename" : {
-          "displayName" : "filename",
-          "dynamic" : true,
-          "identifiesControllerService" : false,
-          "name" : "filename",
-          "sensitive" : false
-        },
-        "Store State" : {
-          "displayName" : "Store State",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Store State",
-          "sensitive" : false
-        },
-        "Cache Value Lookup Cache Size" : {
-          "displayName" : "Cache Value Lookup Cache Size",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Cache Value Lookup Cache Size",
-          "sensitive" : false
-        },
-        "Stateful Variables Initial Value" : {
-          "displayName" : "Stateful Variables Initial Value",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Stateful Variables Initial Value",
-          "sensitive" : false
-        }
-      },
-      "retriedRelationships" : [ ],
-      "retryCount" : 10,
-      "runDurationMillis" : 25,
-      "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "0 sec",
-      "schedulingStrategy" : "TIMER_DRIVEN",
-      "style" : { },
-      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
-      "yieldDuration" : "1 sec"
     } ],
     "remoteProcessGroups" : [ ],
     "scheduledState" : "ENABLED",
@@ -589,6 +486,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "API-Ingestion",
-    "timestamp" : 1779461642791
+    "timestamp" : 1779468926157
   }
 }
