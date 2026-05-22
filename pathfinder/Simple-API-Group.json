@@ -467,8 +467,9 @@
     "inputPorts" : [ ],
     "labels" : [ ],
     "maxConcurrentTasks" : 1,
-    "name" : "Simple API Group",
+    "name" : "Dummy Data Write",
     "outputPorts" : [ ],
+    "parameterContextName" : "Metadata-API-Variables",
     "position" : {
       "x" : 0.0,
       "y" : 0.0
@@ -816,7 +817,7 @@
         "HTTP/2 Disabled" : "False",
         "Connection Timeout" : "5 secs",
         "Response Cookie Strategy" : "DISABLED",
-        "Authorization" : "Bearer nifi_service_api_key",
+        "Authorization" : "#{INTERNAL_API_BEARER}",
         "Socket Read Timeout" : "15 secs",
         "Socket Idle Connections" : "5",
         "Request Body Enabled" : "true",
@@ -900,7 +901,7 @@
           "dynamic" : true,
           "identifiesControllerService" : false,
           "name" : "Authorization",
-          "sensitive" : false
+          "sensitive" : true
         },
         "Request Password" : {
           "displayName" : "Request Password",
@@ -2005,11 +2006,22 @@
   },
   "flowEncodingVersion" : "1.0",
   "latest" : false,
-  "parameterContexts" : { },
+  "parameterContexts" : {
+    "Metadata-API-Variables" : {
+      "componentType" : "PARAMETER_CONTEXT",
+      "inheritedParameterContexts" : [ ],
+      "name" : "Metadata-API-Variables",
+      "parameters" : [ {
+        "name" : "INTERNAL_API_BEARER",
+        "provided" : false,
+        "sensitive" : true
+      } ]
+    }
+  },
   "parameterProviders" : { },
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Simple-API-Group",
-    "timestamp" : 1779368059910
+    "timestamp" : 1779445508702
   }
 }
