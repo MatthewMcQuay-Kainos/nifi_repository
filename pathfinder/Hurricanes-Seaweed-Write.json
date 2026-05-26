@@ -22,15 +22,14 @@
       "bends" : [ ],
       "componentType" : "CONNECTION",
       "destination" : {
-        "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "1161f487-721b-3570-9ff3-d1c36b8d9e0d",
-        "name" : "Merge Write Output",
-        "type" : "PROCESSOR"
+        "id" : "7929f69c-1378-3289-8d18-0046222fbfb9",
+        "name" : "Seaweed Output",
+        "type" : "OUTPUT_PORT"
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "0010064d-7a46-3fa4-8163-a075bde67e63",
+      "identifier" : "0217fc87-4e53-313e-bc78-47f54a9a0056",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -41,11 +40,11 @@
       "source" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "648f5d73-019e-1000-f095-4d4ec8a414f8",
-        "name" : "Set Success",
+        "id" : "2b662b42-7ec8-3c5e-b888-a91bbb917d7a",
+        "name" : "Set Total File Size and Count",
         "type" : "PROCESSOR"
       },
-      "zIndex" : 6
+      "zIndex" : 12
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
@@ -55,7 +54,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "648f5d73-019e-1000-f095-4d4ec8a414f8",
-        "name" : "Set Success",
+        "name" : "Set Success and File Size",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
@@ -76,6 +75,36 @@
         "type" : "PROCESSOR"
       },
       "zIndex" : 4
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "2b662b42-7ec8-3c5e-b888-a91bbb917d7a",
+        "name" : "Set Total File Size and Count",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "1439930c-e99b-310f-958e-f4cf0f03f660",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "merged" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "1161f487-721b-3570-9ff3-d1c36b8d9e0d",
+        "name" : "Merge Write Output",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 11
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
@@ -114,6 +143,36 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
+        "id" : "1161f487-721b-3570-9ff3-d1c36b8d9e0d",
+        "name" : "Merge Write Output",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "9bca072d-a3bd-31b0-8a99-b267a163a9b5",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "7ad996c2-db95-3345-a452-ad8e971a7371",
+        "name" : "Sum Total File Sizes",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 10
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
         "id" : "d0ef710f-e6ea-3d2d-9065-013a8af83d56",
         "name" : "Set Filenames",
         "type" : "PROCESSOR"
@@ -143,42 +202,13 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "e8fc6597-9853-31b2-ab3c-6fd78412d396",
-        "name" : "ExecuteScript",
+        "id" : "7ad996c2-db95-3345-a452-ad8e971a7371",
+        "name" : "Sum Total File Sizes",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "b803c32b-a025-3aca-a852-760a14747f72",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "merged" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "1161f487-721b-3570-9ff3-d1c36b8d9e0d",
-        "name" : "Merge Write Output",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 7
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "groupId" : "flow-contents-group",
-        "id" : "7929f69c-1378-3289-8d18-0046222fbfb9",
-        "name" : "Seaweed Output",
-        "type" : "OUTPUT_PORT"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "b98bb5fa-b722-3bae-bed7-ba8a321b0b24",
+      "identifier" : "f6a476a3-3878-3069-b5f7-213d1f04e3c9",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -189,11 +219,11 @@
       "source" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "e8fc6597-9853-31b2-ab3c-6fd78412d396",
-        "name" : "ExecuteScript",
+        "id" : "648f5d73-019e-1000-f095-4d4ec8a414f8",
+        "name" : "Set Success and File Size",
         "type" : "PROCESSOR"
       },
-      "zIndex" : 8
+      "zIndex" : 9
     } ],
     "controllerServices" : [ ],
     "defaultBackPressureDataSizeThreshold" : "1 GB",
@@ -238,7 +268,7 @@
       "portFunction" : "STANDARD",
       "position" : {
         "x" : -128.0,
-        "y" : 1344.0
+        "y" : 1408.0
       },
       "scheduledState" : "ENABLED",
       "type" : "OUTPUT_PORT"
@@ -269,7 +299,7 @@
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : -184.0,
-        "y" : 744.0
+        "y" : 928.0
       },
       "properties" : {
         "Metadata Strategy" : "Do Not Merge Uncommon Metadata",
@@ -448,6 +478,87 @@
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
       "type" : "org.apache.nifi.processors.standard.MergeContent",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-update-attribute-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.9.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "2b662b42-7ec8-3c5e-b888-a91bbb917d7a",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "Set Total File Size and Count",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -184.0,
+        "y" : 1152.0
+      },
+      "properties" : {
+        "Store State" : "Do not store state",
+        "total_file_size" : "${running_file_size_addition}",
+        "total_file_count" : "${merge.count}",
+        "Cache Value Lookup Cache Size" : "100"
+      },
+      "propertyDescriptors" : {
+        "Delete Attributes Expression" : {
+          "displayName" : "Delete Attributes Expression",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Delete Attributes Expression",
+          "sensitive" : false
+        },
+        "Store State" : {
+          "displayName" : "Store State",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Store State",
+          "sensitive" : false
+        },
+        "total_file_size" : {
+          "displayName" : "total_file_size",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "total_file_size",
+          "sensitive" : false
+        },
+        "total_file_count" : {
+          "displayName" : "total_file_count",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "total_file_count",
+          "sensitive" : false
+        },
+        "Cache Value Lookup Cache Size" : {
+          "displayName" : "Cache Value Lookup Cache Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Cache Value Lookup Cache Size",
+          "sensitive" : false
+        },
+        "Stateful Variables Initial Value" : {
+          "displayName" : "Stateful Variables Initial Value",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Stateful Variables Initial Value",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 25,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
       "yieldDuration" : "1 sec"
     }, {
       "autoTerminatedRelationships" : [ "failure" ],
@@ -731,7 +842,7 @@
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "648f5d73-019e-1000-f095-4d4ec8a414f8",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "Set Success",
+      "name" : "Set Success and File Size",
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : -184.0,
@@ -740,7 +851,8 @@
       "properties" : {
         "Store State" : "Do not store state",
         "Cache Value Lookup Cache Size" : "100",
-        "state" : "SUCCESS"
+        "state" : "SUCCESS",
+        "file_size" : "${fileSize}"
       },
       "propertyDescriptors" : {
         "Delete Attributes Expression" : {
@@ -769,6 +881,87 @@
           "dynamic" : true,
           "identifiesControllerService" : false,
           "name" : "state",
+          "sensitive" : false
+        },
+        "Stateful Variables Initial Value" : {
+          "displayName" : "Stateful Variables Initial Value",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Stateful Variables Initial Value",
+          "sensitive" : false
+        },
+        "file_size" : {
+          "displayName" : "file_size",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "file_size",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 25,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "set state fail" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-update-attribute-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.9.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "7ad996c2-db95-3345-a452-ad8e971a7371",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "Sum Total File Sizes",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -184.0,
+        "y" : 672.0
+      },
+      "properties" : {
+        "Store State" : "Store state locally",
+        "Cache Value Lookup Cache Size" : "100",
+        "running_file_size_addition" : "${running_file_size_addition:toNumber():lt(1):ifElse(${file_size:toNumber()},${running_file_size_addition:toNumber():plus(${file_size:toNumber()})})}",
+        "Stateful Variables Initial Value" : "0"
+      },
+      "propertyDescriptors" : {
+        "Delete Attributes Expression" : {
+          "displayName" : "Delete Attributes Expression",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Delete Attributes Expression",
+          "sensitive" : false
+        },
+        "Store State" : {
+          "displayName" : "Store State",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Store State",
+          "sensitive" : false
+        },
+        "Cache Value Lookup Cache Size" : {
+          "displayName" : "Cache Value Lookup Cache Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Cache Value Lookup Cache Size",
+          "sensitive" : false
+        },
+        "running_file_size_addition" : {
+          "displayName" : "running_file_size_addition",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "running_file_size_addition",
           "sensitive" : false
         },
         "Stateful Variables Initial Value" : {
@@ -869,79 +1062,6 @@
       "style" : { },
       "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
       "yieldDuration" : "1 sec"
-    }, {
-      "autoTerminatedRelationships" : [ "failure" ],
-      "backoffMechanism" : "PENALIZE_FLOWFILE",
-      "bulletinLevel" : "WARN",
-      "bundle" : {
-        "artifact" : "nifi-scripting-nar",
-        "group" : "org.apache.nifi",
-        "version" : "2.9.0"
-      },
-      "comments" : "",
-      "componentType" : "PROCESSOR",
-      "concurrentlySchedulableTaskCount" : 1,
-      "executionNode" : "ALL",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "e8fc6597-9853-31b2-ab3c-6fd78412d396",
-      "maxBackoffPeriod" : "10 mins",
-      "name" : "ExecuteScript",
-      "penaltyDuration" : "30 sec",
-      "position" : {
-        "x" : -184.0,
-        "y" : 1016.0
-      },
-      "properties" : {
-        "Script Engine" : "Groovy",
-        "Script Body" : "def fileSizes = flowFile.getAttribute('fileSize')  // e.g., \"123,456,789\"\ndef totalSize = 0\nif (fileSizes != null) {\n    fileSizes.split(',').each { s ->\n        totalSize += s.toLong()\n    }\n}\nflowFile = session.putAttribute(flowFile, 'total_file_size', totalSize.toString())\nflowFile = session.putAttribute(flowFile, 'total_file_count', flowFile.getAttribute('merge.count'))"
-      },
-      "propertyDescriptors" : {
-        "Script File" : {
-          "displayName" : "Script File",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Script File",
-          "resourceDefinition" : {
-            "cardinality" : "SINGLE",
-            "resourceTypes" : [ "FILE" ]
-          },
-          "sensitive" : false
-        },
-        "Script Engine" : {
-          "displayName" : "Script Engine",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Script Engine",
-          "sensitive" : false
-        },
-        "Script Body" : {
-          "displayName" : "Script Body",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Script Body",
-          "sensitive" : false
-        },
-        "Module Directory" : {
-          "displayName" : "Module Directory",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Module Directory",
-          "resourceDefinition" : {
-            "cardinality" : "MULTIPLE",
-            "resourceTypes" : [ "DIRECTORY", "FILE" ]
-          },
-          "sensitive" : false
-        }
-      },
-      "retriedRelationships" : [ ],
-      "retryCount" : 10,
-      "runDurationMillis" : 0,
-      "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "0 sec",
-      "schedulingStrategy" : "TIMER_DRIVEN",
-      "style" : { },
-      "type" : "org.apache.nifi.processors.script.ExecuteScript",
-      "yieldDuration" : "1 sec"
     } ],
     "remoteProcessGroups" : [ ],
     "scheduledState" : "ENABLED",
@@ -965,6 +1085,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Seaweed-Write",
-    "timestamp" : 1779809362852
+    "timestamp" : 1779811535471
   }
 }
