@@ -70,64 +70,6 @@
         "type" : "INPUT_PORT"
       },
       "zIndex" : 1
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "groupId" : "flow-contents-group",
-        "id" : "64e58371-019e-1000-0b04-596a21ee9bab",
-        "name" : "Write to Metadata-Index Failure",
-        "type" : "OUTPUT_PORT"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "64e58375-019e-1000-087d-1bf382f7d557",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "Failure" ],
-      "source" : {
-        "comments" : "Need to replace the hardcoded value here!!!",
-        "groupId" : "flow-contents-group",
-        "id" : "64e5836f-019e-1000-e52d-a16ab2aa0b52",
-        "name" : "Write Activity to Metadata Index",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 4
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "groupId" : "flow-contents-group",
-        "id" : "64e58372-019e-1000-b1cd-6c8805d7b4ab",
-        "name" : "Write to Metadata-Index Success",
-        "type" : "OUTPUT_PORT"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "64e58376-019e-1000-82e2-41b5efd65d0e",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "Response" ],
-      "source" : {
-        "comments" : "Need to replace the hardcoded value here!!!",
-        "groupId" : "flow-contents-group",
-        "id" : "64e5836f-019e-1000-e52d-a16ab2aa0b52",
-        "name" : "Write Activity to Metadata Index",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 3
     } ],
     "controllerServices" : [ ],
     "defaultBackPressureDataSizeThreshold" : "1 GB",
@@ -157,35 +99,7 @@
     "labels" : [ ],
     "maxConcurrentTasks" : 1,
     "name" : "Write to Metadata Index",
-    "outputPorts" : [ {
-      "allowRemoteAccess" : false,
-      "componentType" : "OUTPUT_PORT",
-      "concurrentlySchedulableTaskCount" : 1,
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "64e58371-019e-1000-0b04-596a21ee9bab",
-      "name" : "Write to Metadata-Index Failure",
-      "portFunction" : "FAILURE",
-      "position" : {
-        "x" : 87.9999950231462,
-        "y" : 299.9999860560488
-      },
-      "scheduledState" : "ENABLED",
-      "type" : "OUTPUT_PORT"
-    }, {
-      "allowRemoteAccess" : false,
-      "componentType" : "OUTPUT_PORT",
-      "concurrentlySchedulableTaskCount" : 1,
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "64e58372-019e-1000-b1cd-6c8805d7b4ab",
-      "name" : "Write to Metadata-Index Success",
-      "portFunction" : "STANDARD",
-      "position" : {
-        "x" : -328.0000049768538,
-        "y" : 299.9999860560488
-      },
-      "scheduledState" : "ENABLED",
-      "type" : "OUTPUT_PORT"
-    } ],
+    "outputPorts" : [ ],
     "parameterContextName" : "Metadata-API-Variables",
     "position" : {
       "x" : 0.0,
@@ -298,7 +212,7 @@
       "type" : "org.apache.nifi.processors.standard.ReplaceText",
       "yieldDuration" : "1 sec"
     }, {
-      "autoTerminatedRelationships" : [ "No Retry", "Original", "Retry" ],
+      "autoTerminatedRelationships" : [ "Failure", "No Retry", "Original", "Response", "Retry" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
@@ -641,6 +555,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Write-to-Metadata-Index",
-    "timestamp" : 1779809289450
+    "timestamp" : 1779809517876
   }
 }
