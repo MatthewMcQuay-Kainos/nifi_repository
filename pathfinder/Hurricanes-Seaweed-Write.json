@@ -67,7 +67,7 @@
       "name" : "",
       "partitioningAttribute" : "",
       "prioritizers" : [ ],
-      "selectedRelationships" : [ "failure" ],
+      "selectedRelationships" : [ "success" ],
       "source" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
@@ -1021,7 +1021,7 @@
       "name" : "ExecuteScript",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -144.0,
+        "x" : -136.0,
         "y" : 1016.0
       },
       "properties" : {
@@ -1098,6 +1098,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Seaweed-Write",
-    "timestamp" : 1779804660291
+    "timestamp" : 1779805024666
   }
 }
