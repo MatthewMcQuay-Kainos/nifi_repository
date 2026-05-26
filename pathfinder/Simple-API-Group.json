@@ -137,35 +137,6 @@
       "bends" : [ ],
       "componentType" : "CONNECTION",
       "destination" : {
-        "groupId" : "b2972b92-7450-3e1c-b30d-653d0f525d17",
-        "id" : "6127ab15-84a9-382a-b8c1-93717d8508cc",
-        "name" : "API Input",
-        "type" : "INPUT_PORT"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "27514b19-b5ec-30a1-95c5-2647ec4563d8",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "success" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "5051f804-019e-1000-178a-3fcd7810be7b",
-        "name" : "Update Filename",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 15
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "519142cc-e01f-3497-94b9-12830d428123",
@@ -318,7 +289,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "93d678bb-f7a1-3b47-8d0e-c449a90b438b",
-        "name" : "Set Ingestion Start Time",
+        "name" : "Set Ingestion Start Time and File Name",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
@@ -345,15 +316,14 @@
       "bends" : [ ],
       "componentType" : "CONNECTION",
       "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "5051f804-019e-1000-178a-3fcd7810be7b",
-        "name" : "Update Filename",
-        "type" : "PROCESSOR"
+        "groupId" : "b2972b92-7450-3e1c-b30d-653d0f525d17",
+        "id" : "6127ab15-84a9-382a-b8c1-93717d8508cc",
+        "name" : "API Input",
+        "type" : "INPUT_PORT"
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "ac313a3c-2a5f-31ce-814e-0ad5adefb2d5",
+      "identifier" : "acdbf75e-6b93-314c-a2ed-8dae811b28fa",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -365,10 +335,10 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "93d678bb-f7a1-3b47-8d0e-c449a90b438b",
-        "name" : "Set Ingestion Start Time",
+        "name" : "Set Ingestion Start Time and File Name",
         "type" : "PROCESSOR"
       },
-      "zIndex" : 18
+      "zIndex" : 30
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
@@ -752,11 +722,11 @@
       "name" : "Set Dataset ID",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : 280.0,
-        "y" : -632.0
+        "x" : 288.0,
+        "y" : -392.0
       },
       "properties" : {
-        "Destination" : "flowfile-content",
+        "Destination" : "flowfile-attribute",
         "Max String Length" : "20 MB",
         "Return Type" : "auto-detect",
         "dataset_id" : "$.dataset_id",
@@ -850,7 +820,7 @@
         "Socket Idle Connections" : "5",
         "Request Body Enabled" : "true",
         "OAuth2 Access Token Refresh Strategy" : "ON_TOKEN_EXPIRATION",
-        "HTTP URL" : "http://metadata-api:3001/v1/datasets/80edd2f0-fe49-4966-b237-d9b5310c9d05/activity",
+        "HTTP URL" : "http://metadata-api:3001/v1/datasets/${dataset_id}/activity",
         "Socket Idle Timeout" : "5 mins",
         "Response Redirects Enabled" : "True",
         "Socket Write Timeout" : "15 secs",
@@ -1332,79 +1302,6 @@
       "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
       "yieldDuration" : "1 sec"
     }, {
-      "autoTerminatedRelationships" : [ ],
-      "backoffMechanism" : "PENALIZE_FLOWFILE",
-      "bulletinLevel" : "WARN",
-      "bundle" : {
-        "artifact" : "nifi-update-attribute-nar",
-        "group" : "org.apache.nifi",
-        "version" : "2.9.0"
-      },
-      "comments" : "",
-      "componentType" : "PROCESSOR",
-      "concurrentlySchedulableTaskCount" : 1,
-      "executionNode" : "ALL",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "5051f804-019e-1000-178a-3fcd7810be7b",
-      "maxBackoffPeriod" : "10 mins",
-      "name" : "Update Filename",
-      "penaltyDuration" : "30 sec",
-      "position" : {
-        "x" : 288.0,
-        "y" : -112.0
-      },
-      "properties" : {
-        "filename" : "${dataset_name}_${now():format('yyyyMMddHHmm')}.json",
-        "Store State" : "Do not store state",
-        "Cache Value Lookup Cache Size" : "100"
-      },
-      "propertyDescriptors" : {
-        "Delete Attributes Expression" : {
-          "displayName" : "Delete Attributes Expression",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Delete Attributes Expression",
-          "sensitive" : false
-        },
-        "filename" : {
-          "displayName" : "filename",
-          "dynamic" : true,
-          "identifiesControllerService" : false,
-          "name" : "filename",
-          "sensitive" : false
-        },
-        "Store State" : {
-          "displayName" : "Store State",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Store State",
-          "sensitive" : false
-        },
-        "Cache Value Lookup Cache Size" : {
-          "displayName" : "Cache Value Lookup Cache Size",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Cache Value Lookup Cache Size",
-          "sensitive" : false
-        },
-        "Stateful Variables Initial Value" : {
-          "displayName" : "Stateful Variables Initial Value",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Stateful Variables Initial Value",
-          "sensitive" : false
-        }
-      },
-      "retriedRelationships" : [ ],
-      "retryCount" : 10,
-      "runDurationMillis" : 25,
-      "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "0 sec",
-      "schedulingStrategy" : "TIMER_DRIVEN",
-      "style" : { },
-      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
-      "yieldDuration" : "1 sec"
-    }, {
       "autoTerminatedRelationships" : [ "Failure", "No Retry", "Original", "Retry" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
@@ -1423,8 +1320,8 @@
       "name" : "Get Dataset ID By Name",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : 280.0,
-        "y" : -928.0
+        "x" : 288.0,
+        "y" : -688.0
       },
       "properties" : {
         "Request Content-Encoding" : "DISABLED",
@@ -2112,13 +2009,14 @@
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "93d678bb-f7a1-3b47-8d0e-c449a90b438b",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "Set Ingestion Start Time",
+      "name" : "Set Ingestion Start Time and File Name",
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : 288.0,
-        "y" : -360.0
+        "y" : -120.0
       },
       "properties" : {
+        "filename" : "${dataset_name}_${now():format('yyyyMMddHHmm')}.json",
         "ingestion_start_time" : "${now():format(\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\")}",
         "Store State" : "Do not store state",
         "Cache Value Lookup Cache Size" : "100"
@@ -2129,6 +2027,13 @@
           "dynamic" : false,
           "identifiesControllerService" : false,
           "name" : "Delete Attributes Expression",
+          "sensitive" : false
+        },
+        "filename" : {
+          "displayName" : "filename",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "filename",
           "sensitive" : false
         },
         "ingestion_start_time" : {
@@ -2188,8 +2093,8 @@
       "name" : "Set Dataset Name and Storage Location",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : 280.0,
-        "y" : -1248.0
+        "x" : 288.0,
+        "y" : -1008.0
       },
       "properties" : {
         "Store State" : "Do not store state",
@@ -2278,7 +2183,7 @@
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : 288.0,
-        "y" : -1552.0
+        "y" : -1312.0
       },
       "properties" : {
         "File Size" : "0B",
@@ -2370,6 +2275,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Simple-API-Group",
-    "timestamp" : 1779468938199
+    "timestamp" : 1779782348212
   }
 }
