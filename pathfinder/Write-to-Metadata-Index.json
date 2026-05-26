@@ -11,7 +11,124 @@
   "flowContents" : {
     "comments" : "",
     "componentType" : "PROCESS_GROUP",
-    "connections" : [ ],
+    "connections" : [ {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "Need to replace the hardcoded value here!!!",
+        "groupId" : "flow-contents-group",
+        "id" : "64e5836f-019e-1000-e52d-a16ab2aa0b52",
+        "name" : "Write Activity to Metadata Index",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "64e58373-019e-1000-9b75-e705456ea6e6",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "64e5836e-019e-1000-b114-b49d7920f31e",
+        "name" : "Create API Body",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 2
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "64e5836e-019e-1000-b114-b49d7920f31e",
+        "name" : "Create API Body",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "64e58374-019e-1000-a03d-4c46429ce2b4",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "" ],
+      "source" : {
+        "groupId" : "flow-contents-group",
+        "id" : "64e58370-019e-1000-30a8-0ac3766bea19",
+        "name" : "Write to Metadata Index Input",
+        "type" : "INPUT_PORT"
+      },
+      "zIndex" : 1
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "groupId" : "flow-contents-group",
+        "id" : "64e58371-019e-1000-0b04-596a21ee9bab",
+        "name" : "Write to Metadata-Index Failure",
+        "type" : "OUTPUT_PORT"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "64e58375-019e-1000-087d-1bf382f7d557",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "Failure" ],
+      "source" : {
+        "comments" : "Need to replace the hardcoded value here!!!",
+        "groupId" : "flow-contents-group",
+        "id" : "64e5836f-019e-1000-e52d-a16ab2aa0b52",
+        "name" : "Write Activity to Metadata Index",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 4
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "groupId" : "flow-contents-group",
+        "id" : "64e58372-019e-1000-b1cd-6c8805d7b4ab",
+        "name" : "Write to Metadata-Index Success",
+        "type" : "OUTPUT_PORT"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "64e58376-019e-1000-82e2-41b5efd65d0e",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "Response" ],
+      "source" : {
+        "comments" : "Need to replace the hardcoded value here!!!",
+        "groupId" : "flow-contents-group",
+        "id" : "64e5836f-019e-1000-e52d-a16ab2aa0b52",
+        "name" : "Write Activity to Metadata Index",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 3
+    } ],
     "controllerServices" : [ ],
     "defaultBackPressureDataSizeThreshold" : "1 GB",
     "defaultBackPressureObjectThreshold" : 10000,
@@ -22,18 +139,61 @@
     "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
     "funnels" : [ ],
     "identifier" : "flow-contents-group",
-    "inputPorts" : [ ],
+    "inputPorts" : [ {
+      "allowRemoteAccess" : false,
+      "componentType" : "INPUT_PORT",
+      "concurrentlySchedulableTaskCount" : 1,
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "64e58370-019e-1000-30a8-0ac3766bea19",
+      "name" : "Write to Metadata Index Input",
+      "portFunction" : "STANDARD",
+      "position" : {
+        "x" : -144.0000049768538,
+        "y" : -348.0000139439512
+      },
+      "scheduledState" : "ENABLED",
+      "type" : "INPUT_PORT"
+    } ],
     "labels" : [ ],
     "maxConcurrentTasks" : 1,
     "name" : "Write to Metadata Index",
-    "outputPorts" : [ ],
+    "outputPorts" : [ {
+      "allowRemoteAccess" : false,
+      "componentType" : "OUTPUT_PORT",
+      "concurrentlySchedulableTaskCount" : 1,
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "64e58371-019e-1000-0b04-596a21ee9bab",
+      "name" : "Write to Metadata-Index Failure",
+      "portFunction" : "FAILURE",
+      "position" : {
+        "x" : 87.9999950231462,
+        "y" : 299.9999860560488
+      },
+      "scheduledState" : "ENABLED",
+      "type" : "OUTPUT_PORT"
+    }, {
+      "allowRemoteAccess" : false,
+      "componentType" : "OUTPUT_PORT",
+      "concurrentlySchedulableTaskCount" : 1,
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "64e58372-019e-1000-b1cd-6c8805d7b4ab",
+      "name" : "Write to Metadata-Index Success",
+      "portFunction" : "STANDARD",
+      "position" : {
+        "x" : -328.0000049768538,
+        "y" : 299.9999860560488
+      },
+      "scheduledState" : "ENABLED",
+      "type" : "OUTPUT_PORT"
+    } ],
+    "parameterContextName" : "Metadata-API-Variables",
     "position" : {
       "x" : 0.0,
       "y" : 0.0
     },
     "processGroups" : [ ],
     "processors" : [ {
-      "autoTerminatedRelationships" : [ "Failure", "No Retry", "Original", "Response", "Retry" ],
+      "autoTerminatedRelationships" : [ "failure" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
@@ -46,13 +206,118 @@
       "concurrentlySchedulableTaskCount" : 1,
       "executionNode" : "ALL",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "4a1c19ab-019e-1000-9623-2fff5ee885ea",
+      "identifier" : "64e5836e-019e-1000-b114-b49d7920f31e",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "InvokeHTTP",
+      "name" : "Create API Body",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -176.0,
-        "y" : -64.0
+        "x" : -200.0000049768538,
+        "y" : -172.00001394395122
+      },
+      "properties" : {
+        "Replacement Value" : "{\n  \"ingestion_start_time\": \"${ingestion_start_time}\",\n  \"ingestion_completion_time\": \"${ingestion_completion_time}\",\n  \"lineage\": [\n    [\n      \"${ingestion_start_time}\",\n      \"${dataset_source}\"\n    ]\n  ],\n  \"bytes_written\": \"${bytes_written}\",\n  \"file_count\": \"${file_count}\",\n  \"ingestion_status\": \"${ingestion_status}\"\n}",
+        "Search Value" : "(?s)(^.*$)",
+        "Evaluation Mode" : "Entire text",
+        "Line-by-Line Evaluation Mode" : "All",
+        "Character Set" : "UTF-8",
+        "Maximum Buffer Size" : "1 MB",
+        "Replacement Strategy" : "Always Replace"
+      },
+      "propertyDescriptors" : {
+        "Replacement Value" : {
+          "displayName" : "Replacement Value",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Replacement Value",
+          "sensitive" : false
+        },
+        "Search Value" : {
+          "displayName" : "Search Value",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Search Value",
+          "sensitive" : false
+        },
+        "Evaluation Mode" : {
+          "displayName" : "Evaluation Mode",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Evaluation Mode",
+          "sensitive" : false
+        },
+        "Text to Prepend" : {
+          "displayName" : "Text to Prepend",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Text to Prepend",
+          "sensitive" : false
+        },
+        "Line-by-Line Evaluation Mode" : {
+          "displayName" : "Line-by-Line Evaluation Mode",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Line-by-Line Evaluation Mode",
+          "sensitive" : false
+        },
+        "Character Set" : {
+          "displayName" : "Character Set",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Character Set",
+          "sensitive" : false
+        },
+        "Maximum Buffer Size" : {
+          "displayName" : "Maximum Buffer Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Maximum Buffer Size",
+          "sensitive" : false
+        },
+        "Replacement Strategy" : {
+          "displayName" : "Replacement Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Replacement Strategy",
+          "sensitive" : false
+        },
+        "Text to Append" : {
+          "displayName" : "Text to Append",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Text to Append",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 25,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.ReplaceText",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "No Retry", "Original", "Retry" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.9.0"
+      },
+      "comments" : "Need to replace the hardcoded value here!!!",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "64e5836f-019e-1000-e52d-a16ab2aa0b52",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "Write Activity to Metadata Index",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -200.0000049768538,
+        "y" : 67.99998605604878
       },
       "properties" : {
         "Request Content-Encoding" : "DISABLED",
@@ -61,11 +326,12 @@
         "HTTP/2 Disabled" : "False",
         "Connection Timeout" : "5 secs",
         "Response Cookie Strategy" : "DISABLED",
+        "Authorization" : "#{INTERNAL_API_BEARER}",
         "Socket Read Timeout" : "15 secs",
         "Socket Idle Connections" : "5",
         "Request Body Enabled" : "true",
         "OAuth2 Access Token Refresh Strategy" : "ON_TOKEN_EXPIRATION",
-        "HTTP URL" : "http://metadata-api:3001/v1/datasets/",
+        "HTTP URL" : "http://metadata-api:3001/v1/datasets/${dataset_id}/activity",
         "Socket Idle Timeout" : "5 mins",
         "Response Redirects Enabled" : "True",
         "Socket Write Timeout" : "15 secs",
@@ -76,7 +342,7 @@
         "Response Body Attribute Size" : "256",
         "Response Generation Required" : "false",
         "Response Header Request Attributes Enabled" : "false",
-        "HTTP Method" : "GET",
+        "HTTP Method" : "POST",
         "Request Content-Type" : "${mime.type}",
         "Request Digest Authentication Enabled" : "false",
         "Response Cache Size" : "10MB",
@@ -138,6 +404,13 @@
           "identifiesControllerService" : false,
           "name" : "Response Cookie Strategy",
           "sensitive" : false
+        },
+        "Authorization" : {
+          "displayName" : "Authorization",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "Authorization",
+          "sensitive" : true
         },
         "Request Password" : {
           "displayName" : "Request Password",
@@ -352,11 +625,22 @@
   },
   "flowEncodingVersion" : "1.0",
   "latest" : false,
-  "parameterContexts" : { },
+  "parameterContexts" : {
+    "Metadata-API-Variables" : {
+      "componentType" : "PARAMETER_CONTEXT",
+      "inheritedParameterContexts" : [ ],
+      "name" : "Metadata-API-Variables",
+      "parameters" : [ {
+        "name" : "INTERNAL_API_BEARER",
+        "provided" : false,
+        "sensitive" : true
+      } ]
+    }
+  },
   "parameterProviders" : { },
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Write-to-Metadata-Index",
-    "timestamp" : 1779359972642
+    "timestamp" : 1779809289450
   }
 }
