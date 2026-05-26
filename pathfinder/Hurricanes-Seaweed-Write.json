@@ -811,7 +811,7 @@
         "y" : -104.0
       },
       "properties" : {
-        "filename" : "${dataset_name:toLower()}/${layer_name:toLower():replaceAll(' ', '_'):replaceAll('/', '_')}_${ingestion_start_time:toDate(\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\"):format(\"yyyy_MM_dd_HHmm\")}.json",
+        "filename" : "${dataset_name:toLower()}/${layer_name:toLower():replaceAll(' ', '_'):replaceAll('/', '_')}/${layer_name:toLower():replaceAll(' ', '_'):replaceAll('/', '_')}_${ingestion_start_time:toDate(\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\"):format(\"yyyy_MM_dd_HHmm\")}.json",
         "Store State" : "Do not store state",
         "batch_id" : "1",
         "Cache Value Lookup Cache Size" : "100"
@@ -965,6 +965,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Seaweed-Write",
-    "timestamp" : 1779805889675
+    "timestamp" : 1779806617438
   }
 }
