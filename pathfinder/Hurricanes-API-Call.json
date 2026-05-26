@@ -135,35 +135,6 @@
       "bends" : [ ],
       "componentType" : "CONNECTION",
       "destination" : {
-        "groupId" : "flow-contents-group",
-        "id" : "a23005e1-9624-31a7-b895-873ccedacf28",
-        "name" : "Failure",
-        "type" : "OUTPUT_PORT"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "3d1c3aaf-d3c9-36d9-a104-58712b4f624c",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "Failure" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "1fd7128e-bc19-37a5-b919-9d6c0c091fd8",
-        "name" : "GET Layers",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 9
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "8e4b0261-86e2-3dfe-9239-0e0ad787ea1a",
@@ -261,20 +232,6 @@
       },
       "scheduledState" : "ENABLED",
       "type" : "OUTPUT_PORT"
-    }, {
-      "allowRemoteAccess" : false,
-      "componentType" : "OUTPUT_PORT",
-      "concurrentlySchedulableTaskCount" : 1,
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "a23005e1-9624-31a7-b895-873ccedacf28",
-      "name" : "Failure",
-      "portFunction" : "FAILURE",
-      "position" : {
-        "x" : 16.0,
-        "y" : 1552.0
-      },
-      "scheduledState" : "ENABLED",
-      "type" : "OUTPUT_PORT"
     } ],
     "position" : {
       "x" : 0.0,
@@ -282,7 +239,7 @@
     },
     "processGroups" : [ ],
     "processors" : [ {
-      "autoTerminatedRelationships" : [ "No Retry", "Original", "Retry" ],
+      "autoTerminatedRelationships" : [ "Failure", "No Retry", "Original", "Retry" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
@@ -1067,6 +1024,7 @@
         "Max String Length" : "20 MB",
         "Return Type" : "auto-detect",
         "Null Value Representation" : "empty string",
+        "layer_name" : "$.name",
         "Path Not Found Behavior" : "ignore"
       },
       "propertyDescriptors" : {
@@ -1105,6 +1063,13 @@
           "name" : "Null Value Representation",
           "sensitive" : false
         },
+        "layer_name" : {
+          "displayName" : "layer_name",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "layer_name",
+          "sensitive" : false
+        },
         "Path Not Found Behavior" : {
           "displayName" : "Path Not Found Behavior",
           "dynamic" : false,
@@ -1134,6 +1099,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-API-Call",
-    "timestamp" : 1779801248733
+    "timestamp" : 1779805063712
   }
 }
