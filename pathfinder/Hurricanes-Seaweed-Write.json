@@ -893,7 +893,7 @@
       },
       "properties" : {
         "Script Engine" : "Groovy",
-        "Script Body" : "def flowFile = session.get()\nif(!flowFile) return\n\ndef totalSize = 0L\ndef count = 0\n\n// The merged flowfile will have a 'merge.count' attribute (number of merged files)\ndef mergeCount = flowFile.getAttribute('merge.count') as Integer\n\n// The merged flowfile will have 'merge.parent.uuid' and 'merge.uuid.<n>' attributes for each original flowfile\nfor (int i = 0; i < mergeCount; i++) {\n    def sizeAttr = flowFile.getAttribute(\"merge.fragment.attribute.fileSize.${i}\")\n    if (sizeAttr) {\n        totalSize += sizeAttr as Long\n        count++\n    }\n}\n\nflowFile = session.putAttribute(flowFile, 'total_bytes_written', totalSize.toString())\nflowFile = session.putAttribute(flowFile, 'total_file_count', count.toString())\nsession.transfer(flowFile, REL_SUCCESS)"
+        "Script Body" : "def fileSizes = flowFile.getAttribute('fileSize')  // e.g., \"123,456,789\"\ndef totalSize = 0\nif (fileSizes != null) {\n    fileSizes.split(',').each { s ->\n        totalSize += s.toLong()\n    }\n}\nflowFile = session.putAttribute(flowFile, 'total_file_size', totalSize.toString())\nflowFile = session.putAttribute(flowFile, 'total_file_count', flowFile.getAttribute('merge.count'))"
       },
       "propertyDescriptors" : {
         "Script File" : {
@@ -965,6 +965,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Seaweed-Write",
-    "timestamp" : 1779806617438
+    "timestamp" : 1779809362852
   }
 }
