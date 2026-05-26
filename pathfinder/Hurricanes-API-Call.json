@@ -17,30 +17,29 @@
       "bends" : [ ],
       "componentType" : "CONNECTION",
       "destination" : {
-        "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "82825b3f-9f47-3701-a164-407c374b02a9",
-        "name" : "Get API Layers",
-        "type" : "PROCESSOR"
+        "id" : "5a4e06be-aab6-3a1d-aed4-e29fd1132b9c",
+        "name" : "Success",
+        "type" : "OUTPUT_PORT"
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "01879dcc-a2e6-34c0-b588-8278a01b56ee",
+      "identifier" : "15434482-befa-37ec-afe9-3f62c360329d",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
       "name" : "",
       "partitioningAttribute" : "",
       "prioritizers" : [ ],
-      "selectedRelationships" : [ "success" ],
+      "selectedRelationships" : [ "Response" ],
       "source" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "b000532f-9ac7-3679-a0b1-595bafa504aa",
-        "name" : "Start Flow",
+        "id" : "1fd7128e-bc19-37a5-b919-9d6c0c091fd8",
+        "name" : "GET Layers",
         "type" : "PROCESSOR"
       },
-      "zIndex" : 1
+      "zIndex" : 6
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
@@ -71,6 +70,35 @@
         "type" : "PROCESSOR"
       },
       "zIndex" : 2
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "82825b3f-9f47-3701-a164-407c374b02a9",
+        "name" : "Get API Layers",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "32b6cb45-2af0-3f7c-8ee3-7060f13939c4",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "" ],
+      "source" : {
+        "groupId" : "flow-contents-group",
+        "id" : "b533d524-6538-396e-88d7-47298b97c8ee",
+        "name" : "API Input",
+        "type" : "INPUT_PORT"
+      },
+      "zIndex" : 8
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
@@ -172,18 +200,46 @@
     "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
     "funnels" : [ ],
     "identifier" : "flow-contents-group",
-    "inputPorts" : [ ],
+    "inputPorts" : [ {
+      "allowRemoteAccess" : false,
+      "componentType" : "INPUT_PORT",
+      "concurrentlySchedulableTaskCount" : 1,
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "b533d524-6538-396e-88d7-47298b97c8ee",
+      "name" : "API Input",
+      "portFunction" : "STANDARD",
+      "position" : {
+        "x" : -488.0,
+        "y" : -32.0
+      },
+      "scheduledState" : "ENABLED",
+      "type" : "INPUT_PORT"
+    } ],
     "labels" : [ ],
     "maxConcurrentTasks" : 1,
     "name" : "Get Hurricanes Data",
-    "outputPorts" : [ ],
+    "outputPorts" : [ {
+      "allowRemoteAccess" : false,
+      "componentType" : "OUTPUT_PORT",
+      "concurrentlySchedulableTaskCount" : 1,
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "5a4e06be-aab6-3a1d-aed4-e29fd1132b9c",
+      "name" : "Success",
+      "portFunction" : "STANDARD",
+      "position" : {
+        "x" : -488.0,
+        "y" : 1552.0
+      },
+      "scheduledState" : "ENABLED",
+      "type" : "OUTPUT_PORT"
+    } ],
     "position" : {
       "x" : 0.0,
       "y" : 0.0
     },
     "processGroups" : [ ],
     "processors" : [ {
-      "autoTerminatedRelationships" : [ "Failure", "No Retry", "Original", "Response", "Retry" ],
+      "autoTerminatedRelationships" : [ "Failure", "No Retry", "Original", "Retry" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
@@ -515,7 +571,7 @@
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : -544.0,
-        "y" : 144.0
+        "y" : 176.0
       },
       "properties" : {
         "Request Content-Encoding" : "DISABLED",
@@ -941,95 +997,6 @@
       "type" : "org.apache.nifi.processors.standard.SplitJson",
       "yieldDuration" : "1 sec"
     }, {
-      "autoTerminatedRelationships" : [ ],
-      "backoffMechanism" : "PENALIZE_FLOWFILE",
-      "bulletinLevel" : "WARN",
-      "bundle" : {
-        "artifact" : "nifi-standard-nar",
-        "group" : "org.apache.nifi",
-        "version" : "2.9.0"
-      },
-      "comments" : "",
-      "componentType" : "PROCESSOR",
-      "concurrentlySchedulableTaskCount" : 1,
-      "executionNode" : "ALL",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "b000532f-9ac7-3679-a0b1-595bafa504aa",
-      "maxBackoffPeriod" : "10 mins",
-      "name" : "Start Flow",
-      "penaltyDuration" : "30 sec",
-      "position" : {
-        "x" : -544.0,
-        "y" : -152.0
-      },
-      "properties" : {
-        "File Size" : "0B",
-        "Batch Size" : "1",
-        "Unique FlowFiles" : "false",
-        "Character Set" : "UTF-8",
-        "Data Format" : "Text"
-      },
-      "propertyDescriptors" : {
-        "File Size" : {
-          "displayName" : "File Size",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "File Size",
-          "sensitive" : false
-        },
-        "Batch Size" : {
-          "displayName" : "Batch Size",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Batch Size",
-          "sensitive" : false
-        },
-        "Unique FlowFiles" : {
-          "displayName" : "Unique FlowFiles",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Unique FlowFiles",
-          "sensitive" : false
-        },
-        "Mime Type" : {
-          "displayName" : "Mime Type",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Mime Type",
-          "sensitive" : false
-        },
-        "Custom Text" : {
-          "displayName" : "Custom Text",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Custom Text",
-          "sensitive" : false
-        },
-        "Character Set" : {
-          "displayName" : "Character Set",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Character Set",
-          "sensitive" : false
-        },
-        "Data Format" : {
-          "displayName" : "Data Format",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Data Format",
-          "sensitive" : false
-        }
-      },
-      "retriedRelationships" : [ ],
-      "retryCount" : 10,
-      "runDurationMillis" : 0,
-      "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "365 day",
-      "schedulingStrategy" : "TIMER_DRIVEN",
-      "style" : { },
-      "type" : "org.apache.nifi.processors.standard.GenerateFlowFile",
-      "yieldDuration" : "1 sec"
-    }, {
       "autoTerminatedRelationships" : [ "failure", "unmatched" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
@@ -1124,6 +1091,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-API-Call",
-    "timestamp" : 1779800130424
+    "timestamp" : 1779801215783
   }
 }
