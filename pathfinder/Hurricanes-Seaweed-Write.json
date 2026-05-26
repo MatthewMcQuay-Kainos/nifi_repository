@@ -84,36 +84,6 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "cbd25069-02e1-301f-8d4a-3f6d16c821e7",
-        "name" : "Set Failure",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "7a49f5ef-3fa3-3a01-9eb6-3feeaf592a41",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "failure" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "64769b48-019e-1000-e75d-525f2405243a",
-        "name" : "Write to Seaweed",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 3
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
         "id" : "64769b48-019e-1000-e75d-525f2405243a",
         "name" : "Write to Seaweed",
         "type" : "PROCESSOR"
@@ -132,7 +102,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "d0ef710f-e6ea-3d2d-9065-013a8af83d56",
-        "name" : "UpdateAttribute",
+        "name" : "Set Filenames",
         "type" : "PROCESSOR"
       },
       "zIndex" : 2
@@ -144,38 +114,8 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "1161f487-721b-3570-9ff3-d1c36b8d9e0d",
-        "name" : "Merge Write Output",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "97410421-d01a-313d-9f67-761fd30cda6b",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "success" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "cbd25069-02e1-301f-8d4a-3f6d16c821e7",
-        "name" : "Set Failure",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 5
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
         "id" : "d0ef710f-e6ea-3d2d-9065-013a8af83d56",
-        "name" : "UpdateAttribute",
+        "name" : "Set Filenames",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
@@ -297,7 +237,7 @@
       "name" : "Seaweed Output",
       "portFunction" : "STANDARD",
       "position" : {
-        "x" : -80.0,
+        "x" : -128.0,
         "y" : 1344.0
       },
       "scheduledState" : "ENABLED",
@@ -328,7 +268,7 @@
       "name" : "Merge Write Output",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -136.0,
+        "x" : -184.0,
         "y" : 744.0
       },
       "properties" : {
@@ -510,7 +450,7 @@
       "type" : "org.apache.nifi.processors.standard.MergeContent",
       "yieldDuration" : "1 sec"
     }, {
-      "autoTerminatedRelationships" : [ ],
+      "autoTerminatedRelationships" : [ "failure" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
@@ -794,8 +734,8 @@
       "name" : "Set Success",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : 128.0,
-        "y" : 432.0
+        "x" : -184.0,
+        "y" : 440.0
       },
       "properties" : {
         "Store State" : "Do not store state",
@@ -862,89 +802,16 @@
       "concurrentlySchedulableTaskCount" : 1,
       "executionNode" : "ALL",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "cbd25069-02e1-301f-8d4a-3f6d16c821e7",
-      "maxBackoffPeriod" : "10 mins",
-      "name" : "Set Failure",
-      "penaltyDuration" : "30 sec",
-      "position" : {
-        "x" : -480.0,
-        "y" : 424.0
-      },
-      "properties" : {
-        "Store State" : "Do not store state",
-        "Cache Value Lookup Cache Size" : "100",
-        "state" : "FAILURE"
-      },
-      "propertyDescriptors" : {
-        "Delete Attributes Expression" : {
-          "displayName" : "Delete Attributes Expression",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Delete Attributes Expression",
-          "sensitive" : false
-        },
-        "Store State" : {
-          "displayName" : "Store State",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Store State",
-          "sensitive" : false
-        },
-        "Cache Value Lookup Cache Size" : {
-          "displayName" : "Cache Value Lookup Cache Size",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Cache Value Lookup Cache Size",
-          "sensitive" : false
-        },
-        "state" : {
-          "displayName" : "state",
-          "dynamic" : true,
-          "identifiesControllerService" : false,
-          "name" : "state",
-          "sensitive" : false
-        },
-        "Stateful Variables Initial Value" : {
-          "displayName" : "Stateful Variables Initial Value",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Stateful Variables Initial Value",
-          "sensitive" : false
-        }
-      },
-      "retriedRelationships" : [ ],
-      "retryCount" : 10,
-      "runDurationMillis" : 25,
-      "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "0 sec",
-      "schedulingStrategy" : "TIMER_DRIVEN",
-      "style" : { },
-      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
-      "yieldDuration" : "1 sec"
-    }, {
-      "autoTerminatedRelationships" : [ ],
-      "backoffMechanism" : "PENALIZE_FLOWFILE",
-      "bulletinLevel" : "WARN",
-      "bundle" : {
-        "artifact" : "nifi-update-attribute-nar",
-        "group" : "org.apache.nifi",
-        "version" : "2.9.0"
-      },
-      "comments" : "",
-      "componentType" : "PROCESSOR",
-      "concurrentlySchedulableTaskCount" : 1,
-      "executionNode" : "ALL",
-      "groupIdentifier" : "flow-contents-group",
       "identifier" : "d0ef710f-e6ea-3d2d-9065-013a8af83d56",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "UpdateAttribute",
+      "name" : "Set Filenames",
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : -184.0,
         "y" : -104.0
       },
       "properties" : {
-        "filename" : "${dataset_name:toLower()}/${name:toLower():replaceAll(' ', '_'):replaceAll('/', '_')}_${ingestion_start_time:toDate(\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\"):format(\"yyyy_MM_dd_HHmm\")}.json",
+        "filename" : "${dataset_name:toLower()}/${layer_name:toLower():replaceAll(' ', '_'):replaceAll('/', '_')}_${ingestion_start_time:toDate(\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\"):format(\"yyyy_MM_dd_HHmm\")}.json",
         "Store State" : "Do not store state",
         "batch_id" : "1",
         "Cache Value Lookup Cache Size" : "100"
@@ -1021,7 +888,7 @@
       "name" : "ExecuteScript",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -136.0,
+        "x" : -184.0,
         "y" : 1016.0
       },
       "properties" : {
@@ -1098,6 +965,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Seaweed-Write",
-    "timestamp" : 1779805024666
+    "timestamp" : 1779805889675
   }
 }
