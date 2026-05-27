@@ -332,12 +332,20 @@
         "y" : 896.0
       },
       "properties" : {
+        "Stateful Key" : "${batch_id}",
         "Store State" : "Store state locally",
         "total_file_size" : "${total_file_size:toNumber():plus(${file_part_size:toNumber()})}",
         "Cache Value Lookup Cache Size" : "100",
         "Stateful Variables Initial Value" : "0"
       },
       "propertyDescriptors" : {
+        "Stateful Key" : {
+          "displayName" : "Stateful Key",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "Stateful Key",
+          "sensitive" : false
+        },
         "Delete Attributes Expression" : {
           "displayName" : "Delete Attributes Expression",
           "dynamic" : false,
@@ -1004,7 +1012,7 @@
       "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
       "yieldDuration" : "1 sec"
     }, {
-      "autoTerminatedRelationships" : [ ],
+      "autoTerminatedRelationships" : [ "set state fail" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
@@ -1180,6 +1188,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Seaweed-Write",
-    "timestamp" : 1779870122468
+    "timestamp" : 1779873890721
   }
 }
