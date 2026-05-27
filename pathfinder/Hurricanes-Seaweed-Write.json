@@ -280,14 +280,14 @@
       "portFunction" : "STANDARD",
       "position" : {
         "x" : -128.0,
-        "y" : -296.0
+        "y" : -240.0
       },
       "scheduledState" : "ENABLED",
       "type" : "INPUT_PORT"
     } ],
     "labels" : [ ],
     "maxConcurrentTasks" : 1,
-    "name" : "Write to Seaweed",
+    "name" : "Write Hurricanes to Seaweed",
     "outputPorts" : [ {
       "allowRemoteAccess" : false,
       "componentType" : "OUTPUT_PORT",
@@ -298,7 +298,7 @@
       "portFunction" : "STANDARD",
       "position" : {
         "x" : -128.0,
-        "y" : 1408.0
+        "y" : 1584.0
       },
       "scheduledState" : "ENABLED",
       "type" : "OUTPUT_PORT"
@@ -328,8 +328,8 @@
       "name" : "Set Total File Size",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : 300.0,
-        "y" : 817.0
+        "x" : -184.0,
+        "y" : 896.0
       },
       "properties" : {
         "Store State" : "Store state locally",
@@ -403,7 +403,7 @@
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : -184.0,
-        "y" : 928.0
+        "y" : 1128.0
       },
       "properties" : {
         "Metadata Strategy" : "Do Not Merge Uncommon Metadata",
@@ -603,7 +603,7 @@
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : -184.0,
-        "y" : 1152.0
+        "y" : 1352.0
       },
       "properties" : {
         "Store State" : "Do not store state",
@@ -1096,7 +1096,7 @@
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : -184.0,
-        "y" : -104.0
+        "y" : -72.0
       },
       "properties" : {
         "filename" : "${dataset_name:toLower()}/${layer_name:toLower():replaceAll(' ', '_'):replaceAll('/', '_')}/${layer_name:toLower():replaceAll(' ', '_'):replaceAll('/', '_')}_${ingestion_start_time:toDate(\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\"):format(\"yyyy_MM_dd_HHmm\")}.json",
@@ -1180,6 +1180,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Seaweed-Write",
-    "timestamp" : 1779812187906
+    "timestamp" : 1779870122468
   }
 }
