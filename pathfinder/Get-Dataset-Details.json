@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1779869897704,
+    "description" : "",
+    "identifier" : "Get-Dataset-Details",
+    "lastModifiedTimestamp" : 1779869897704,
+    "name" : "Get Dataset Details",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
