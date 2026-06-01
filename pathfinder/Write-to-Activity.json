@@ -950,7 +950,7 @@
         "y" : 24.0
       },
       "properties" : {
-        "Replacement Value" : "{\n  \"ingestion_completion_time\": \"${ingestion_completion_time}\",\n  \"lineage\": ${lineage},\n  \"bytes_written\": ${total_file_size},\n  \"file_count\": ${total_file_count},\n  \"ingestion_status\": \"${activity_status}\"\n}",
+        "Replacement Value" : "{\n  \"ingestion_completion_time\": \"${activity_completion_time}\",\n  \"lineage\": ${lineage},\n  \"bytes_written\": ${total_file_size},\n  \"file_count\": ${total_file_count},\n  \"ingestion_status\": \"${activity_status}\"\n}",
         "Search Value" : "(?s)(^.*$)",
         "Evaluation Mode" : "Entire text",
         "Line-by-Line Evaluation Mode" : "All",
@@ -1138,6 +1138,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Write-to-Activity",
-    "timestamp" : 1780329935213
+    "timestamp" : 1780329986322
   }
 }
