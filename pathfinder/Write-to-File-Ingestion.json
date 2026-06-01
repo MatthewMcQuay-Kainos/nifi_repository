@@ -399,7 +399,7 @@
       "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
       "yieldDuration" : "1 sec"
     }, {
-      "autoTerminatedRelationships" : [ "No Retry", "Retry" ],
+      "autoTerminatedRelationships" : [ "No Retry", "Original", "Retry" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
@@ -742,7 +742,7 @@
         "y" : -312.0
       },
       "properties" : {
-        "Replacement Value" : "{\n  \"ingestion_start_time\": \"${ingestion_start_time}\",\n  \"filepath\", \"${filepath}\",\n  \"bytes_written\": 0,\n  \"ingestion_status\": \"RUNNING\"\n}",
+        "Replacement Value" : "{\n  \"ingestion_start_time\": \"${ingestion_start_time}\",\n  \"filepath\", \"${s3_filepath}\",\n  \"bytes_written\": 0,\n  \"ingestion_status\": \"RUNNING\"\n}",
         "Search Value" : "(?s)(^.*$)",
         "Evaluation Mode" : "Entire text",
         "Line-by-Line Evaluation Mode" : "All",
@@ -1025,6 +1025,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Write-to-File-Ingestion",
-    "timestamp" : 1780325055257
+    "timestamp" : 1780325688351
   }
 }
