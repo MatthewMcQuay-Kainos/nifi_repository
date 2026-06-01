@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1780327085114,
+    "description" : "Creates or updates an activity.",
+    "identifier" : "Write-to-Activity",
+    "lastModifiedTimestamp" : 1780327085114,
+    "name" : "Write to Activity",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
