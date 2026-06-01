@@ -953,7 +953,7 @@
       },
       "properties" : {
         "Store State" : "Do not store state",
-        "api_url" : "http://localhost:3001/v1/activity/${parent_activity_id}/ingestion_file\n\n",
+        "api_url" : "http://metadata-api:3001/v1/activity/${parent_activity_id}/ingestion_file",
         "Cache Value Lookup Cache Size" : "100"
       },
       "propertyDescriptors" : {
@@ -1025,6 +1025,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Write-to-File-Ingestion",
-    "timestamp" : 1780326205945
+    "timestamp" : 1780326385776
   }
 }
