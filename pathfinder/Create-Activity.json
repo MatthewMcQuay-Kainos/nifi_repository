@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1780314739118,
+    "description" : "Creates an activity for the dataset with the details provided.",
+    "identifier" : "Create-Activity",
+    "lastModifiedTimestamp" : 1780314739118,
+    "name" : "Create Activity",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
