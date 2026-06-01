@@ -80,6 +80,34 @@
       "bends" : [ ],
       "componentType" : "CONNECTION",
       "destination" : {
+        "groupId" : "flow-contents-group",
+        "id" : "7929f69c-1378-3289-8d18-0046222fbfb9",
+        "name" : "Success",
+        "type" : "OUTPUT_PORT"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "576c6c0b-fd6c-323a-bfce-961cb7c7935d",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "" ],
+      "source" : {
+        "groupId" : "a2b513ad-a8b6-31a2-bb36-fc73be1bbc2f",
+        "id" : "8399da2c-019e-1000-5823-52925d43b954",
+        "name" : "Write to File Ingestion - Success",
+        "type" : "OUTPUT_PORT"
+      },
+      "zIndex" : 14
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
         "groupId" : "a2b513ad-a8b6-31a2-bb36-fc73be1bbc2f",
         "id" : "8399da29-019e-1000-d454-eb264e55822d",
         "name" : "Update File Ingestion",
@@ -317,11 +345,11 @@
       "concurrentlySchedulableTaskCount" : 1,
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "7929f69c-1378-3289-8d18-0046222fbfb9",
-      "name" : "Seaweed Output",
+      "name" : "Success",
       "portFunction" : "STANDARD",
       "position" : {
-        "x" : -128.0,
-        "y" : 1584.0
+        "x" : -136.0,
+        "y" : 1168.0
       },
       "scheduledState" : "ENABLED",
       "type" : "OUTPUT_PORT"
@@ -332,7 +360,7 @@
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "fdee847e-ea4b-397c-a60a-a409d160e898",
       "name" : "Failure",
-      "portFunction" : "STANDARD",
+      "portFunction" : "FAILURE",
       "position" : {
         "x" : 784.0,
         "y" : 472.0
@@ -966,6 +994,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Seaweed-Write",
-    "timestamp" : 1780326649082
+    "timestamp" : 1780327248328
   }
 }
