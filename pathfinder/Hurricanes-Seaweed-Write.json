@@ -25,7 +25,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "648f5d73-019e-1000-f095-4d4ec8a414f8",
-        "name" : "Set Success and File Size",
+        "name" : "Set Success",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
@@ -127,7 +127,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "82fe9521-019e-1000-2abf-0e690f668275",
-        "name" : "Set Success and File Size",
+        "name" : "Set Failure",
         "type" : "PROCESSOR"
       },
       "zIndex" : 12
@@ -169,7 +169,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "82fe9521-019e-1000-2abf-0e690f668275",
-        "name" : "Set Success and File Size",
+        "name" : "Set Failure",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
@@ -244,7 +244,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "648f5d73-019e-1000-f095-4d4ec8a414f8",
-        "name" : "Set Success and File Size",
+        "name" : "Set Success",
         "type" : "PROCESSOR"
       },
       "zIndex" : 11
@@ -407,7 +407,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Write-to-File-Ingestion",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "c3aa8ac2e41533e2bae02ffa545a397116e2a2e1"
+        "version" : "6290d0914f08c18bc11e3e967d4aa7400b0d3471"
       }
     }, {
       "comments" : "",
@@ -443,7 +443,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Write-to-File-Ingestion",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "c3aa8ac2e41533e2bae02ffa545a397116e2a2e1"
+        "version" : "6290d0914f08c18bc11e3e967d4aa7400b0d3471"
       }
     } ],
     "processors" : [ {
@@ -728,7 +728,7 @@
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "648f5d73-019e-1000-f095-4d4ec8a414f8",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "Set Success and File Size",
+      "name" : "Set Success",
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : -464.0,
@@ -817,7 +817,7 @@
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "82fe9521-019e-1000-2abf-0e690f668275",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "Set Success and File Size",
+      "name" : "Set Failure",
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : 64.0,
@@ -826,6 +826,7 @@
       "properties" : {
         "bytes_written" : "0",
         "Store State" : "Do not store state",
+        "ingestion_completion_time" : "${now():format(\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\")}",
         "Cache Value Lookup Cache Size" : "100",
         "error_status" : "",
         "ingestion_status" : "FAILURE"
@@ -850,6 +851,13 @@
           "dynamic" : false,
           "identifiesControllerService" : false,
           "name" : "Store State",
+          "sensitive" : false
+        },
+        "ingestion_completion_time" : {
+          "displayName" : "ingestion_completion_time",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "ingestion_completion_time",
           "sensitive" : false
         },
         "Cache Value Lookup Cache Size" : {
@@ -994,6 +1002,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Seaweed-Write",
-    "timestamp" : 1780330322385
+    "timestamp" : 1780341751000
   }
 }
