@@ -847,7 +847,7 @@
         "y" : -296.0
       },
       "properties" : {
-        "Replacement Value" : "{\n  \"ingestion_completion_time\": \"${ingestion_completion_time}\",\n  \"bytes_written\": \"${bytes_written}\",\n  \"ingestion_status\": \"${ingestion_status}\",\n  \"error_message\": \"${error_message}\"\n}",
+        "Replacement Value" : "{\n  \"ingestion_completion_time\": \"${ingestion_completion_time}\",\n  \"bytes_written\": ${bytes_written},\n  \"ingestion_status\": \"${ingestion_status}\",\n  \"error_message\": \"${error_message}\"\n}",
         "Search Value" : "(?s)(^.*$)",
         "Evaluation Mode" : "Entire text",
         "Line-by-Line Evaluation Mode" : "All",
@@ -1025,6 +1025,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Write-to-File-Ingestion",
-    "timestamp" : 1780326628906
+    "timestamp" : 1780329530164
   }
 }
