@@ -348,7 +348,7 @@
     } ],
     "labels" : [ ],
     "maxConcurrentTasks" : 1,
-    "name" : "Create File Ingestion",
+    "name" : "Update File Ingestion",
     "outputPorts" : [ {
       "allowRemoteAccess" : false,
       "componentType" : "OUTPUT_PORT",
@@ -407,7 +407,7 @@
         "y" : 472.0
       },
       "properties" : {
-        "Destination" : "flowfile-content",
+        "Destination" : "flowfile-attribute",
         "ingestion_file_id" : "$.ingestion_file_id",
         "Max String Length" : "20 MB",
         "Return Type" : "auto-detect",
@@ -1167,6 +1167,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Write-to-File-Ingestion",
-    "timestamp" : 1780339090057
+    "timestamp" : 1780341623971
   }
 }
