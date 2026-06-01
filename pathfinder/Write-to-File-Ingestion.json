@@ -289,7 +289,7 @@
     } ],
     "labels" : [ ],
     "maxConcurrentTasks" : 1,
-    "name" : "Write to File Ingestion",
+    "name" : "Create File Ingestion",
     "outputPorts" : [ {
       "allowRemoteAccess" : false,
       "componentType" : "OUTPUT_PORT",
@@ -742,7 +742,7 @@
         "y" : -312.0
       },
       "properties" : {
-        "Replacement Value" : "{\n  \"ingestion_start_time\": \"${ingestion_start_time}\",\n  \"filepath\", \"${s3_filepath}\",\n  \"bytes_written\": 0,\n  \"ingestion_status\": \"RUNNING\"\n}",
+        "Replacement Value" : "{\n  \"ingestion_start_time\": \"${ingestion_start_time}\",\n  \"filepath\": \"${s3_filepath}\",\n  \"bytes_written\": 0,\n  \"ingestion_status\": \"RUNNING\"\n}",
         "Search Value" : "(?s)(^.*$)",
         "Evaluation Mode" : "Entire text",
         "Line-by-Line Evaluation Mode" : "All",
@@ -1025,6 +1025,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Write-to-File-Ingestion",
-    "timestamp" : 1780325688351
+    "timestamp" : 1780326205945
   }
 }
