@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1780325054034,
+    "description" : "Writes a new record or updates an existing record in the File Ingestion Table",
+    "identifier" : "Write-to-File-Ingestion",
+    "lastModifiedTimestamp" : 1780325054034,
+    "name" : "Write to File Ingestion",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
