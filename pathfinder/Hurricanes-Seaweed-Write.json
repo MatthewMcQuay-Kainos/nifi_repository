@@ -112,7 +112,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "d0ef710f-e6ea-3d2d-9065-013a8af83d56",
-        "name" : "Set Filenames",
+        "name" : "Set Filepaths",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
@@ -187,7 +187,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "d0ef710f-e6ea-3d2d-9065-013a8af83d56",
-        "name" : "Set Filenames",
+        "name" : "Set Filepaths",
         "type" : "PROCESSOR"
       },
       "zIndex" : 8
@@ -877,7 +877,7 @@
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "d0ef710f-e6ea-3d2d-9065-013a8af83d56",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "Set Filenames",
+      "name" : "Set Filepaths",
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : -184.0,
@@ -886,7 +886,7 @@
       "properties" : {
         "Store State" : "Do not store state",
         "batch_id" : "1",
-        "s3_filepath" : "${dataset_name:toLower()}/${layer_name:toLower():replaceAll(' ', '_'):replaceAll('/', '_')}/${layer_name:toLower():replaceAll(' ', '_'):replaceAll('/', '_')}_${ingestion_start_time:toDate(\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\"):format(\"yyyy_MM_dd_HHmm\")}.json",
+        "s3_filepath" : "${dataset_name:toLower():replaceAll(' ', '_'):replaceAll('/', '_')}/${layer_name:toLower():replaceAll(' ', '_'):replaceAll('/', '_')}/${layer_name:toLower():replaceAll(' ', '_'):replaceAll('/', '_')}_${ingestion_start_time:toDate(\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\"):format(\"yyyy_MM_dd_HHmm\")}.json",
         "Cache Value Lookup Cache Size" : "100"
       },
       "propertyDescriptors" : {
@@ -965,6 +965,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Seaweed-Write",
-    "timestamp" : 1780325853474
+    "timestamp" : 1780326069015
   }
 }
