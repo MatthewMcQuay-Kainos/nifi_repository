@@ -624,7 +624,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Write-to-Metadata-Index",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "097ea6052b5ebb977605ac68533dc07f58a495c2"
+        "version" : "ff4fe94c0fc744fe70a2bc63ef4eea4708009589"
       }
     } ],
     "processors" : [ {
@@ -651,7 +651,7 @@
       },
       "properties" : {
         "file_count" : "${total_file_count}",
-        "bytes_written" : "${total_bytes_written}",
+        "bytes_written" : "100",
         "Store State" : "Do not store state",
         "ingestion_completion_time" : "${now():format(\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\")}",
         "Cache Value Lookup Cache Size" : "100",
@@ -751,7 +751,7 @@
         "Store State" : "Do not store state",
         "dataset_source" : "services9.arcgis.com",
         "Cache Value Lookup Cache Size" : "100",
-        "dataset_name" : "Hurricanes",
+        "dataset_name" : "Active Hurricanes",
         "s3_bucket" : "open-source"
       },
       "propertyDescriptors" : {
@@ -933,6 +933,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Ingestion",
-    "timestamp" : 1779873961782
+    "timestamp" : 1780314090158
   }
 }
