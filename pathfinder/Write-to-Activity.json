@@ -297,7 +297,7 @@
       "name" : "Create Activity Input",
       "portFunction" : "STANDARD",
       "position" : {
-        "x" : -560.0,
+        "x" : -376.0,
         "y" : -160.0
       },
       "scheduledState" : "ENABLED",
@@ -311,7 +311,7 @@
       "name" : "Update Activity Input",
       "portFunction" : "STANDARD",
       "position" : {
-        "x" : 296.0,
+        "x" : 152.0,
         "y" : -160.0
       },
       "scheduledState" : "ENABLED",
@@ -695,8 +695,8 @@
       "name" : "Create API Body - Create",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -616.0,
-        "y" : 16.0
+        "x" : -428.57586669921875,
+        "y" : 13.34149169921875
       },
       "properties" : {
         "Replacement Value" : "{\n  \"ingestion_start_time\": \"${ingestion_start_time}\",\n  \"lineage\": [],\n  \"bytes_written\": 0,\n  \"file_count\": 0,\n  \"ingestion_status\": \"RUNNING\"\n}",
@@ -800,8 +800,8 @@
       "name" : "Set API URL - Create",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -616.0,
-        "y" : 256.0
+        "x" : -428.57586669921875,
+        "y" : 253.34149169921875
       },
       "properties" : {
         "Store State" : "Do not store state",
@@ -873,7 +873,7 @@
       "name" : "Set API URL - Update",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : 240.0,
+        "x" : 96.0,
         "y" : 256.0
       },
       "properties" : {
@@ -946,7 +946,7 @@
       "name" : "Create API Body - Update",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : 240.0,
+        "x" : 96.0,
         "y" : 24.0
       },
       "properties" : {
@@ -1138,6 +1138,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Write-to-Activity",
-    "timestamp" : 1780327086237
+    "timestamp" : 1780327175664
   }
 }
