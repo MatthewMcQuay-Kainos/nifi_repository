@@ -213,7 +213,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "e6ae9b46-e946-3a5d-95cf-33dfd96fe4f9",
-        "name" : "EvaluateJsonPath",
+        "name" : "Get Activity ID",
         "type" : "PROCESSOR"
       },
       "zIndex" : 4
@@ -226,7 +226,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "e6ae9b46-e946-3a5d-95cf-33dfd96fe4f9",
-        "name" : "EvaluateJsonPath",
+        "name" : "Get Activity ID",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
@@ -462,11 +462,11 @@
           "name" : "Response Cookie Strategy",
           "sensitive" : false
         },
-        "authorization" : {
-          "displayName" : "authorization",
+        "Authorization" : {
+          "displayName" : "Authorization",
           "dynamic" : true,
           "identifiesControllerService" : false,
-          "name" : "authorization",
+          "name" : "Authorization",
           "sensitive" : true
         },
         "Request Password" : {
@@ -1047,7 +1047,7 @@
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "e6ae9b46-e946-3a5d-95cf-33dfd96fe4f9",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "EvaluateJsonPath",
+      "name" : "Get Activity ID",
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : -176.0,
@@ -1137,6 +1137,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Write-to-Activity",
-    "timestamp" : 1780398386899
+    "timestamp" : 1780398447523
   }
 }
