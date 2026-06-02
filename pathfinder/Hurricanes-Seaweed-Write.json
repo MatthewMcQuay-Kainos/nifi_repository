@@ -407,7 +407,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Write-to-File-Ingestion",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "eecd11a68886182bae5b9527a92823468a9a97c8"
+        "version" : "812911ef9bdcc8427605a9286e048a09e61f23ed"
       }
     }, {
       "comments" : "",
@@ -443,7 +443,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Write-to-File-Ingestion",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "eecd11a68886182bae5b9527a92823468a9a97c8"
+        "version" : "812911ef9bdcc8427605a9286e048a09e61f23ed"
       }
     } ],
     "processors" : [ {
@@ -737,7 +737,7 @@
       "properties" : {
         "bytes_written" : "${fileSize}",
         "Store State" : "Do not store state",
-        "ingestion_completion_time" : "${now():format(\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\")}",
+        "ingestion_completion_time" : "${now():toNumber():divide(1000):format('0')}",
         "Cache Value Lookup Cache Size" : "100",
         "ingestion_status" : "SUCCESS"
       },
@@ -826,7 +826,7 @@
       "properties" : {
         "bytes_written" : "0",
         "Store State" : "Do not store state",
-        "ingestion_completion_time" : "${now():format(\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\")}",
+        "ingestion_completion_time" : "${now():toNumber():divide(1000):format('0')}",
         "Cache Value Lookup Cache Size" : "100",
         "error_status" : "",
         "ingestion_status" : "FAILURE"
@@ -1002,6 +1002,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Seaweed-Write",
-    "timestamp" : 1780397849224
+    "timestamp" : 1780413495644
   }
 }
