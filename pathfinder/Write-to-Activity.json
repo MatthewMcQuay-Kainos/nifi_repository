@@ -327,7 +327,7 @@
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "0033eb62-9bc0-3536-aa37-aebe19027e9f",
       "name" : "Write to Activity - Failure",
-      "portFunction" : "STANDARD",
+      "portFunction" : "FAILURE",
       "position" : {
         "x" : 396.08207449641134,
         "y" : 771.1430089442302
@@ -461,6 +461,13 @@
           "identifiesControllerService" : false,
           "name" : "Response Cookie Strategy",
           "sensitive" : false
+        },
+        "authorization" : {
+          "displayName" : "authorization",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "authorization",
+          "sensitive" : true
         },
         "Request Password" : {
           "displayName" : "Request Password",
@@ -1130,6 +1137,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Write-to-Activity",
-    "timestamp" : 1780397526467
+    "timestamp" : 1780398386899
   }
 }
