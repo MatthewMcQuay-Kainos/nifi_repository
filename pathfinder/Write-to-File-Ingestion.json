@@ -17,6 +17,35 @@
       "bends" : [ ],
       "componentType" : "CONNECTION",
       "destination" : {
+        "groupId" : "flow-contents-group",
+        "id" : "8399da2c-019e-1000-5823-52925d43b954",
+        "name" : "Write to File Ingestion - Success",
+        "type" : "OUTPUT_PORT"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "6921ab0c-ccef-3f72-8429-c2ead1597280",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "3a7bf6a6-979d-327f-8709-ae2cc680fd24",
+        "name" : "Set Ingestion File ID",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 13
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "8399da27-019e-1000-3a4b-84486b718b1f",
@@ -224,80 +253,22 @@
       "bends" : [ ],
       "componentType" : "CONNECTION",
       "destination" : {
+        "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "8399da2b-019e-1000-a665-91d311053aba",
-        "name" : "Write to File Ingestion - Failure",
-        "type" : "OUTPUT_PORT"
+        "id" : "3a7bf6a6-979d-327f-8709-ae2cc680fd24",
+        "name" : "Set Ingestion File ID",
+        "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "aa40cdad-929c-39e7-8430-35d571569de8",
+      "identifier" : "d7cb4b09-d6da-309f-820a-085e93d1a6db",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
       "name" : "",
       "partitioningAttribute" : "",
       "prioritizers" : [ ],
-      "selectedRelationships" : [ "failure", "unmatched" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "3324ef17-33d5-349b-80d7-8f6b6e314ec3",
-        "name" : "EvaluateJsonPath",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 14
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "groupId" : "flow-contents-group",
-        "id" : "8399da2c-019e-1000-5823-52925d43b954",
-        "name" : "Write to File Ingestion - Success",
-        "type" : "OUTPUT_PORT"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "bab09704-6f71-3066-891b-c29715b40828",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "matched" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "3324ef17-33d5-349b-80d7-8f6b6e314ec3",
-        "name" : "EvaluateJsonPath",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 13
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "3324ef17-33d5-349b-80d7-8f6b6e314ec3",
-        "name" : "EvaluateJsonPath",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "cd74252c-6a4b-3002-b40d-3a65dff0224b",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "Response" ],
+      "selectedRelationships" : [ "Original" ],
       "source" : {
         "comments" : "Need to replace the hardcoded value here!!!",
         "groupId" : "flow-contents-group",
@@ -389,7 +360,7 @@
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
-        "artifact" : "nifi-standard-nar",
+        "artifact" : "nifi-update-attribute-nar",
         "group" : "org.apache.nifi",
         "version" : "2.9.0"
       },
@@ -398,30 +369,20 @@
       "concurrentlySchedulableTaskCount" : 1,
       "executionNode" : "ALL",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "3324ef17-33d5-349b-80d7-8f6b6e314ec3",
+      "identifier" : "3a7bf6a6-979d-327f-8709-ae2cc680fd24",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "EvaluateJsonPath",
+      "name" : "Set Ingestion File ID",
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : -88.0,
-        "y" : 472.0
+        "y" : 464.0
       },
       "properties" : {
-        "Destination" : "flowfile-attribute",
-        "ingestion_file_id" : "$.ingestion_file_id",
-        "Max String Length" : "10 MB",
-        "Return Type" : "auto-detect",
-        "Null Value Representation" : "empty string",
-        "Path Not Found Behavior" : "ignore"
+        "ingestion_file_id" : "${file_ingestion_id_response_body:jsonPath('$.ingestion_file_id')}",
+        "Store State" : "Do not store state",
+        "Cache Value Lookup Cache Size" : "100"
       },
       "propertyDescriptors" : {
-        "Destination" : {
-          "displayName" : "Destination",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Destination",
-          "sensitive" : false
-        },
         "ingestion_file_id" : {
           "displayName" : "ingestion_file_id",
           "dynamic" : true,
@@ -429,43 +390,43 @@
           "name" : "ingestion_file_id",
           "sensitive" : false
         },
-        "Max String Length" : {
-          "displayName" : "Max String Length",
+        "Delete Attributes Expression" : {
+          "displayName" : "Delete Attributes Expression",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Max String Length",
+          "name" : "Delete Attributes Expression",
           "sensitive" : false
         },
-        "Return Type" : {
-          "displayName" : "Return Type",
+        "Store State" : {
+          "displayName" : "Store State",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Return Type",
+          "name" : "Store State",
           "sensitive" : false
         },
-        "Null Value Representation" : {
-          "displayName" : "Null Value Representation",
+        "Cache Value Lookup Cache Size" : {
+          "displayName" : "Cache Value Lookup Cache Size",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Null Value Representation",
+          "name" : "Cache Value Lookup Cache Size",
           "sensitive" : false
         },
-        "Path Not Found Behavior" : {
-          "displayName" : "Path Not Found Behavior",
+        "Stateful Variables Initial Value" : {
+          "displayName" : "Stateful Variables Initial Value",
           "dynamic" : false,
           "identifiesControllerService" : false,
-          "name" : "Path Not Found Behavior",
+          "name" : "Stateful Variables Initial Value",
           "sensitive" : false
         }
       },
       "retriedRelationships" : [ ],
       "retryCount" : 10,
-      "runDurationMillis" : 0,
+      "runDurationMillis" : 25,
       "scheduledState" : "ENABLED",
       "schedulingPeriod" : "0 sec",
       "schedulingStrategy" : "TIMER_DRIVEN",
       "style" : { },
-      "type" : "org.apache.nifi.processors.standard.EvaluateJsonPath",
+      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
       "yieldDuration" : "1 sec"
     }, {
       "autoTerminatedRelationships" : [ ],
@@ -541,7 +502,7 @@
       "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
       "yieldDuration" : "1 sec"
     }, {
-      "autoTerminatedRelationships" : [ "No Retry", "Original", "Retry" ],
+      "autoTerminatedRelationships" : [ "No Retry", "Response", "Retry" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
@@ -586,6 +547,7 @@
         "Response Header Request Attributes Enabled" : "false",
         "HTTP Method" : "POST",
         "Request Content-Type" : "${mime.type}",
+        "Response Body Attribute Name" : "file_ingestion_id_response_body",
         "Request Digest Authentication Enabled" : "false",
         "Response Cache Size" : "10MB",
         "Response Body Ignored" : "false"
@@ -1166,6 +1128,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Write-to-File-Ingestion",
-    "timestamp" : 1780384822637
+    "timestamp" : 1780387306110
   }
 }
