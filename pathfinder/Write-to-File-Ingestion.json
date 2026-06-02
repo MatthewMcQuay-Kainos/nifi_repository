@@ -409,7 +409,7 @@
       "properties" : {
         "Destination" : "flowfile-attribute",
         "ingestion_file_id" : "$.ingestion_file_id",
-        "Max String Length" : "20 MB",
+        "Max String Length" : "10 MB",
         "Return Type" : "auto-detect",
         "Null Value Representation" : "empty string",
         "Path Not Found Behavior" : "ignore"
@@ -1166,6 +1166,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Write-to-File-Ingestion",
-    "timestamp" : 1780384196695
+    "timestamp" : 1780384822637
   }
 }
