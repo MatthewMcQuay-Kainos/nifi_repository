@@ -621,7 +621,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Write-to-Activity",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "62cd9328156adb3b846ed2bf90ce0a41be4f0aa4"
+        "version" : "e0dedc26b35e0f6d3f9f9ec85c8d06fa6b58b5a3"
       }
     }, {
       "comments" : "",
@@ -657,7 +657,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Hurricanes-Seaweed-Write",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "b8fbe06073645f2491985736ca443408703e3d88"
+        "version" : "c2e2218223cfec92c35c6b29c3c5f4b47c0e93a9"
       }
     }, {
       "comments" : "",
@@ -693,7 +693,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Write-to-Activity",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "62cd9328156adb3b846ed2bf90ce0a41be4f0aa4"
+        "version" : "e0dedc26b35e0f6d3f9f9ec85c8d06fa6b58b5a3"
       }
     }, {
       "comments" : "",
@@ -1103,7 +1103,7 @@
         "Store State" : "Do not store state",
         "total_file_count" : "11",
         "Cache Value Lookup Cache Size" : "100",
-        "activity_completion_time" : "${now():format(\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\")}"
+        "activity_completion_time" : "${now():toNumber():divide(1000):format('0')}"
       },
       "propertyDescriptors" : {
         "Delete Attributes Expression" : {
@@ -1254,8 +1254,8 @@
         "y" : -776.0
       },
       "properties" : {
-        "lineage" : "[\"${now():format(\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\")}\", \"services9.arcgis.com API Service\"]",
-        "ingestion_start_time" : "${now():format(\"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\")}",
+        "lineage" : "[${now():toNumber():divide(1000):format('0')}, \"services9.arcgis.com API Service\"]",
+        "ingestion_start_time" : "${now():toNumber():divide(1000):format('0')}",
         "Store State" : "Do not store state",
         "dataset_source" : "services9.arcgis.com",
         "Cache Value Lookup Cache Size" : "100",
@@ -1538,6 +1538,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Ingestion",
-    "timestamp" : 1780412192284
+    "timestamp" : 1780413566825
   }
 }
