@@ -657,7 +657,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Hurricanes-Seaweed-Write",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "c2e2218223cfec92c35c6b29c3c5f4b47c0e93a9"
+        "version" : "f778a8a404d27b96d36cdad37d73390a5f4315c7"
       }
     }, {
       "comments" : "",
@@ -1103,7 +1103,7 @@
         "Store State" : "Do not store state",
         "total_file_count" : "11",
         "Cache Value Lookup Cache Size" : "100",
-        "activity_completion_time" : "${now():toNumber():divide(1000):format('0')}"
+        "activity_completion_time" : "${now():toNumber():divide(1000)}"
       },
       "propertyDescriptors" : {
         "Delete Attributes Expression" : {
@@ -1254,8 +1254,8 @@
         "y" : -776.0
       },
       "properties" : {
-        "lineage" : "[${now():toNumber():divide(1000):format('0')}, \"services9.arcgis.com API Service\"]",
-        "ingestion_start_time" : "${now():toNumber():divide(1000):format('0')}",
+        "lineage" : "[${now():toNumber():divide(1000)}, \"services9.arcgis.com API Service\"]",
+        "ingestion_start_time" : "${now():toNumber():divide(1000)}",
         "Store State" : "Do not store state",
         "dataset_source" : "services9.arcgis.com",
         "Cache Value Lookup Cache Size" : "100",
@@ -1538,6 +1538,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Ingestion",
-    "timestamp" : 1780413566825
+    "timestamp" : 1780414061032
   }
 }
