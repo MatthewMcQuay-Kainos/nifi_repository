@@ -481,7 +481,7 @@
         "Storage Class" : "STANDARD",
         "Multipart Part Size" : "5 GB",
         "Remove Tag Prefix" : "false",
-        "Object Key" : "${s3_filename}",
+        "Object Key" : "${s3_filepath}",
         "Multipart Threshold" : "5 GB",
         "Temporary Directory Multipart State" : "${java.io.tmpdir}",
         "Bucket" : "${s3_bucket}",
@@ -1002,6 +1002,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Seaweed-Write",
-    "timestamp" : 1780385601479
+    "timestamp" : 1780386007052
   }
 }
