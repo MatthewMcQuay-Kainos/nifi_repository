@@ -737,7 +737,7 @@
       "properties" : {
         "bytes_written" : "${fileSize}",
         "Store State" : "Do not store state",
-        "ingestion_completion_time" : "${now():toNumber():divide(1000):format('0')}",
+        "ingestion_completion_time" : "${now():toNumber():divide(1000)}",
         "Cache Value Lookup Cache Size" : "100",
         "ingestion_status" : "SUCCESS"
       },
@@ -1002,6 +1002,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Seaweed-Write",
-    "timestamp" : 1780413495644
+    "timestamp" : 1780414053341
   }
 }
