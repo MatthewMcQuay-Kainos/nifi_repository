@@ -319,7 +319,7 @@
     } ],
     "labels" : [ ],
     "maxConcurrentTasks" : 1,
-    "name" : "Create Activity",
+    "name" : "Update Activity",
     "outputPorts" : [ {
       "allowRemoteAccess" : false,
       "componentType" : "OUTPUT_PORT",
@@ -461,13 +461,6 @@
           "identifiesControllerService" : false,
           "name" : "Response Cookie Strategy",
           "sensitive" : false
-        },
-        "Authorization" : {
-          "displayName" : "Authorization",
-          "dynamic" : true,
-          "identifiesControllerService" : false,
-          "name" : "Authorization",
-          "sensitive" : true
         },
         "Request Password" : {
           "displayName" : "Request Password",
@@ -877,7 +870,7 @@
       },
       "properties" : {
         "Store State" : "Do not store state",
-        "api_url" : "http://metadata-api:3001/v1/activity/${activity_id}",
+        "api_url" : "http://metadata-api:3001/v1/activity/${parent_activity_id}",
         "Cache Value Lookup Cache Size" : "100"
       },
       "propertyDescriptors" : {
@@ -949,7 +942,7 @@
         "y" : 24.0
       },
       "properties" : {
-        "Replacement Value" : "{\n  \"ingestion_completion_time\": \"${activity_completion_time}\",\n  \"lineage\": ${lineage},\n  \"bytes_written\": ${total_file_size},\n  \"file_count\": ${total_file_count},\n  \"ingestion_status\": \"${activity_status}\"\n}",
+        "Replacement Value" : "{\n  \"ingestion_completion_time\": \"${activity_completion_time}\",\n  \"lineage\": ${lineage},\n  \"bytes_written\": ${total_bytes_written},\n  \"file_count\": ${total_file_count},\n  \"ingestion_status\": \"${final_status}\"\n}",
         "Search Value" : "(?s)(^.*$)",
         "Evaluation Mode" : "Entire text",
         "Line-by-Line Evaluation Mode" : "All",
@@ -1137,6 +1130,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Write-to-Activity",
-    "timestamp" : 1780384762122
+    "timestamp" : 1780397526467
   }
 }
