@@ -565,7 +565,7 @@
       },
       "properties" : {
         "Destination" : "flowfile-attribute",
-        "Max String Length" : "20 MB",
+        "Max String Length" : "10 MB",
         "Return Type" : "auto-detect",
         "dataset_id" : "$.dataset_id",
         "Null Value Representation" : "empty string",
@@ -647,6 +647,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Get-Dataset-Details",
-    "timestamp" : 1780384167826
+    "timestamp" : 1780384669529
   }
 }
