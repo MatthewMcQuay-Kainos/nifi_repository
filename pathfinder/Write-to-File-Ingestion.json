@@ -124,7 +124,7 @@
         "comments" : "Need to replace the hardcoded value here!!!",
         "groupId" : "flow-contents-group",
         "id" : "8399da25-019e-1000-7cb0-455af25673ef",
-        "name" : "Write File Ingestion to Metadata Index",
+        "name" : "Write to File Ingestion Record",
         "type" : "PROCESSOR"
       },
       "zIndex" : 11
@@ -137,7 +137,7 @@
         "comments" : "Need to replace the hardcoded value here!!!",
         "groupId" : "flow-contents-group",
         "id" : "8399da25-019e-1000-7cb0-455af25673ef",
-        "name" : "Write File Ingestion to Metadata Index",
+        "name" : "Write to File Ingestion Record",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
@@ -197,7 +197,7 @@
         "comments" : "Need to replace the hardcoded value here!!!",
         "groupId" : "flow-contents-group",
         "id" : "8399da25-019e-1000-7cb0-455af25673ef",
-        "name" : "Write File Ingestion to Metadata Index",
+        "name" : "Write to File Ingestion Record",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
@@ -273,7 +273,7 @@
         "comments" : "Need to replace the hardcoded value here!!!",
         "groupId" : "flow-contents-group",
         "id" : "8399da25-019e-1000-7cb0-455af25673ef",
-        "name" : "Write File Ingestion to Metadata Index",
+        "name" : "Write to File Ingestion Record",
         "type" : "PROCESSOR"
       },
       "zIndex" : 12
@@ -319,7 +319,7 @@
     } ],
     "labels" : [ ],
     "maxConcurrentTasks" : 1,
-    "name" : "Create File Ingestion",
+    "name" : "Update File Ingestion",
     "outputPorts" : [ {
       "allowRemoteAccess" : false,
       "componentType" : "OUTPUT_PORT",
@@ -517,7 +517,7 @@
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "8399da25-019e-1000-7cb0-455af25673ef",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "Write File Ingestion to Metadata Index",
+      "name" : "Write to File Ingestion Record",
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : 112.0,
@@ -1128,6 +1128,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Write-to-File-Ingestion",
-    "timestamp" : 1780387306110
+    "timestamp" : 1780389420254
   }
 }
