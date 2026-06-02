@@ -319,7 +319,7 @@
     } ],
     "labels" : [ ],
     "maxConcurrentTasks" : 1,
-    "name" : "Update Activity",
+    "name" : "Create Activity",
     "outputPorts" : [ {
       "allowRemoteAccess" : false,
       "componentType" : "OUTPUT_PORT",
@@ -384,7 +384,6 @@
         "HTTP/2 Disabled" : "False",
         "Connection Timeout" : "5 secs",
         "Response Cookie Strategy" : "DISABLED",
-        "Authorization" : "#{INTERNAL_API_BEARER}",
         "Socket Read Timeout" : "15 secs",
         "Socket Idle Connections" : "5",
         "Request Body Enabled" : "true",
@@ -1138,6 +1137,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Write-to-Activity",
-    "timestamp" : 1780329986322
+    "timestamp" : 1780384016988
   }
 }
