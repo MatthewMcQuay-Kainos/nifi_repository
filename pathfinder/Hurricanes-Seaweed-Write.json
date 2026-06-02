@@ -80,34 +80,6 @@
       "bends" : [ ],
       "componentType" : "CONNECTION",
       "destination" : {
-        "groupId" : "flow-contents-group",
-        "id" : "7929f69c-1378-3289-8d18-0046222fbfb9",
-        "name" : "Success",
-        "type" : "OUTPUT_PORT"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "576c6c0b-fd6c-323a-bfce-961cb7c7935d",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "" ],
-      "source" : {
-        "groupId" : "a2b513ad-a8b6-31a2-bb36-fc73be1bbc2f",
-        "id" : "8399da2c-019e-1000-5823-52925d43b954",
-        "name" : "Write to File Ingestion - Success",
-        "type" : "OUTPUT_PORT"
-      },
-      "zIndex" : 14
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
         "groupId" : "a2b513ad-a8b6-31a2-bb36-fc73be1bbc2f",
         "id" : "8399da29-019e-1000-d454-eb264e55822d",
         "name" : "Update File Ingestion",
@@ -131,6 +103,34 @@
         "type" : "PROCESSOR"
       },
       "zIndex" : 12
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "groupId" : "flow-contents-group",
+        "id" : "7929f69c-1378-3289-8d18-0046222fbfb9",
+        "name" : "Success",
+        "type" : "OUTPUT_PORT"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "7cde68cc-d1c8-398b-a673-805047d533f8",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "" ],
+      "source" : {
+        "groupId" : "a2b513ad-a8b6-31a2-bb36-fc73be1bbc2f",
+        "id" : "8399da2c-019e-1000-5823-52925d43b954",
+        "name" : "Write to File Ingestion - Success",
+        "type" : "OUTPUT_PORT"
+      },
+      "zIndex" : 14
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
@@ -349,7 +349,7 @@
       "portFunction" : "STANDARD",
       "position" : {
         "x" : -136.0,
-        "y" : 1168.0
+        "y" : 1120.0
       },
       "scheduledState" : "ENABLED",
       "type" : "OUTPUT_PORT"
@@ -407,7 +407,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Write-to-File-Ingestion",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "97bf0a3a4cbaded8b6bc6acc5bb9293b4d628189"
+        "version" : "eecd11a68886182bae5b9527a92823468a9a97c8"
       }
     }, {
       "comments" : "",
@@ -443,7 +443,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Write-to-File-Ingestion",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "97bf0a3a4cbaded8b6bc6acc5bb9293b4d628189"
+        "version" : "eecd11a68886182bae5b9527a92823468a9a97c8"
       }
     } ],
     "processors" : [ {
@@ -1002,6 +1002,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Seaweed-Write",
-    "timestamp" : 1780387345304
+    "timestamp" : 1780397849224
   }
 }
