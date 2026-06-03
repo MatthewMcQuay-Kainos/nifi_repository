@@ -384,6 +384,7 @@
         "HTTP/2 Disabled" : "False",
         "Connection Timeout" : "6 secs",
         "Response Cookie Strategy" : "DISABLED",
+        "Authorization" : "#{INTERNAL_API_BEARER}",
         "Socket Read Timeout" : "15 secs",
         "Socket Idle Connections" : "5",
         "Request Body Enabled" : "true",
@@ -1147,6 +1148,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Write-to-Activity",
-    "timestamp" : 1780494178265
+    "timestamp" : 1780494743265
   }
 }
