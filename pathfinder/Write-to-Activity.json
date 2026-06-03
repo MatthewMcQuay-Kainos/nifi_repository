@@ -698,7 +698,7 @@
         "y" : 13.34149169921875
       },
       "properties" : {
-        "Replacement Value" : "{ \n \"dataset_id\": \"${dataset_id}\",\n \"ingestion_start_time\": ${ingestion_start_time},\n  \"lineage\": [],\n  \"bytes_written\": 0,\n  \"file_count\": 0,\n  \"ingestion_status\": \"RUNNING\"\n}",
+        "Replacement Value" : "{ \n \"dataset_id\": \"${dataset_id}\",\n \"ingestion_start_time\": ${ingestion_start_time},\n  \"lineage\": ${lineage},\n  \"bytes_written\": 0,\n  \"file_count\": 0,\n  \"ingestion_status\": \"RUNNING\"\n}",
         "Search Value" : "(?s)(^.*$)",
         "Evaluation Mode" : "Entire text",
         "Line-by-Line Evaluation Mode" : "All",
@@ -1137,6 +1137,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Write-to-Activity",
-    "timestamp" : 1780413390593
+    "timestamp" : 1780483608630
   }
 }
