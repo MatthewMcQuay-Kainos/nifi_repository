@@ -474,9 +474,9 @@
         "Endpoint Override URL" : "http://dataset-store:8333",
         "Multipart Upload Max Age Threshold" : "7 days",
         "Canned ACL" : "${s3.permissions.cannedacl}",
-        "Use Path Style Access" : "false",
+        "Use Path Style Access" : "true",
         "Write ACL User List" : "${s3.permissions.writeacl.users}",
-        "Use Chunked Encoding" : "true",
+        "Use Chunked Encoding" : "false",
         "Read ACL User List" : "${s3.permissions.readacl.users}",
         "Storage Class" : "STANDARD",
         "Multipart Part Size" : "5 GB",
@@ -1002,6 +1002,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Seaweed-Write",
-    "timestamp" : 1780484896929
+    "timestamp" : 1780486012118
   }
 }
