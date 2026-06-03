@@ -615,7 +615,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Get-Dataset-Details",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "f85a828cac03078c5c0254de3f0215a39471d6e9"
+        "version" : "0ea79950d53df3d0da2efcfbc8a0c48bee74a01d"
       }
     }, {
       "comments" : "",
@@ -651,7 +651,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Write-to-Activity",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "d4574ae764bc898df280bfab07579d22d09b2989"
+        "version" : "0a9eb0de17a12659f9a519312748aedf1b8d8c78"
       }
     }, {
       "comments" : "",
@@ -687,7 +687,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Hurricanes-Seaweed-Write",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "5243718a4caf68aea40490dbae200c107e158af8"
+        "version" : "4f2159caff077d3d2de1405819ea2756a63a9423"
       }
     }, {
       "comments" : "",
@@ -723,7 +723,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Write-to-Activity",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "d4574ae764bc898df280bfab07579d22d09b2989"
+        "version" : "0a9eb0de17a12659f9a519312748aedf1b8d8c78"
       }
     }, {
       "comments" : "",
@@ -758,7 +758,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Hurricanes-API-Call",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "ef76977037bb1682b8aec53b24d4750b5fd61f5c"
+        "version" : "73f4dd35fd1f2368abce5dcd7708dfeb98175160"
       }
     } ],
     "processors" : [ {
@@ -1130,6 +1130,7 @@
         "y" : -1072.0
       },
       "properties" : {
+        "INTERNAL_AUTH" : "#{INTERNAL_API_BEARER}",
         "Store State" : "Do not store state",
         "METADATA_API_BASE_URL" : "#{METADATA_API_BASE_URL}",
         "Cache Value Lookup Cache Size" : "100",
@@ -1141,6 +1142,13 @@
           "dynamic" : false,
           "identifiesControllerService" : false,
           "name" : "Delete Attributes Expression",
+          "sensitive" : false
+        },
+        "INTERNAL_AUTH" : {
+          "displayName" : "INTERNAL_AUTH",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "INTERNAL_AUTH",
           "sensitive" : false
         },
         "Store State" : {
@@ -1643,6 +1651,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Ingestion",
-    "timestamp" : 1780494531980
+    "timestamp" : 1780495857644
   }
 }
