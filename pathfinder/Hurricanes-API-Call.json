@@ -314,7 +314,7 @@
       "maxConcurrentTasks" : 1,
       "name" : "Create File Ingestion",
       "outputPorts" : [ ],
-      "parameterContextName" : "Metadata-API-Variables",
+      "parameterContextName" : "Data-Exchange-Variables",
       "position" : {
         "x" : -560.0,
         "y" : 1576.0
@@ -329,7 +329,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Write-to-File-Ingestion",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "812911ef9bdcc8427605a9286e048a09e61f23ed"
+        "version" : "27ed712490737ac305788e01817b318936af8229"
       }
     } ],
     "processors" : [ {
@@ -1274,6 +1274,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-API-Call",
-    "timestamp" : 1780487031520
+    "timestamp" : 1780493979342
   }
 }
