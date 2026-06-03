@@ -546,7 +546,7 @@
     "maxConcurrentTasks" : 1,
     "name" : "Hurricanes Ingestion",
     "outputPorts" : [ ],
-    "parameterContextName" : "Metadata-API-Variables",
+    "parameterContextName" : "Data-Exchange-Variables",
     "position" : {
       "x" : 0.0,
       "y" : 0.0
@@ -570,7 +570,7 @@
       "maxConcurrentTasks" : 1,
       "name" : "Get Dataset Details",
       "outputPorts" : [ ],
-      "parameterContextName" : "Metadata-API-Variables",
+      "parameterContextName" : "Data-Exchange-Variables",
       "position" : {
         "x" : 272.0,
         "y" : -456.0
@@ -585,7 +585,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Get-Dataset-Details",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "39b6409f7a2207eeb21451a500af5732b2eeb57a"
+        "version" : "f85a828cac03078c5c0254de3f0215a39471d6e9"
       }
     }, {
       "comments" : "",
@@ -621,7 +621,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Write-to-Activity",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "840d2f576a9a6835e1e4da89af6327ece0e259a0"
+        "version" : "029b9962c4a2684a2221d99597204dc1d997d920"
       }
     }, {
       "comments" : "",
@@ -642,7 +642,7 @@
       "maxConcurrentTasks" : 1,
       "name" : "Write Hurricanes to Seaweed",
       "outputPorts" : [ ],
-      "parameterContextName" : "Metadata-API-Variables",
+      "parameterContextName" : "Data-Exchange-Variables",
       "position" : {
         "x" : 272.0,
         "y" : 696.0
@@ -657,7 +657,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Hurricanes-Seaweed-Write",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "6ca7c88eb37736005a9f9d8ea85cf45718360707"
+        "version" : "5243718a4caf68aea40490dbae200c107e158af8"
       }
     }, {
       "comments" : "",
@@ -678,7 +678,7 @@
       "maxConcurrentTasks" : 1,
       "name" : "Update Activity",
       "outputPorts" : [ ],
-      "parameterContextName" : "Metadata-API-Variables",
+      "parameterContextName" : "Data-Exchange-Variables",
       "position" : {
         "x" : 272.0,
         "y" : 2408.0
@@ -693,7 +693,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Write-to-Activity",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "840d2f576a9a6835e1e4da89af6327ece0e259a0"
+        "version" : "029b9962c4a2684a2221d99597204dc1d997d920"
       }
     }, {
       "comments" : "",
@@ -728,7 +728,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Hurricanes-API-Call",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "0281bf18ef5df8696e1a56fd3aebb1b48bfc3012"
+        "version" : "ef76977037bb1682b8aec53b24d4750b5fd61f5c"
       }
     } ],
     "processors" : [ {
@@ -1507,14 +1507,24 @@
   "flowEncodingVersion" : "1.0",
   "latest" : false,
   "parameterContexts" : {
-    "Metadata-API-Variables" : {
+    "Data-Exchange-Variables" : {
       "componentType" : "PARAMETER_CONTEXT",
       "inheritedParameterContexts" : [ ],
-      "name" : "Metadata-API-Variables",
+      "name" : "Data-Exchange-Variables",
       "parameters" : [ {
+        "name" : "DATASTORE_ENDPOINT_URL",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "http://dataset-store:8333"
+      }, {
         "name" : "INTERNAL_API_BEARER",
         "provided" : false,
         "sensitive" : true
+      }, {
+        "name" : "METADATA_API_BASE_URL",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "http://metadata-api:3001"
       } ]
     }
   },
@@ -1522,6 +1532,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Ingestion",
-    "timestamp" : 1780488727974
+    "timestamp" : 1780494108874
   }
 }
