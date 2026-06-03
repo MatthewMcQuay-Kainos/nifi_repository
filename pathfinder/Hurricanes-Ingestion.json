@@ -20,7 +20,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "c057b585-c3db-3976-8f12-773e361a4899",
-        "name" : "Set Dataset Name, Ingestion Start Time and Storage Location",
+        "name" : "Set Dataset Details and Ingestion Start Time",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
@@ -213,7 +213,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "c057b585-c3db-3976-8f12-773e361a4899",
-        "name" : "Set Dataset Name, Ingestion Start Time and Storage Location",
+        "name" : "Set Dataset Details and Ingestion Start Time",
         "type" : "PROCESSOR"
       },
       "zIndex" : 34
@@ -585,7 +585,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Get-Dataset-Details",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "21e387f7e7112800cc41cf424bcf3bda7daf3916"
+        "version" : "39b6409f7a2207eeb21451a500af5732b2eeb57a"
       }
     }, {
       "comments" : "",
@@ -621,7 +621,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Write-to-Activity",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "e0dedc26b35e0f6d3f9f9ec85c8d06fa6b58b5a3"
+        "version" : "840d2f576a9a6835e1e4da89af6327ece0e259a0"
       }
     }, {
       "comments" : "",
@@ -657,7 +657,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Hurricanes-Seaweed-Write",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "ee603caa88eab872df55be12034e181e1816adc6"
+        "version" : "2f10037b0e6c04b98d307aba5e9cb1b7b89b4389"
       }
     }, {
       "comments" : "",
@@ -693,7 +693,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Write-to-Activity",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "e0dedc26b35e0f6d3f9f9ec85c8d06fa6b58b5a3"
+        "version" : "840d2f576a9a6835e1e4da89af6327ece0e259a0"
       }
     }, {
       "comments" : "",
@@ -1247,7 +1247,7 @@
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "c057b585-c3db-3976-8f12-773e361a4899",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "Set Dataset Name, Ingestion Start Time and Storage Location",
+      "name" : "Set Dataset Details and Ingestion Start Time",
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : 288.0,
@@ -1257,10 +1257,8 @@
         "lineage" : "[${now():toNumber():divide(1000)}, \"services9.arcgis.com API Service\"]",
         "ingestion_start_time" : "${now():toNumber():divide(1000)}",
         "Store State" : "Do not store state",
-        "dataset_source" : "services9.arcgis.com",
-        "Cache Value Lookup Cache Size" : "100",
-        "dataset_name" : "Active Hurricanes",
-        "s3_bucket" : "open-source"
+        "dataset_id" : "8a7e579a-f578-453c-89e1-84d894faae0d",
+        "Cache Value Lookup Cache Size" : "100"
       },
       "propertyDescriptors" : {
         "lineage" : {
@@ -1291,11 +1289,11 @@
           "name" : "Store State",
           "sensitive" : false
         },
-        "dataset_source" : {
-          "displayName" : "dataset_source",
+        "dataset_id" : {
+          "displayName" : "dataset_id",
           "dynamic" : true,
           "identifiesControllerService" : false,
-          "name" : "dataset_source",
+          "name" : "dataset_id",
           "sensitive" : false
         },
         "Cache Value Lookup Cache Size" : {
@@ -1310,20 +1308,6 @@
           "dynamic" : false,
           "identifiesControllerService" : false,
           "name" : "Stateful Variables Initial Value",
-          "sensitive" : false
-        },
-        "dataset_name" : {
-          "displayName" : "dataset_name",
-          "dynamic" : true,
-          "identifiesControllerService" : false,
-          "name" : "dataset_name",
-          "sensitive" : false
-        },
-        "s3_bucket" : {
-          "displayName" : "s3_bucket",
-          "dynamic" : true,
-          "identifiesControllerService" : false,
-          "name" : "s3_bucket",
           "sensitive" : false
         }
       },
@@ -1538,6 +1522,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Ingestion",
-    "timestamp" : 1780414373381
+    "timestamp" : 1780483852108
   }
 }
