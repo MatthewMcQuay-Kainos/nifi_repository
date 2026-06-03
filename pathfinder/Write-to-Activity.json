@@ -349,7 +349,7 @@
       "scheduledState" : "ENABLED",
       "type" : "OUTPUT_PORT"
     } ],
-    "parameterContextName" : "Metadata-API-Variables",
+    "parameterContextName" : "Data-Exchange-Variables",
     "position" : {
       "x" : 0.0,
       "y" : 0.0
@@ -382,7 +382,7 @@
         "Request Multipart Form-Data Filename Enabled" : "true",
         "Request Chunked Transfer-Encoding Enabled" : "false",
         "HTTP/2 Disabled" : "False",
-        "Connection Timeout" : "5 secs",
+        "Connection Timeout" : "6 secs",
         "Response Cookie Strategy" : "DISABLED",
         "Socket Read Timeout" : "15 secs",
         "Socket Idle Connections" : "5",
@@ -1122,14 +1122,24 @@
   "flowEncodingVersion" : "1.0",
   "latest" : false,
   "parameterContexts" : {
-    "Metadata-API-Variables" : {
+    "Data-Exchange-Variables" : {
       "componentType" : "PARAMETER_CONTEXT",
       "inheritedParameterContexts" : [ ],
-      "name" : "Metadata-API-Variables",
+      "name" : "Data-Exchange-Variables",
       "parameters" : [ {
+        "name" : "DATASTORE_ENDPOINT_URL",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "http://dataset-store:8333"
+      }, {
         "name" : "INTERNAL_API_BEARER",
         "provided" : false,
         "sensitive" : true
+      }, {
+        "name" : "METADATA_API_BASE_URL",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "http://metadata-api:3001"
       } ]
     }
   },
@@ -1137,6 +1147,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Write-to-Activity",
-    "timestamp" : 1780493886789
+    "timestamp" : 1780494178265
   }
 }
