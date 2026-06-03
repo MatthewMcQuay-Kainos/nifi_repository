@@ -804,7 +804,7 @@
       },
       "properties" : {
         "Store State" : "Do not store state",
-        "api_url" : "http://metadata-api:3001/v1/datasets/${dataset_id}/activity",
+        "api_url" : "${METADATA_API_BASE_URL}/v1/datasets/${dataset_id}/activity",
         "Cache Value Lookup Cache Size" : "100"
       },
       "propertyDescriptors" : {
@@ -877,7 +877,7 @@
       },
       "properties" : {
         "Store State" : "Do not store state",
-        "api_url" : "http://metadata-api:3001/v1/activity/${parent_activity_id}",
+        "api_url" : "${METADATA_API_BASE_URL}/v1/activity/${parent_activity_id}",
         "Cache Value Lookup Cache Size" : "100"
       },
       "propertyDescriptors" : {
@@ -1137,6 +1137,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Write-to-Activity",
-    "timestamp" : 1780483608630
+    "timestamp" : 1780493886789
   }
 }
