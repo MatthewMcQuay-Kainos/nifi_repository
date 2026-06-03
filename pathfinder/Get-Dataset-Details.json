@@ -215,7 +215,7 @@
       "scheduledState" : "ENABLED",
       "type" : "OUTPUT_PORT"
     } ],
-    "parameterContextName" : "Metadata-API-Variables",
+    "parameterContextName" : "Data-Exchange-Variables",
     "position" : {
       "x" : 0.0,
       "y" : 0.0
@@ -254,7 +254,7 @@
         "Socket Idle Connections" : "5",
         "Request Body Enabled" : "true",
         "OAuth2 Access Token Refresh Strategy" : "ON_TOKEN_EXPIRATION",
-        "HTTP URL" : "http://metadata-api:3001/v1/datasets/${dataset_id}",
+        "HTTP URL" : "${METADATA_API_BASE_URL}/${dataset_id}",
         "Socket Idle Timeout" : "5 mins",
         "Response Redirects Enabled" : "True",
         "Socket Write Timeout" : "15 secs",
@@ -648,14 +648,24 @@
   "flowEncodingVersion" : "1.0",
   "latest" : false,
   "parameterContexts" : {
-    "Metadata-API-Variables" : {
+    "Data-Exchange-Variables" : {
       "componentType" : "PARAMETER_CONTEXT",
       "inheritedParameterContexts" : [ ],
-      "name" : "Metadata-API-Variables",
+      "name" : "Data-Exchange-Variables",
       "parameters" : [ {
+        "name" : "DATASTORE_ENDPOINT_URL",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "http://dataset-store:8333"
+      }, {
         "name" : "INTERNAL_API_BEARER",
         "provided" : false,
         "sensitive" : true
+      }, {
+        "name" : "METADATA_API_BASE_URL",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "http://metadata-api:3001"
       } ]
     }
   },
@@ -663,6 +673,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Get-Dataset-Details",
-    "timestamp" : 1780483618215
+    "timestamp" : 1780494082837
   }
 }
