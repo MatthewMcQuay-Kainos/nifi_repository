@@ -36,7 +36,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "68803b9a-019e-1000-b4d6-5a7a51e6d975",
-        "name" : "Set Dataset ID",
+        "name" : "Set Dataset Details",
         "type" : "PROCESSOR"
       },
       "zIndex" : 3
@@ -123,7 +123,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "68803b9a-019e-1000-b4d6-5a7a51e6d975",
-        "name" : "Set Dataset ID",
+        "name" : "Set Dataset Details",
         "type" : "PROCESSOR"
       },
       "zIndex" : 4
@@ -136,7 +136,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "68803b9a-019e-1000-b4d6-5a7a51e6d975",
-        "name" : "Set Dataset ID",
+        "name" : "Set Dataset Details",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
@@ -254,7 +254,7 @@
         "Socket Idle Connections" : "5",
         "Request Body Enabled" : "true",
         "OAuth2 Access Token Refresh Strategy" : "ON_TOKEN_EXPIRATION",
-        "HTTP URL" : "http://metadata-api:3001/v1/datasets/name/${dataset_name}",
+        "HTTP URL" : "http://metadata-api:3001/v1/datasets/${dataset_id}",
         "Socket Idle Timeout" : "5 mins",
         "Response Redirects Enabled" : "True",
         "Socket Write Timeout" : "15 secs",
@@ -557,7 +557,7 @@
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "68803b9a-019e-1000-b4d6-5a7a51e6d975",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "Set Dataset ID",
+      "name" : "Set Dataset Details",
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : -175.99998941976833,
@@ -569,6 +569,8 @@
         "Return Type" : "auto-detect",
         "dataset_id" : "$.dataset_id",
         "Null Value Representation" : "empty string",
+        "dataset_name" : "$.dataset_name",
+        "s3_bucket" : "$.storage_path",
         "Path Not Found Behavior" : "ignore"
       },
       "propertyDescriptors" : {
@@ -605,6 +607,20 @@
           "dynamic" : false,
           "identifiesControllerService" : false,
           "name" : "Null Value Representation",
+          "sensitive" : false
+        },
+        "dataset_name" : {
+          "displayName" : "dataset_name",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "dataset_name",
+          "sensitive" : false
+        },
+        "s3_bucket" : {
+          "displayName" : "s3_bucket",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "s3_bucket",
           "sensitive" : false
         },
         "Path Not Found Behavior" : {
@@ -647,6 +663,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Get-Dataset-Details",
-    "timestamp" : 1780384669529
+    "timestamp" : 1780483618215
   }
 }
