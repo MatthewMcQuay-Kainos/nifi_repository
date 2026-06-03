@@ -139,35 +139,6 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "d0ef710f-e6ea-3d2d-9065-013a8af83d56",
-        "name" : "Set Filepaths",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "9f794822-8383-3317-9dbc-f3e1cbffcb51",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "" ],
-      "source" : {
-        "groupId" : "flow-contents-group",
-        "id" : "5fe339ee-005b-33ab-9e5a-fe4dcad28ed6",
-        "name" : "Seaweed Input",
-        "type" : "INPUT_PORT"
-      },
-      "zIndex" : 1
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
         "id" : "82fe9521-019e-1000-2abf-0e690f668275",
         "name" : "Set Failure",
         "type" : "PROCESSOR"
@@ -190,35 +161,6 @@
         "type" : "PROCESSOR"
       },
       "zIndex" : 5
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "groupId" : "8399da23-019e-1000-ec3f-f5b7efc8a8a5",
-        "id" : "8399da2a-019e-1000-cf63-b50818354000",
-        "name" : "Create File Ingestion",
-        "type" : "INPUT_PORT"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "afea9448-fa37-3ad8-a303-c50a2aaf2bc2",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "success" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "d0ef710f-e6ea-3d2d-9065-013a8af83d56",
-        "name" : "Set Filepaths",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 8
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
@@ -262,7 +204,7 @@
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "ee702a85-896b-39c0-9aa2-60b9f6c74066",
+      "identifier" : "c338de71-062f-394a-a9b6-17bc8fdda6fd",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -271,40 +213,12 @@
       "prioritizers" : [ ],
       "selectedRelationships" : [ "" ],
       "source" : {
-        "groupId" : "8399da23-019e-1000-ec3f-f5b7efc8a8a5",
-        "id" : "8399da2c-019e-1000-5823-52925d43b954",
-        "name" : "Write to File Ingestion - Success",
-        "type" : "OUTPUT_PORT"
-      },
-      "zIndex" : 9
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
         "groupId" : "flow-contents-group",
-        "id" : "fdee847e-ea4b-397c-a60a-a409d160e898",
-        "name" : "Failure",
-        "type" : "OUTPUT_PORT"
+        "id" : "5fe339ee-005b-33ab-9e5a-fe4dcad28ed6",
+        "name" : "Seaweed Input",
+        "type" : "INPUT_PORT"
       },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "f4821540-cf6b-3b4f-9336-f7a04061d439",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "" ],
-      "source" : {
-        "groupId" : "8399da23-019e-1000-ec3f-f5b7efc8a8a5",
-        "id" : "8399da2b-019e-1000-a665-91d311053aba",
-        "name" : "Write to File Ingestion - Failure",
-        "type" : "OUTPUT_PORT"
-      },
-      "zIndex" : 10
+      "zIndex" : 15
     } ],
     "controllerServices" : [ ],
     "defaultBackPressureDataSizeThreshold" : "1 GB",
@@ -331,7 +245,7 @@
       "portFunction" : "STANDARD",
       "position" : {
         "x" : -128.0,
-        "y" : -528.0
+        "y" : 8.0
       },
       "scheduledState" : "ENABLED",
       "type" : "INPUT_PORT"
@@ -374,42 +288,6 @@
       "y" : 0.0
     },
     "processGroups" : [ {
-      "comments" : "",
-      "componentType" : "PROCESS_GROUP",
-      "connections" : [ ],
-      "controllerServices" : [ ],
-      "defaultBackPressureDataSizeThreshold" : "1 GB",
-      "defaultBackPressureObjectThreshold" : 10000,
-      "defaultFlowFileExpiration" : "0 sec",
-      "executionEngine" : "INHERITED",
-      "flowFileConcurrency" : "UNBOUNDED",
-      "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
-      "funnels" : [ ],
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "8399da23-019e-1000-ec3f-f5b7efc8a8a5",
-      "inputPorts" : [ ],
-      "labels" : [ ],
-      "maxConcurrentTasks" : 1,
-      "name" : "Create File Ingestion",
-      "outputPorts" : [ ],
-      "parameterContextName" : "Metadata-API-Variables",
-      "position" : {
-        "x" : -200.0,
-        "y" : -104.0
-      },
-      "processGroups" : [ ],
-      "processors" : [ ],
-      "remoteProcessGroups" : [ ],
-      "scheduledState" : "ENABLED",
-      "statelessFlowTimeout" : "1 min",
-      "versionedFlowCoordinates" : {
-        "branch" : "master",
-        "bucketId" : "pathfinder",
-        "flowId" : "Write-to-File-Ingestion",
-        "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "812911ef9bdcc8427605a9286e048a09e61f23ed"
-      }
-    }, {
       "comments" : "",
       "componentType" : "PROCESS_GROUP",
       "connections" : [ ],
@@ -898,87 +776,6 @@
       "style" : { },
       "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
       "yieldDuration" : "1 sec"
-    }, {
-      "autoTerminatedRelationships" : [ ],
-      "backoffMechanism" : "PENALIZE_FLOWFILE",
-      "bulletinLevel" : "WARN",
-      "bundle" : {
-        "artifact" : "nifi-update-attribute-nar",
-        "group" : "org.apache.nifi",
-        "version" : "2.9.0"
-      },
-      "comments" : "",
-      "componentType" : "PROCESSOR",
-      "concurrentlySchedulableTaskCount" : 1,
-      "executionNode" : "ALL",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "d0ef710f-e6ea-3d2d-9065-013a8af83d56",
-      "maxBackoffPeriod" : "10 mins",
-      "name" : "Set Filepaths",
-      "penaltyDuration" : "30 sec",
-      "position" : {
-        "x" : -184.0,
-        "y" : -352.0
-      },
-      "properties" : {
-        "Store State" : "Do not store state",
-        "batch_id" : "1",
-        "s3_filepath" : "${dataset_name:toLower():replaceAll('[^a-z0-9\\s]', ''):trim():replaceAll('\\s+', '_')}/${layer_name:toLower():replaceAll(' ', '_'):replaceAll('/', '_')}/${layer_name:toLower():replaceAll(' ', '_'):replaceAll('/', '_')}_${now():format(\"yyyy_MM_dd_HHmm\")}.json",
-        "Cache Value Lookup Cache Size" : "100"
-      },
-      "propertyDescriptors" : {
-        "Delete Attributes Expression" : {
-          "displayName" : "Delete Attributes Expression",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Delete Attributes Expression",
-          "sensitive" : false
-        },
-        "Store State" : {
-          "displayName" : "Store State",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Store State",
-          "sensitive" : false
-        },
-        "batch_id" : {
-          "displayName" : "batch_id",
-          "dynamic" : true,
-          "identifiesControllerService" : false,
-          "name" : "batch_id",
-          "sensitive" : false
-        },
-        "s3_filepath" : {
-          "displayName" : "s3_filepath",
-          "dynamic" : true,
-          "identifiesControllerService" : false,
-          "name" : "s3_filepath",
-          "sensitive" : false
-        },
-        "Cache Value Lookup Cache Size" : {
-          "displayName" : "Cache Value Lookup Cache Size",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Cache Value Lookup Cache Size",
-          "sensitive" : false
-        },
-        "Stateful Variables Initial Value" : {
-          "displayName" : "Stateful Variables Initial Value",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Stateful Variables Initial Value",
-          "sensitive" : false
-        }
-      },
-      "retriedRelationships" : [ ],
-      "retryCount" : 10,
-      "runDurationMillis" : 25,
-      "scheduledState" : "ENABLED",
-      "schedulingPeriod" : "0 sec",
-      "schedulingStrategy" : "TIMER_DRIVEN",
-      "style" : { },
-      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
-      "yieldDuration" : "1 sec"
     } ],
     "remoteProcessGroups" : [ ],
     "scheduledState" : "ENABLED",
@@ -1002,6 +799,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Seaweed-Write",
-    "timestamp" : 1780486012118
+    "timestamp" : 1780487074243
   }
 }
