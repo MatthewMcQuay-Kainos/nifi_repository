@@ -19,36 +19,6 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "c057b585-c3db-3976-8f12-773e361a4899",
-        "name" : "Set Dataset Details and Ingestion Start Time",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "035b5996-24da-3013-8493-1a1bfecc7124",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "success" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "ef6aa4a6-aaf8-3bcb-8e99-ef882a0c9160",
-        "name" : "GenerateFlowFile",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 19
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
         "id" : "2e019a41-6360-3f65-8b06-19c79117b57c",
         "name" : "Script - Evaluate Merge JSON",
         "type" : "PROCESSOR"
@@ -71,6 +41,66 @@
         "type" : "PROCESSOR"
       },
       "zIndex" : 48
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "7590762c-e1d7-3ad6-9225-49b5d4535bb7",
+        "name" : "Set API Base URL and Metadata Store Endpoint",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "0d84ae4d-9a10-385c-b301-ed319c42ac4b",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "ef6aa4a6-aaf8-3bcb-8e99-ef882a0c9160",
+        "name" : "GenerateFlowFile",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 51
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "c057b585-c3db-3976-8f12-773e361a4899",
+        "name" : "Set Dataset Details and Ingestion Start Time",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "20564127-219e-326e-b600-2cfddf313b5a",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "7590762c-e1d7-3ad6-9225-49b5d4535bb7",
+        "name" : "Set API Base URL and Metadata Store Endpoint",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 52
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
@@ -1091,6 +1121,87 @@
       "concurrentlySchedulableTaskCount" : 1,
       "executionNode" : "ALL",
       "groupIdentifier" : "flow-contents-group",
+      "identifier" : "7590762c-e1d7-3ad6-9225-49b5d4535bb7",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "Set API Base URL and Metadata Store Endpoint",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 288.0,
+        "y" : -1072.0
+      },
+      "properties" : {
+        "Store State" : "Do not store state",
+        "METADATA_API_BASE_URL" : "#{METADATA_API_BASE_URL}",
+        "Cache Value Lookup Cache Size" : "100",
+        "DATASTORE_ENDPOINT_URL" : "#{DATASTORE_ENDPOINT_URL}"
+      },
+      "propertyDescriptors" : {
+        "Delete Attributes Expression" : {
+          "displayName" : "Delete Attributes Expression",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Delete Attributes Expression",
+          "sensitive" : false
+        },
+        "Store State" : {
+          "displayName" : "Store State",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Store State",
+          "sensitive" : false
+        },
+        "METADATA_API_BASE_URL" : {
+          "displayName" : "METADATA_API_BASE_URL",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "METADATA_API_BASE_URL",
+          "sensitive" : false
+        },
+        "Cache Value Lookup Cache Size" : {
+          "displayName" : "Cache Value Lookup Cache Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Cache Value Lookup Cache Size",
+          "sensitive" : false
+        },
+        "Stateful Variables Initial Value" : {
+          "displayName" : "Stateful Variables Initial Value",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Stateful Variables Initial Value",
+          "sensitive" : false
+        },
+        "DATASTORE_ENDPOINT_URL" : {
+          "displayName" : "DATASTORE_ENDPOINT_URL",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "DATASTORE_ENDPOINT_URL",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 25,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-update-attribute-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.9.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
       "identifier" : "79d45862-f2a2-32c0-a93a-babfd3234321",
       "maxBackoffPeriod" : "10 mins",
       "name" : "Set Activity Completion Time",
@@ -1430,7 +1541,7 @@
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : 288.0,
-        "y" : -1072.0
+        "y" : -1368.0
       },
       "properties" : {
         "File Size" : "0B",
@@ -1532,6 +1643,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Ingestion",
-    "timestamp" : 1780494203212
+    "timestamp" : 1780494531980
   }
 }
