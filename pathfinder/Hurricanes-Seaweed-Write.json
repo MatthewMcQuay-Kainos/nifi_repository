@@ -282,7 +282,7 @@
       "scheduledState" : "ENABLED",
       "type" : "OUTPUT_PORT"
     } ],
-    "parameterContextName" : "Metadata-API-Variables",
+    "parameterContextName" : "Data-Exchange-Variables",
     "position" : {
       "x" : 0.0,
       "y" : 0.0
@@ -306,7 +306,7 @@
       "maxConcurrentTasks" : 1,
       "name" : "Update File Ingestion",
       "outputPorts" : [ ],
-      "parameterContextName" : "Metadata-API-Variables",
+      "parameterContextName" : "Data-Exchange-Variables",
       "position" : {
         "x" : -208.0,
         "y" : 792.0
@@ -321,7 +321,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Write-to-File-Ingestion",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "812911ef9bdcc8427605a9286e048a09e61f23ed"
+        "version" : "27ed712490737ac305788e01817b318936af8229"
       }
     } ],
     "processors" : [ {
@@ -349,7 +349,7 @@
       "properties" : {
         "FullControl User List" : "${s3.permissions.full.users}",
         "Resource Transfer Source" : "FLOWFILE_CONTENT",
-        "Endpoint Override URL" : "http://dataset-store:8333",
+        "Endpoint Override URL" : "${DATASTORE_ENDPOINT_URL}",
         "Multipart Upload Max Age Threshold" : "7 days",
         "Canned ACL" : "${s3.permissions.cannedacl}",
         "Use Path Style Access" : "true",
@@ -784,14 +784,24 @@
   "flowEncodingVersion" : "1.0",
   "latest" : false,
   "parameterContexts" : {
-    "Metadata-API-Variables" : {
+    "Data-Exchange-Variables" : {
       "componentType" : "PARAMETER_CONTEXT",
       "inheritedParameterContexts" : [ ],
-      "name" : "Metadata-API-Variables",
+      "name" : "Data-Exchange-Variables",
       "parameters" : [ {
+        "name" : "DATASTORE_ENDPOINT_URL",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "http://dataset-store:8333"
+      }, {
         "name" : "INTERNAL_API_BEARER",
         "provided" : false,
         "sensitive" : true
+      }, {
+        "name" : "METADATA_API_BASE_URL",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "http://metadata-api:3001"
       } ]
     }
   },
@@ -799,6 +809,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Seaweed-Write",
-    "timestamp" : 1780487074243
+    "timestamp" : 1780494062147
   }
 }
