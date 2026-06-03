@@ -137,6 +137,94 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
+        "id" : "8d491f79-019e-1000-6cc4-c836c9598b93",
+        "name" : "Set Filepaths",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "469703ca-09d2-315e-bcf9-dc5c9c53c86e",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "8e4b0261-86e2-3dfe-9239-0e0ad787ea1a",
+        "name" : "Set Layer URL",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 9
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "1fd7128e-bc19-37a5-b919-9d6c0c091fd8",
+        "name" : "GET Layers",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "4ac099c3-3203-3f20-8f2f-cc4a3d69be20",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "" ],
+      "source" : {
+        "groupId" : "8d4a0748-019e-1000-aa21-f3ae0c7628e6",
+        "id" : "8399da2c-019e-1000-5823-52925d43b954",
+        "name" : "Write to File Ingestion - Success",
+        "type" : "OUTPUT_PORT"
+      },
+      "zIndex" : 11
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "groupId" : "8d4a0748-019e-1000-aa21-f3ae0c7628e6",
+        "id" : "8399da2a-019e-1000-cf63-b50818354000",
+        "name" : "Create File Ingestion",
+        "type" : "INPUT_PORT"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "bdb29d64-cd1a-3846-ad99-8f12d92acf6e",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "8d491f79-019e-1000-6cc4-c836c9598b93",
+        "name" : "Set Filepaths",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 10
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
         "id" : "8e4b0261-86e2-3dfe-9239-0e0ad787ea1a",
         "name" : "Set Layer URL",
         "type" : "PROCESSOR"
@@ -159,36 +247,6 @@
         "type" : "PROCESSOR"
       },
       "zIndex" : 4
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "1fd7128e-bc19-37a5-b919-9d6c0c091fd8",
-        "name" : "GET Layers",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "d195f863-3940-360c-9a1c-a916032f8a8d",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "success" ],
-      "source" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
-        "id" : "8e4b0261-86e2-3dfe-9239-0e0ad787ea1a",
-        "name" : "Set Layer URL",
-        "type" : "PROCESSOR"
-      },
-      "zIndex" : 5
     } ],
     "controllerServices" : [ ],
     "defaultBackPressureDataSizeThreshold" : "1 GB",
@@ -228,7 +286,7 @@
       "portFunction" : "STANDARD",
       "position" : {
         "x" : -488.0,
-        "y" : 1552.0
+        "y" : 2232.0
       },
       "scheduledState" : "ENABLED",
       "type" : "OUTPUT_PORT"
@@ -237,7 +295,43 @@
       "x" : 0.0,
       "y" : 0.0
     },
-    "processGroups" : [ ],
+    "processGroups" : [ {
+      "comments" : "",
+      "componentType" : "PROCESS_GROUP",
+      "connections" : [ ],
+      "controllerServices" : [ ],
+      "defaultBackPressureDataSizeThreshold" : "1 GB",
+      "defaultBackPressureObjectThreshold" : 10000,
+      "defaultFlowFileExpiration" : "0 sec",
+      "executionEngine" : "INHERITED",
+      "flowFileConcurrency" : "UNBOUNDED",
+      "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+      "funnels" : [ ],
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "8d4a0748-019e-1000-aa21-f3ae0c7628e6",
+      "inputPorts" : [ ],
+      "labels" : [ ],
+      "maxConcurrentTasks" : 1,
+      "name" : "Create File Ingestion",
+      "outputPorts" : [ ],
+      "parameterContextName" : "Metadata-API-Variables",
+      "position" : {
+        "x" : -560.0,
+        "y" : 1576.0
+      },
+      "processGroups" : [ ],
+      "processors" : [ ],
+      "remoteProcessGroups" : [ ],
+      "scheduledState" : "ENABLED",
+      "statelessFlowTimeout" : "1 min",
+      "versionedFlowCoordinates" : {
+        "branch" : "master",
+        "bucketId" : "pathfinder",
+        "flowId" : "Write-to-File-Ingestion",
+        "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
+        "version" : "812911ef9bdcc8427605a9286e048a09e61f23ed"
+      }
+    } ],
     "processors" : [ {
       "autoTerminatedRelationships" : [ "Failure", "No Retry", "Original", "Retry" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
@@ -258,7 +352,7 @@
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : -544.0,
-        "y" : 1232.0
+        "y" : 1928.0
       },
       "properties" : {
         "Request Content-Encoding" : "DISABLED",
@@ -878,6 +972,87 @@
       "concurrentlySchedulableTaskCount" : 1,
       "executionNode" : "ALL",
       "groupIdentifier" : "flow-contents-group",
+      "identifier" : "8d491f79-019e-1000-6cc4-c836c9598b93",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "Set Filepaths",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -544.0,
+        "y" : 1240.0
+      },
+      "properties" : {
+        "Store State" : "Do not store state",
+        "batch_id" : "1",
+        "s3_filepath" : "${dataset_name:toLower():replaceAll('[^a-z0-9\\s]', ''):trim():replaceAll('\\s+', '_')}/${layer_name:toLower():replaceAll(' ', '_'):replaceAll('/', '_')}/${layer_name:toLower():replaceAll(' ', '_'):replaceAll('/', '_')}_${now():format(\"yyyy_MM_dd_HHmm\")}.json",
+        "Cache Value Lookup Cache Size" : "100"
+      },
+      "propertyDescriptors" : {
+        "Delete Attributes Expression" : {
+          "displayName" : "Delete Attributes Expression",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Delete Attributes Expression",
+          "sensitive" : false
+        },
+        "Store State" : {
+          "displayName" : "Store State",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Store State",
+          "sensitive" : false
+        },
+        "batch_id" : {
+          "displayName" : "batch_id",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "batch_id",
+          "sensitive" : false
+        },
+        "s3_filepath" : {
+          "displayName" : "s3_filepath",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "s3_filepath",
+          "sensitive" : false
+        },
+        "Cache Value Lookup Cache Size" : {
+          "displayName" : "Cache Value Lookup Cache Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Cache Value Lookup Cache Size",
+          "sensitive" : false
+        },
+        "Stateful Variables Initial Value" : {
+          "displayName" : "Stateful Variables Initial Value",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Stateful Variables Initial Value",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 25,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-update-attribute-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.9.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
       "identifier" : "8e4b0261-86e2-3dfe-9239-0e0ad787ea1a",
       "maxBackoffPeriod" : "10 mins",
       "name" : "Set Layer URL",
@@ -1099,6 +1274,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-API-Call",
-    "timestamp" : 1779805063712
+    "timestamp" : 1780487031520
   }
 }
