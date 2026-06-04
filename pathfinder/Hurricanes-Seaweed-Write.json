@@ -282,7 +282,7 @@
       "scheduledState" : "ENABLED",
       "type" : "OUTPUT_PORT"
     } ],
-    "parameterContextName" : "Data-Exchange-Variables",
+    "parameterContextName" : "Data-Exchange-Parameters",
     "position" : {
       "x" : 0.0,
       "y" : 0.0
@@ -306,7 +306,7 @@
       "maxConcurrentTasks" : 1,
       "name" : "Update File Ingestion",
       "outputPorts" : [ ],
-      "parameterContextName" : "Data-Exchange-Variables",
+      "parameterContextName" : "Data-Exchange-Parameters",
       "position" : {
         "x" : -208.0,
         "y" : 792.0
@@ -321,7 +321,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Write-to-File-Ingestion",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "439c0e6c079ec7eaae4aa818ffa33e4955247c58"
+        "version" : "50f36600145c9fdcb06bd2cdd920f8b9641e2394"
       }
     } ],
     "processors" : [ {
@@ -784,10 +784,10 @@
   "flowEncodingVersion" : "1.0",
   "latest" : false,
   "parameterContexts" : {
-    "Data-Exchange-Variables" : {
+    "Data-Exchange-Parameters" : {
       "componentType" : "PARAMETER_CONTEXT",
       "inheritedParameterContexts" : [ ],
-      "name" : "Data-Exchange-Variables",
+      "name" : "Data-Exchange-Parameters",
       "parameters" : [ {
         "name" : "DATASTORE_ENDPOINT_URL",
         "provided" : false,
@@ -809,6 +809,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Seaweed-Write",
-    "timestamp" : 1780494840491
+    "timestamp" : 1780568099689
   }
 }
