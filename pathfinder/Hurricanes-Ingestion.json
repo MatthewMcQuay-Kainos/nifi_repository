@@ -168,6 +168,93 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
+        "id" : "84d7fd82-da7a-309f-b6b6-e6d5220629d6",
+        "name" : "Log Failure",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "36ac5fd8-f050-3e61-8fe2-4b1a0318601f",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "" ],
+      "source" : {
+        "groupId" : "ac0f19b5-49ad-3635-8a53-ead9cb86a127",
+        "id" : "0033eb62-9bc0-3536-aa37-aebe19027e9f",
+        "name" : "Write to Activity - Failure",
+        "type" : "OUTPUT_PORT"
+      },
+      "zIndex" : 55
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "efe65b4e-5dc6-34b1-85ea-e19e604b9941",
+        "name" : "Log Success",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "37da928b-4dc7-3993-aeb5-5e32f39e8ac9",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "" ],
+      "source" : {
+        "groupId" : "ac0f19b5-49ad-3635-8a53-ead9cb86a127",
+        "id" : "ee8a2725-20dd-3d5b-9dcd-1ef053724bb2",
+        "name" : "Write to Activity - Success",
+        "type" : "OUTPUT_PORT"
+      },
+      "zIndex" : 56
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "84d7fd82-da7a-309f-b6b6-e6d5220629d6",
+        "name" : "Log Failure",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "5e910c1a-7c12-3a60-a9b9-2e73301c3fac",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "" ],
+      "source" : {
+        "groupId" : "402089c1-8c1a-36d3-9acd-483f8b800267",
+        "id" : "6881e58a-019e-1000-05b2-df03ad3537f6",
+        "name" : "Get Dataset Details Output - Failure",
+        "type" : "OUTPUT_PORT"
+      },
+      "zIndex" : 54
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
         "id" : "747386ac-7c36-3681-a51e-3d761990709d",
         "name" : "Set Activity State - Failure",
         "type" : "PROCESSOR"
@@ -339,6 +426,35 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
+        "id" : "84d7fd82-da7a-309f-b6b6-e6d5220629d6",
+        "name" : "Log Failure",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "d407ef50-e466-3929-947a-a8bada298792",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "" ],
+      "source" : {
+        "groupId" : "85a36b75-f0de-340a-ba2f-d79e603beb8a",
+        "id" : "0033eb62-9bc0-3536-aa37-aebe19027e9f",
+        "name" : "Write to Activity - Failure",
+        "type" : "OUTPUT_PORT"
+      },
+      "zIndex" : 53
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
         "id" : "79d45862-f2a2-32c0-a93a-babfd3234321",
         "name" : "Set Activity Completion Time",
         "type" : "PROCESSOR"
@@ -444,9 +560,11 @@
       "name" : "Seaweed Credentials",
       "properties" : {
         "Assume Role STS Region" : "us-west-2",
+        "Access Key ID" : "#{AWS_ACCESS_KEY_ID}",
         "Assume Role Session Time" : "3600",
         "Use Default Credentials" : "false",
-        "Use Anonymous Credentials" : "false"
+        "Use Anonymous Credentials" : "false",
+        "Secret Access Key" : "#{AWS_SECRET_ACCESS_KEY}"
       },
       "propertyDescriptors" : {
         "Assume Role STS Region" : {
@@ -687,7 +805,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Hurricanes-Seaweed-Write",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "56af0baee8ed7c5a8decdf0b2575243a8d184111"
+        "version" : "9bfaf5393970b848191c33aee1634e4b4efa64a7"
       }
     }, {
       "comments" : "",
@@ -1344,6 +1462,65 @@
       "type" : "org.apache.nifi.processors.attributes.UpdateAttribute",
       "yieldDuration" : "1 sec"
     }, {
+      "autoTerminatedRelationships" : [ "success" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.9.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "84d7fd82-da7a-309f-b6b6-e6d5220629d6",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "Log Failure",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 1224.0,
+        "y" : 1840.0
+      },
+      "properties" : {
+        "Log Message" : "FAILURE",
+        "Log Level" : "info",
+        "Log Prefix" : "Status"
+      },
+      "propertyDescriptors" : {
+        "Log Message" : {
+          "displayName" : "Log Message",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Log Message",
+          "sensitive" : false
+        },
+        "Log Level" : {
+          "displayName" : "Log Level",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Log Level",
+          "sensitive" : false
+        },
+        "Log Prefix" : {
+          "displayName" : "Log Prefix",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Log Prefix",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 25,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.LogMessage",
+      "yieldDuration" : "1 sec"
+    }, {
       "autoTerminatedRelationships" : [ ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
@@ -1611,6 +1788,65 @@
       "style" : { },
       "type" : "org.apache.nifi.processors.standard.GenerateFlowFile",
       "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "success" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.9.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "efe65b4e-5dc6-34b1-85ea-e19e604b9941",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "Log Success",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 288.0,
+        "y" : 2712.0
+      },
+      "properties" : {
+        "Log Message" : "SUCCESS",
+        "Log Level" : "info",
+        "Log Prefix" : "Status"
+      },
+      "propertyDescriptors" : {
+        "Log Message" : {
+          "displayName" : "Log Message",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Log Message",
+          "sensitive" : false
+        },
+        "Log Level" : {
+          "displayName" : "Log Level",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Log Level",
+          "sensitive" : false
+        },
+        "Log Prefix" : {
+          "displayName" : "Log Prefix",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Log Prefix",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 25,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.LogMessage",
+      "yieldDuration" : "1 sec"
     } ],
     "remoteProcessGroups" : [ ],
     "scheduledState" : "ENABLED",
@@ -1624,6 +1860,14 @@
       "inheritedParameterContexts" : [ ],
       "name" : "Data-Exchange-Parameters",
       "parameters" : [ {
+        "name" : "AWS_ACCESS_KEY_ID",
+        "provided" : false,
+        "sensitive" : true
+      }, {
+        "name" : "AWS_SECRET_ACCESS_KEY",
+        "provided" : false,
+        "sensitive" : true
+      }, {
         "name" : "DATASTORE_ENDPOINT_URL",
         "provided" : false,
         "sensitive" : false,
@@ -1644,6 +1888,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Ingestion",
-    "timestamp" : 1780573571018
+    "timestamp" : 1780584951661
   }
 }
