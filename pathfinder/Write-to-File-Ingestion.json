@@ -319,7 +319,7 @@
     } ],
     "labels" : [ ],
     "maxConcurrentTasks" : 1,
-    "name" : "Create File Ingestion",
+    "name" : "Update File Ingestion",
     "outputPorts" : [ {
       "allowRemoteAccess" : false,
       "componentType" : "OUTPUT_PORT",
@@ -349,7 +349,7 @@
       "scheduledState" : "ENABLED",
       "type" : "OUTPUT_PORT"
     } ],
-    "parameterContextName" : "Data-Exchange-Variables",
+    "parameterContextName" : "Data-Exchange-Parameters",
     "position" : {
       "x" : 0.0,
       "y" : 0.0
@@ -448,7 +448,7 @@
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : 424.0,
-        "y" : -48.0
+        "y" : -64.0
       },
       "properties" : {
         "Store State" : "Do not store state",
@@ -528,7 +528,7 @@
         "Request Multipart Form-Data Filename Enabled" : "true",
         "Request Chunked Transfer-Encoding Enabled" : "false",
         "HTTP/2 Disabled" : "False",
-        "Connection Timeout" : "5 secs",
+        "Connection Timeout" : "6 secs",
         "Response Cookie Strategy" : "DISABLED",
         "Authorization" : "#{INTERNAL_API_BEARER}",
         "Socket Read Timeout" : "15 secs",
@@ -948,7 +948,7 @@
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : 424.0,
-        "y" : -296.0
+        "y" : -312.0
       },
       "properties" : {
         "Replacement Value" : "{\n  \"ingestion_completion_time\": ${ingestion_completion_time},\n  \"bytes_written\": ${bytes_written},\n  \"ingestion_status\": \"${ingestion_status}\",\n  \"error_message\": \"${error_message}\"\n}",
@@ -1114,10 +1114,10 @@
   "flowEncodingVersion" : "1.0",
   "latest" : false,
   "parameterContexts" : {
-    "Data-Exchange-Variables" : {
+    "Data-Exchange-Parameters" : {
       "componentType" : "PARAMETER_CONTEXT",
       "inheritedParameterContexts" : [ ],
-      "name" : "Data-Exchange-Variables",
+      "name" : "Data-Exchange-Parameters",
       "parameters" : [ {
         "name" : "DATASTORE_ENDPOINT_URL",
         "provided" : false,
@@ -1139,6 +1139,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Write-to-File-Ingestion",
-    "timestamp" : 1780494796302
+    "timestamp" : 1780568080388
   }
 }
