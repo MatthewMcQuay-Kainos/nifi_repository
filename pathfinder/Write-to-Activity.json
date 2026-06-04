@@ -349,7 +349,7 @@
       "scheduledState" : "ENABLED",
       "type" : "OUTPUT_PORT"
     } ],
-    "parameterContextName" : "Data-Exchange-Variables",
+    "parameterContextName" : "Data-Exchange-Parameters",
     "position" : {
       "x" : 0.0,
       "y" : 0.0
@@ -879,7 +879,7 @@
       "properties" : {
         "Store State" : "Do not store state",
         "api_url" : "${METADATA_API_BASE_URL}/v1/activity/${parent_activity_id}",
-        "Cache Value Lookup Cache Size" : "100"
+        "Cache Value Lookup Cache Size" : "111"
       },
       "propertyDescriptors" : {
         "Delete Attributes Expression" : {
@@ -1123,10 +1123,10 @@
   "flowEncodingVersion" : "1.0",
   "latest" : false,
   "parameterContexts" : {
-    "Data-Exchange-Variables" : {
+    "Data-Exchange-Parameters" : {
       "componentType" : "PARAMETER_CONTEXT",
       "inheritedParameterContexts" : [ ],
-      "name" : "Data-Exchange-Variables",
+      "name" : "Data-Exchange-Parameters",
       "parameters" : [ {
         "name" : "DATASTORE_ENDPOINT_URL",
         "provided" : false,
@@ -1148,6 +1148,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Write-to-Activity",
-    "timestamp" : 1780494743265
+    "timestamp" : 1780567901846
   }
 }
