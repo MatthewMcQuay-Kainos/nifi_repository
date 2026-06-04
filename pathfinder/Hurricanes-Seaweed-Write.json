@@ -349,7 +349,7 @@
       "properties" : {
         "FullControl User List" : "${s3.permissions.full.users}",
         "Resource Transfer Source" : "FLOWFILE_CONTENT",
-        "Endpoint Override URL" : "${DATASTORE_ENDPOINT_URL}",
+        "Endpoint Override URL" : "#{DATASTORE_ENDPOINT_URL}",
         "Multipart Upload Max Age Threshold" : "7 days",
         "Canned ACL" : "${s3.permissions.cannedacl}",
         "Use Path Style Access" : "true",
@@ -809,6 +809,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Seaweed-Write",
-    "timestamp" : 1780572991558
+    "timestamp" : 1780573546407
   }
 }
