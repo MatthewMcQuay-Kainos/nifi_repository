@@ -576,7 +576,7 @@
     "maxConcurrentTasks" : 1,
     "name" : "Hurricanes Ingestion",
     "outputPorts" : [ ],
-    "parameterContextName" : "Data-Exchange-Variables",
+    "parameterContextName" : "Data-Exchange-Parameters",
     "position" : {
       "x" : 0.0,
       "y" : 0.0
@@ -600,7 +600,7 @@
       "maxConcurrentTasks" : 1,
       "name" : "Get Dataset Details",
       "outputPorts" : [ ],
-      "parameterContextName" : "Data-Exchange-Variables",
+      "parameterContextName" : "Data-Exchange-Parameters",
       "position" : {
         "x" : 272.0,
         "y" : -456.0
@@ -615,7 +615,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Get-Dataset-Details",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "0ea79950d53df3d0da2efcfbc8a0c48bee74a01d"
+        "version" : "420e3b9a3b786b5fd331c81c2b78a01b92d65923"
       }
     }, {
       "comments" : "",
@@ -636,7 +636,7 @@
       "maxConcurrentTasks" : 1,
       "name" : "Create Activity",
       "outputPorts" : [ ],
-      "parameterContextName" : "Data-Exchange-Variables",
+      "parameterContextName" : "Data-Exchange-Parameters",
       "position" : {
         "x" : 272.0,
         "y" : -104.0
@@ -651,7 +651,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Write-to-Activity",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "0a9eb0de17a12659f9a519312748aedf1b8d8c78"
+        "version" : "e5a2d73447275d86424d2f2ad2f9ceb4a9a44bc7"
       }
     }, {
       "comments" : "",
@@ -672,7 +672,7 @@
       "maxConcurrentTasks" : 1,
       "name" : "Write Hurricanes to Seaweed",
       "outputPorts" : [ ],
-      "parameterContextName" : "Data-Exchange-Variables",
+      "parameterContextName" : "Data-Exchange-Parameters",
       "position" : {
         "x" : 272.0,
         "y" : 696.0
@@ -687,7 +687,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Hurricanes-Seaweed-Write",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "4f2159caff077d3d2de1405819ea2756a63a9423"
+        "version" : "d510260ebd5efb93d80d1a525fd30576686c7571"
       }
     }, {
       "comments" : "",
@@ -708,7 +708,7 @@
       "maxConcurrentTasks" : 1,
       "name" : "Update Activity",
       "outputPorts" : [ ],
-      "parameterContextName" : "Data-Exchange-Variables",
+      "parameterContextName" : "Data-Exchange-Parameters",
       "position" : {
         "x" : 272.0,
         "y" : 2408.0
@@ -723,7 +723,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Write-to-Activity",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "0a9eb0de17a12659f9a519312748aedf1b8d8c78"
+        "version" : "e5a2d73447275d86424d2f2ad2f9ceb4a9a44bc7"
       }
     }, {
       "comments" : "",
@@ -744,6 +744,7 @@
       "maxConcurrentTasks" : 1,
       "name" : "Get Hurricanes Data",
       "outputPorts" : [ ],
+      "parameterContextName" : "Data-Exchange-Parameters",
       "position" : {
         "x" : 272.0,
         "y" : 264.0
@@ -758,7 +759,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Hurricanes-API-Call",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "73f4dd35fd1f2368abce5dcd7708dfeb98175160"
+        "version" : "a1b50068510af374f1f55e57ed1b7f0b82c4b17b"
       }
     } ],
     "processors" : [ {
@@ -1130,7 +1131,6 @@
         "y" : -1072.0
       },
       "properties" : {
-        "INTERNAL_AUTH" : "#{INTERNAL_API_BEARER}",
         "Store State" : "Do not store state",
         "METADATA_API_BASE_URL" : "#{METADATA_API_BASE_URL}",
         "Cache Value Lookup Cache Size" : "100",
@@ -1142,13 +1142,6 @@
           "dynamic" : false,
           "identifiesControllerService" : false,
           "name" : "Delete Attributes Expression",
-          "sensitive" : false
-        },
-        "INTERNAL_AUTH" : {
-          "displayName" : "INTERNAL_AUTH",
-          "dynamic" : true,
-          "identifiesControllerService" : false,
-          "name" : "INTERNAL_AUTH",
           "sensitive" : false
         },
         "Store State" : {
@@ -1626,10 +1619,10 @@
   "flowEncodingVersion" : "1.0",
   "latest" : false,
   "parameterContexts" : {
-    "Data-Exchange-Variables" : {
+    "Data-Exchange-Parameters" : {
       "componentType" : "PARAMETER_CONTEXT",
       "inheritedParameterContexts" : [ ],
-      "name" : "Data-Exchange-Variables",
+      "name" : "Data-Exchange-Parameters",
       "parameters" : [ {
         "name" : "DATASTORE_ENDPOINT_URL",
         "provided" : false,
@@ -1651,6 +1644,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Ingestion",
-    "timestamp" : 1780495857644
+    "timestamp" : 1780568175486
   }
 }
