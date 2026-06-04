@@ -330,7 +330,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Write-to-File-Ingestion",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "439c0e6c079ec7eaae4aa818ffa33e4955247c58"
+        "version" : "50f36600145c9fdcb06bd2cdd920f8b9641e2394"
       }
     } ],
     "processors" : [ {
@@ -1296,6 +1296,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-API-Call",
-    "timestamp" : 1780567963675
+    "timestamp" : 1780568159082
   }
 }
