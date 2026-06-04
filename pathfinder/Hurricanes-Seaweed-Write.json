@@ -109,34 +109,6 @@
       "bends" : [ ],
       "componentType" : "CONNECTION",
       "destination" : {
-        "groupId" : "flow-contents-group",
-        "id" : "7929f69c-1378-3289-8d18-0046222fbfb9",
-        "name" : "Success",
-        "type" : "OUTPUT_PORT"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "7cde68cc-d1c8-398b-a673-805047d533f8",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "" ],
-      "source" : {
-        "groupId" : "a2b513ad-a8b6-31a2-bb36-fc73be1bbc2f",
-        "id" : "8399da2c-019e-1000-5823-52925d43b954",
-        "name" : "Write to File Ingestion - Success",
-        "type" : "OUTPUT_PORT"
-      },
-      "zIndex" : 14
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "82fe9521-019e-1000-2abf-0e690f668275",
@@ -161,6 +133,35 @@
         "type" : "PROCESSOR"
       },
       "zIndex" : 5
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "75793f03-5498-3a52-bff5-a14533fd5d37",
+        "name" : "Route On Failure/Success",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "abdac5fd-4d47-3854-b12b-a5ab787b7baa",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "" ],
+      "source" : {
+        "groupId" : "a2b513ad-a8b6-31a2-bb36-fc73be1bbc2f",
+        "id" : "8399da2c-019e-1000-5823-52925d43b954",
+        "name" : "Write to File Ingestion - Success",
+        "type" : "OUTPUT_PORT"
+      },
+      "zIndex" : 16
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
@@ -219,6 +220,64 @@
         "type" : "INPUT_PORT"
       },
       "zIndex" : 15
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "groupId" : "flow-contents-group",
+        "id" : "fdee847e-ea4b-397c-a60a-a409d160e898",
+        "name" : "Failure",
+        "type" : "OUTPUT_PORT"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "d878b5e9-61c1-3a08-ba98-d32138b5836c",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "failure", "unmatched" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "75793f03-5498-3a52-bff5-a14533fd5d37",
+        "name" : "Route On Failure/Success",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 18
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "groupId" : "flow-contents-group",
+        "id" : "7929f69c-1378-3289-8d18-0046222fbfb9",
+        "name" : "Success",
+        "type" : "OUTPUT_PORT"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "e27ebd9a-fb73-3073-8a80-8d3a9a87e161",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "75793f03-5498-3a52-bff5-a14533fd5d37",
+        "name" : "Route On Failure/Success",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 17
     } ],
     "controllerServices" : [ ],
     "defaultBackPressureDataSizeThreshold" : "1 GB",
@@ -263,7 +322,7 @@
       "portFunction" : "STANDARD",
       "position" : {
         "x" : -136.0,
-        "y" : 1120.0
+        "y" : 1424.0
       },
       "scheduledState" : "ENABLED",
       "type" : "OUTPUT_PORT"
@@ -276,8 +335,8 @@
       "name" : "Failure",
       "portFunction" : "FAILURE",
       "position" : {
-        "x" : 784.0,
-        "y" : 472.0
+        "x" : 504.0,
+        "y" : 1160.0
       },
       "scheduledState" : "ENABLED",
       "type" : "OUTPUT_PORT"
@@ -684,6 +743,65 @@
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.9.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "75793f03-5498-3a52-bff5-a14533fd5d37",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "Route On Failure/Success",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -192.0,
+        "y" : 1128.0
+      },
+      "properties" : {
+        "Routing Strategy" : "Route to Property name",
+        "failure" : "${ingestion_status:equals('FAILURE')}",
+        "success" : "${ingestion_status:equals('SUCCESS')}"
+      },
+      "propertyDescriptors" : {
+        "Routing Strategy" : {
+          "displayName" : "Routing Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Routing Strategy",
+          "sensitive" : false
+        },
+        "failure" : {
+          "displayName" : "failure",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "failure",
+          "sensitive" : false
+        },
+        "success" : {
+          "displayName" : "success",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "success",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 25,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.RouteOnAttribute",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
         "artifact" : "nifi-update-attribute-nar",
         "group" : "org.apache.nifi",
         "version" : "2.9.0"
@@ -789,6 +907,14 @@
       "inheritedParameterContexts" : [ ],
       "name" : "Data-Exchange-Parameters",
       "parameters" : [ {
+        "name" : "AWS_ACCESS_KEY_ID",
+        "provided" : false,
+        "sensitive" : true
+      }, {
+        "name" : "AWS_SECRET_ACCESS_KEY",
+        "provided" : false,
+        "sensitive" : true
+      }, {
         "name" : "DATASTORE_ENDPOINT_URL",
         "provided" : false,
         "sensitive" : false,
@@ -809,6 +935,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Seaweed-Write",
-    "timestamp" : 1780573546407
+    "timestamp" : 1780584620633
   }
 }
