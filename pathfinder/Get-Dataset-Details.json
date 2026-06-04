@@ -215,7 +215,7 @@
       "scheduledState" : "ENABLED",
       "type" : "OUTPUT_PORT"
     } ],
-    "parameterContextName" : "Data-Exchange-Variables",
+    "parameterContextName" : "Data-Exchange-Parameters",
     "position" : {
       "x" : 0.0,
       "y" : 0.0
@@ -572,7 +572,7 @@
         "Null Value Representation" : "empty string",
         "dataset_name" : "$.dataset_name",
         "s3_bucket" : "$.storage_path",
-        "Path Not Found Behavior" : "ignore"
+        "Path Not Found Behavior" : "warn"
       },
       "propertyDescriptors" : {
         "Destination" : {
@@ -649,10 +649,10 @@
   "flowEncodingVersion" : "1.0",
   "latest" : false,
   "parameterContexts" : {
-    "Data-Exchange-Variables" : {
+    "Data-Exchange-Parameters" : {
       "componentType" : "PARAMETER_CONTEXT",
       "inheritedParameterContexts" : [ ],
-      "name" : "Data-Exchange-Variables",
+      "name" : "Data-Exchange-Parameters",
       "parameters" : [ {
         "name" : "DATASTORE_ENDPOINT_URL",
         "provided" : false,
@@ -674,6 +674,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Get-Dataset-Details",
-    "timestamp" : 1780494634669
+    "timestamp" : 1780567815578
   }
 }
