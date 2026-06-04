@@ -89,7 +89,7 @@
       "name" : "",
       "partitioningAttribute" : "",
       "prioritizers" : [ ],
-      "selectedRelationships" : [ "Failure" ],
+      "selectedRelationships" : [ "Failure", "No Retry" ],
       "source" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
@@ -222,7 +222,7 @@
     },
     "processGroups" : [ ],
     "processors" : [ {
-      "autoTerminatedRelationships" : [ "No Retry", "Original", "Retry" ],
+      "autoTerminatedRelationships" : [ "Original", "Retry" ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
       "bundle" : {
@@ -255,7 +255,7 @@
         "Socket Idle Connections" : "5",
         "Request Body Enabled" : "true",
         "OAuth2 Access Token Refresh Strategy" : "ON_TOKEN_EXPIRATION",
-        "HTTP URL" : "${METADATA_API_BASE_URL}/${dataset_id}",
+        "HTTP URL" : "${METADATA_API_BASE_URL}/v1/datasets/${dataset_id}",
         "Socket Idle Timeout" : "5 mins",
         "Response Redirects Enabled" : "True",
         "Socket Write Timeout" : "15 secs",
@@ -674,6 +674,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Get-Dataset-Details",
-    "timestamp" : 1780567815578
+    "timestamp" : 1780570037609
   }
 }
