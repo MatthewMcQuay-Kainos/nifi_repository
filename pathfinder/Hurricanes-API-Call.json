@@ -36,7 +36,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "1fd7128e-bc19-37a5-b919-9d6c0c091fd8",
-        "name" : "GET Layers",
+        "name" : "Get Layers",
         "type" : "PROCESSOR"
       },
       "zIndex" : 6
@@ -168,7 +168,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "1fd7128e-bc19-37a5-b919-9d6c0c091fd8",
-        "name" : "GET Layers",
+        "name" : "Get Layers",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
@@ -291,6 +291,7 @@
       "scheduledState" : "ENABLED",
       "type" : "OUTPUT_PORT"
     } ],
+    "parameterContextName" : "Data-Exchange-Parameters",
     "position" : {
       "x" : 0.0,
       "y" : 0.0
@@ -314,7 +315,7 @@
       "maxConcurrentTasks" : 1,
       "name" : "Create File Ingestion",
       "outputPorts" : [ ],
-      "parameterContextName" : "Data-Exchange-Variables",
+      "parameterContextName" : "Data-Exchange-Parameters",
       "position" : {
         "x" : -560.0,
         "y" : 1576.0
@@ -348,7 +349,7 @@
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "1fd7128e-bc19-37a5-b919-9d6c0c091fd8",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "GET Layers",
+      "name" : "Get Layers",
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : -544.0,
@@ -1269,11 +1270,32 @@
   },
   "flowEncodingVersion" : "1.0",
   "latest" : false,
-  "parameterContexts" : { },
+  "parameterContexts" : {
+    "Data-Exchange-Parameters" : {
+      "componentType" : "PARAMETER_CONTEXT",
+      "inheritedParameterContexts" : [ ],
+      "name" : "Data-Exchange-Parameters",
+      "parameters" : [ {
+        "name" : "DATASTORE_ENDPOINT_URL",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "http://dataset-store:8333"
+      }, {
+        "name" : "INTERNAL_API_BEARER",
+        "provided" : false,
+        "sensitive" : true
+      }, {
+        "name" : "METADATA_API_BASE_URL",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "http://metadata-api:3001"
+      } ]
+    }
+  },
   "parameterProviders" : { },
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-API-Call",
-    "timestamp" : 1780494805368
+    "timestamp" : 1780567963675
   }
 }
