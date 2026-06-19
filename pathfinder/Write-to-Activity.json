@@ -699,7 +699,7 @@
         "y" : 13.34149169921875
       },
       "properties" : {
-        "Replacement Value" : "{ \n \"dataset_id\": \"${dataset_id}\",\n \"ingestion_start_time\": ${ingestion_start_time},\n  \"lineage\": ${lineage},\n  \"bytes_written\": 0,\n  \"file_count\": 0,\n  \"ingestion_status\": \"RUNNING\"\n}",
+        "Replacement Value" : "{ \n \"activity_type\": \"INGESTION\",\n \"dataset_id\": \"${dataset_id}\",\n \"ingestion_start_time\": ${ingestion_start_time},\n  \"lineage\": ${lineage},\n  \"bytes_written\": 0,\n  \"file_count\": 0,\n  \"ingestion_status\": \"RUNNING\"\n}",
         "Search Value" : "(?s)(^.*$)",
         "Evaluation Mode" : "Entire text",
         "Line-by-Line Evaluation Mode" : "All",
@@ -950,7 +950,7 @@
         "y" : 24.0
       },
       "properties" : {
-        "Replacement Value" : "{\n  \"dataset_id\": \"${dataset_id}\",\n  \"ingestion_completion_time\": ${activity_completion_time},\n  \"lineage\": ${lineage},\n  \"bytes_written\": ${total_bytes_written},\n  \"file_count\": ${total_file_count},\n  \"ingestion_status\": \"${final_status}\"\n}",
+        "Replacement Value" : "{ \n  \"activity_type\": \"INGESTION\",\n  \"dataset_id\": \"${dataset_id}\",\n  \"ingestion_completion_time\": ${activity_completion_time},\n  \"lineage\": ${lineage},\n  \"bytes_written\": ${total_bytes_written},\n  \"file_count\": ${total_file_count},\n  \"ingestion_status\": \"${final_status}\"\n}",
         "Search Value" : "(?s)(^.*$)",
         "Evaluation Mode" : "Entire text",
         "Line-by-Line Evaluation Mode" : "All",
@@ -1128,6 +1128,14 @@
       "inheritedParameterContexts" : [ ],
       "name" : "Data-Exchange-Parameters",
       "parameters" : [ {
+        "name" : "AWS_ACCESS_KEY_ID",
+        "provided" : false,
+        "sensitive" : true
+      }, {
+        "name" : "AWS_SECRET_ACCESS_KEY",
+        "provided" : false,
+        "sensitive" : true
+      }, {
         "name" : "DATASTORE_ENDPOINT_URL",
         "provided" : false,
         "sensitive" : false,
@@ -1148,6 +1156,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Write-to-Activity",
-    "timestamp" : 1780567901846
+    "timestamp" : 1781879872406
   }
 }
