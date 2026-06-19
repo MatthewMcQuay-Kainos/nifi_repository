@@ -566,11 +566,9 @@
       "name" : "Seaweed Credentials",
       "properties" : {
         "Assume Role STS Region" : "us-west-2",
-        "Access Key ID" : "#{AWS_ACCESS_KEY_ID}",
         "Assume Role Session Time" : "3600",
         "Use Default Credentials" : "false",
-        "Use Anonymous Credentials" : "false",
-        "Secret Access Key" : "#{AWS_SECRET_ACCESS_KEY}"
+        "Use Anonymous Credentials" : "false"
       },
       "propertyDescriptors" : {
         "Assume Role STS Region" : {
@@ -847,7 +845,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Write-to-Activity",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "e5a2d73447275d86424d2f2ad2f9ceb4a9a44bc7"
+        "version" : "27fac1139b6b7f9a050adaa508af3015c205ac6f"
       }
     }, {
       "comments" : "",
@@ -1894,6 +1892,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Ingestion",
-    "timestamp" : 1781879921330
+    "timestamp" : 1781881735449
   }
 }
