@@ -139,35 +139,6 @@
       "destination" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "83f33f69-019e-1000-8026-0c34aff03457",
-        "name" : "Set Activity State - Success",
-        "type" : "PROCESSOR"
-      },
-      "flowFileExpiration" : "0 sec",
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "2fb02a0a-4d6e-3075-ab93-540e700859db",
-      "labelIndex" : 0,
-      "loadBalanceCompression" : "DO_NOT_COMPRESS",
-      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-      "name" : "",
-      "partitioningAttribute" : "",
-      "prioritizers" : [ ],
-      "selectedRelationships" : [ "" ],
-      "source" : {
-        "groupId" : "9f699482-1eb9-3747-a588-36c0c318f29b",
-        "id" : "7929f69c-1378-3289-8d18-0046222fbfb9",
-        "name" : "Success",
-        "type" : "OUTPUT_PORT"
-      },
-      "zIndex" : 43
-    }, {
-      "backPressureDataSizeThreshold" : "1 GB",
-      "backPressureObjectThreshold" : 10000,
-      "bends" : [ ],
-      "componentType" : "CONNECTION",
-      "destination" : {
-        "comments" : "",
-        "groupId" : "flow-contents-group",
         "id" : "84d7fd82-da7a-309f-b6b6-e6d5220629d6",
         "name" : "Log Failure",
         "type" : "PROCESSOR"
@@ -337,6 +308,35 @@
         "type" : "PROCESSOR"
       },
       "zIndex" : 34
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "83f33f69-019e-1000-8026-0c34aff03457",
+        "name" : "Set Activity State - Success",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "a9c0dbf7-fcdd-38ce-b34f-2623f02cac4b",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "" ],
+      "source" : {
+        "groupId" : "9f699482-1eb9-3747-a588-36c0c318f29b",
+        "id" : "7929f69c-1378-3289-8d18-0046222fbfb9",
+        "name" : "Success",
+        "type" : "OUTPUT_PORT"
+      },
+      "zIndex" : 57
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
@@ -797,7 +797,7 @@
       "parameterContextName" : "Data-Exchange-Parameters",
       "position" : {
         "x" : 272.0,
-        "y" : 696.0
+        "y" : 680.0
       },
       "processGroups" : [ ],
       "processors" : [ ],
@@ -809,7 +809,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Hurricanes-Seaweed-Write",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "9bfaf5393970b848191c33aee1634e4b4efa64a7"
+        "version" : "286e4507b0fa4e99684f459c746d2b694b296f73"
       }
     }, {
       "comments" : "",
@@ -1877,6 +1877,16 @@
         "sensitive" : false,
         "value" : "http://dataset-store:8333"
       }, {
+        "name" : "INGESTION_CHECKSUM_ALGORITHM",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "SHA-256"
+      }, {
+        "name" : "INGESTION_SUCCESS_STATUS",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "SUCCESS"
+      }, {
         "name" : "INTERNAL_API_BEARER",
         "provided" : false,
         "sensitive" : true
@@ -1892,6 +1902,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Ingestion",
-    "timestamp" : 1781881735449
+    "timestamp" : 1783415243053
   }
 }
