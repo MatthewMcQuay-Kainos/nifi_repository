@@ -951,7 +951,7 @@
         "y" : -312.0
       },
       "properties" : {
-        "Replacement Value" : "{\n  \"ingestion_completion_time\": ${ingestion_completion_time},\n  \"bytes_written\": ${bytes_written},\n  \"ingestion_status\": \"${ingestion_status}\",\n  \"error_message\": \"${error_message}\"\n}",
+        "Replacement Value" : "{\n  \"ingestion_completion_time\": ${ingestion_completion_time},\n  \"bytes_written\": ${bytes_written},\n  \"ingestion_status\": \"${ingestion_status}\",\n  \"error_message\": \"${error_message}\",\n  \"checksum\": \"${'content_SHA-256'}\"\n}",
         "Search Value" : "(?s)(^.*$)",
         "Evaluation Mode" : "Entire text",
         "Line-by-Line Evaluation Mode" : "All",
@@ -1119,10 +1119,28 @@
       "inheritedParameterContexts" : [ ],
       "name" : "Data-Exchange-Parameters",
       "parameters" : [ {
+        "name" : "AWS_ACCESS_KEY_ID",
+        "provided" : false,
+        "sensitive" : true
+      }, {
+        "name" : "AWS_SECRET_ACCESS_KEY",
+        "provided" : false,
+        "sensitive" : true
+      }, {
         "name" : "DATASTORE_ENDPOINT_URL",
         "provided" : false,
         "sensitive" : false,
         "value" : "http://dataset-store:8333"
+      }, {
+        "name" : "INGESTION_CHECKSUM_ALGORITHM",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "SHA-256"
+      }, {
+        "name" : "INGESTION_SUCCESS_STATUS",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "SUCCESS"
       }, {
         "name" : "INTERNAL_API_BEARER",
         "provided" : false,
@@ -1139,6 +1157,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Write-to-File-Ingestion",
-    "timestamp" : 1780568080388
+    "timestamp" : 1783415201858
   }
 }
