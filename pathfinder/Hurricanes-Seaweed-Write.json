@@ -30,7 +30,7 @@
       },
       "flowFileExpiration" : "0 sec",
       "groupIdentifier" : "flow-contents-group",
-      "identifier" : "0765e83d-bdd6-311e-b414-326cc75d12c0",
+      "identifier" : "2c6fc799-b134-3ea0-9afe-3bf4e709f077",
       "labelIndex" : 0,
       "loadBalanceCompression" : "DO_NOT_COMPRESS",
       "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -41,11 +41,11 @@
       "source" : {
         "comments" : "",
         "groupId" : "flow-contents-group",
-        "id" : "64769b48-019e-1000-e75d-525f2405243a",
-        "name" : "Write to Seaweed",
+        "id" : "37b758f8-019f-1000-4d85-f1ce5a991240",
+        "name" : "Compute SHA256 Checksum",
         "type" : "PROCESSOR"
       },
-      "zIndex" : 4
+      "zIndex" : 20
     }, {
       "backPressureDataSizeThreshold" : "1 GB",
       "backPressureObjectThreshold" : 10000,
@@ -278,6 +278,36 @@
         "type" : "PROCESSOR"
       },
       "zIndex" : 17
+    }, {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "37b758f8-019f-1000-4d85-f1ce5a991240",
+        "name" : "Compute SHA256 Checksum",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "e7d26029-7fe6-3b1d-822d-d1d009107600",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "64769b48-019e-1000-e75d-525f2405243a",
+        "name" : "Write to Seaweed",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 19
     } ],
     "controllerServices" : [ ],
     "defaultBackPressureDataSizeThreshold" : "1 GB",
@@ -380,10 +410,61 @@
         "bucketId" : "pathfinder",
         "flowId" : "Write-to-File-Ingestion",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "50f36600145c9fdcb06bd2cdd920f8b9641e2394"
+        "version" : "9a16351c69e0209cb72aaea74c02ae3ce598ada0"
       }
     } ],
     "processors" : [ {
+      "autoTerminatedRelationships" : [ "failure" ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.9.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "37b758f8-019f-1000-4d85-f1ce5a991240",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "Compute SHA256 Checksum",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -824.0,
+        "y" : 168.0
+      },
+      "properties" : {
+        "Hash Algorithm" : "SHA-256",
+        "Fail When Content Empty" : "false"
+      },
+      "propertyDescriptors" : {
+        "Hash Algorithm" : {
+          "displayName" : "Hash Algorithm",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Hash Algorithm",
+          "sensitive" : false
+        },
+        "Fail When Content Empty" : {
+          "displayName" : "Fail When Content Empty",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Fail When Content Empty",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.CryptographicHashContent",
+      "yieldDuration" : "1 sec"
+    }, {
       "autoTerminatedRelationships" : [ ],
       "backoffMechanism" : "PENALIZE_FLOWFILE",
       "bulletinLevel" : "WARN",
@@ -920,6 +1001,16 @@
         "sensitive" : false,
         "value" : "http://dataset-store:8333"
       }, {
+        "name" : "INGESTION_CHECKSUM_ALGORITHM",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "SHA-256"
+      }, {
+        "name" : "INGESTION_SUCCESS_STATUS",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "SUCCESS"
+      }, {
         "name" : "INTERNAL_API_BEARER",
         "provided" : false,
         "sensitive" : true
@@ -935,6 +1026,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Seaweed-Write",
-    "timestamp" : 1780584620633
+    "timestamp" : 1783415221284
   }
 }
