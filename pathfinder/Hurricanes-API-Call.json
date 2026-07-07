@@ -330,7 +330,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Write-to-File-Ingestion",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "50f36600145c9fdcb06bd2cdd920f8b9641e2394"
+        "version" : "9a16351c69e0209cb72aaea74c02ae3ce598ada0"
       }
     } ],
     "processors" : [ {
@@ -1276,10 +1276,28 @@
       "inheritedParameterContexts" : [ ],
       "name" : "Data-Exchange-Parameters",
       "parameters" : [ {
+        "name" : "AWS_ACCESS_KEY_ID",
+        "provided" : false,
+        "sensitive" : true
+      }, {
+        "name" : "AWS_SECRET_ACCESS_KEY",
+        "provided" : false,
+        "sensitive" : true
+      }, {
         "name" : "DATASTORE_ENDPOINT_URL",
         "provided" : false,
         "sensitive" : false,
         "value" : "http://dataset-store:8333"
+      }, {
+        "name" : "INGESTION_CHECKSUM_ALGORITHM",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "SHA-256"
+      }, {
+        "name" : "INGESTION_SUCCESS_STATUS",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "SUCCESS"
       }, {
         "name" : "INTERNAL_API_BEARER",
         "provided" : false,
@@ -1296,6 +1314,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-API-Call",
-    "timestamp" : 1780568159082
+    "timestamp" : 1783415320013
   }
 }
