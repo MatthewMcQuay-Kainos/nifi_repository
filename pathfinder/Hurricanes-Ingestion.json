@@ -544,146 +544,7 @@
       },
       "zIndex" : 45
     } ],
-    "controllerServices" : [ {
-      "bulletinLevel" : "WARN",
-      "bundle" : {
-        "artifact" : "nifi-aws-nar",
-        "group" : "org.apache.nifi",
-        "version" : "2.9.0"
-      },
-      "comments" : "",
-      "componentType" : "CONTROLLER_SERVICE",
-      "controllerServiceApis" : [ {
-        "bundle" : {
-          "artifact" : "nifi-aws-service-api-nar",
-          "group" : "org.apache.nifi",
-          "version" : "2.9.0"
-        },
-        "type" : "org.apache.nifi.processors.aws.credentials.provider.AwsCredentialsProviderService"
-      } ],
-      "groupIdentifier" : "flow-contents-group",
-      "identifier" : "262ed805-9442-3381-b2e0-374fbf70a40b",
-      "name" : "Seaweed Credentials",
-      "properties" : {
-        "Assume Role STS Region" : "us-west-2",
-        "Assume Role Session Time" : "3600",
-        "Use Default Credentials" : "false",
-        "Use Anonymous Credentials" : "false"
-      },
-      "propertyDescriptors" : {
-        "Assume Role STS Region" : {
-          "displayName" : "Assume Role STS Region",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Assume Role STS Region",
-          "sensitive" : false
-        },
-        "Assume Role Proxy Configuration Service" : {
-          "displayName" : "Assume Role Proxy Configuration Service",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "Assume Role Proxy Configuration Service",
-          "sensitive" : false
-        },
-        "Access Key ID" : {
-          "displayName" : "Access Key ID",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Access Key ID",
-          "sensitive" : true
-        },
-        "OAuth2 Access Token Provider" : {
-          "displayName" : "OAuth2 Access Token Provider",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "OAuth2 Access Token Provider",
-          "sensitive" : false
-        },
-        "Assume Role ARN" : {
-          "displayName" : "Assume Role ARN",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Assume Role ARN",
-          "sensitive" : false
-        },
-        "Assume Role Session Time" : {
-          "displayName" : "Assume Role Session Time",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Assume Role Session Time",
-          "sensitive" : false
-        },
-        "Assume Role Session Name" : {
-          "displayName" : "Assume Role Session Name",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Assume Role Session Name",
-          "sensitive" : false
-        },
-        "Use Default Credentials" : {
-          "displayName" : "Use Default Credentials",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Use Default Credentials",
-          "sensitive" : false
-        },
-        "Assume Role External ID" : {
-          "displayName" : "Assume Role External ID",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Assume Role External ID",
-          "sensitive" : false
-        },
-        "Assume Role STS Endpoint Override" : {
-          "displayName" : "Assume Role STS Endpoint Override",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Assume Role STS Endpoint Override",
-          "sensitive" : false
-        },
-        "Profile Name" : {
-          "displayName" : "Profile Name",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Profile Name",
-          "sensitive" : false
-        },
-        "Credentials File" : {
-          "displayName" : "Credentials File",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Credentials File",
-          "resourceDefinition" : {
-            "cardinality" : "SINGLE",
-            "resourceTypes" : [ "FILE" ]
-          },
-          "sensitive" : false
-        },
-        "Use Anonymous Credentials" : {
-          "displayName" : "Use Anonymous Credentials",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Use Anonymous Credentials",
-          "sensitive" : false
-        },
-        "Secret Access Key" : {
-          "displayName" : "Secret Access Key",
-          "dynamic" : false,
-          "identifiesControllerService" : false,
-          "name" : "Secret Access Key",
-          "sensitive" : true
-        },
-        "Assume Role SSL Context Service" : {
-          "displayName" : "Assume Role SSL Context Service",
-          "dynamic" : false,
-          "identifiesControllerService" : true,
-          "name" : "Assume Role SSL Context Service",
-          "sensitive" : false
-        }
-      },
-      "scheduledState" : "DISABLED",
-      "type" : "org.apache.nifi.processors.aws.credentials.provider.service.AWSCredentialsProviderControllerService"
-    } ],
+    "controllerServices" : [ ],
     "defaultBackPressureDataSizeThreshold" : "1 GB",
     "defaultBackPressureObjectThreshold" : 10000,
     "defaultFlowFileExpiration" : "0 sec",
@@ -809,7 +670,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Hurricanes-Seaweed-Write",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "286e4507b0fa4e99684f459c746d2b694b296f73"
+        "version" : "f247565f9fd565d00a21aad012284d65b0ca36de"
       }
     }, {
       "comments" : "",
@@ -1902,6 +1763,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Ingestion",
-    "timestamp" : 1783415345919
+    "timestamp" : 1785237637805
   }
 }
