@@ -846,7 +846,7 @@
         "y" : -312.0
       },
       "properties" : {
-        "Replacement Value" : "{\n  \"ingestion_start_time\": ${ingestion_start_time},\n  \"filepath\": \"${s3_filepath}\",\n  \"bytes_written\": 0,\n  \"ingestion_status\": \"RUNNING\"\n}",
+        "Replacement Value" : "{\n  \"ingestion_start_time\": ${ingestion_start_time},\n  \"filepath\": \"${s3_bucket}/${s3_filepath}\",\n  \"bytes_written\": 0,\n  \"ingestion_status\": \"RUNNING\"\n}",
         "Search Value" : "(?s)(^.*$)",
         "Evaluation Mode" : "Entire text",
         "Line-by-Line Evaluation Mode" : "All",
@@ -1157,6 +1157,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Write-to-File-Ingestion",
-    "timestamp" : 1783415201858
+    "timestamp" : 1785247602370
   }
 }
