@@ -567,6 +567,7 @@
       "properties" : {
         "Destination" : "flowfile-attribute",
         "Max String Length" : "10 MB",
+        "s3_path" : "$.storage_prefix",
         "Return Type" : "auto-detect",
         "dataset_id" : "$.dataset_id",
         "Null Value Representation" : "empty string",
@@ -587,6 +588,13 @@
           "dynamic" : false,
           "identifiesControllerService" : false,
           "name" : "Max String Length",
+          "sensitive" : false
+        },
+        "s3_path" : {
+          "displayName" : "s3_path",
+          "dynamic" : true,
+          "identifiesControllerService" : false,
+          "name" : "s3_path",
           "sensitive" : false
         },
         "Return Type" : {
@@ -654,10 +662,28 @@
       "inheritedParameterContexts" : [ ],
       "name" : "Data-Exchange-Parameters",
       "parameters" : [ {
+        "name" : "AWS_ACCESS_KEY_ID",
+        "provided" : false,
+        "sensitive" : true
+      }, {
+        "name" : "AWS_SECRET_ACCESS_KEY",
+        "provided" : false,
+        "sensitive" : true
+      }, {
         "name" : "DATASTORE_ENDPOINT_URL",
         "provided" : false,
         "sensitive" : false,
         "value" : "http://dataset-store:8333"
+      }, {
+        "name" : "INGESTION_CHECKSUM_ALGORITHM",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "SHA-256"
+      }, {
+        "name" : "INGESTION_SUCCESS_STATUS",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "SUCCESS"
       }, {
         "name" : "INTERNAL_API_BEARER",
         "provided" : false,
@@ -674,6 +700,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Get-Dataset-Details",
-    "timestamp" : 1780570037609
+    "timestamp" : 1785241330388
   }
 }
