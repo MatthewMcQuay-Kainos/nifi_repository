@@ -1,8 +1,8 @@
 {
   "externalControllerServices" : {
-    "262ed805-9442-3381-b2e0-374fbf70a40b" : {
-      "identifier" : "262ed805-9442-3381-b2e0-374fbf70a40b",
-      "name" : "Seaweed Credentials"
+    "600a8c74-8588-3893-9c4b-cd4d6033827f" : {
+      "identifier" : "600a8c74-8588-3893-9c4b-cd4d6033827f",
+      "name" : "AWS Credentials"
     }
   },
   "flow" : {
@@ -42,7 +42,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "37b758f8-019f-1000-4d85-f1ce5a991240",
-        "name" : "Compute SHA256 Checksum",
+        "name" : "Compute Checksum",
         "type" : "PROCESSOR"
       },
       "zIndex" : 20
@@ -287,7 +287,7 @@
         "comments" : "",
         "groupId" : "flow-contents-group",
         "id" : "37b758f8-019f-1000-4d85-f1ce5a991240",
-        "name" : "Compute SHA256 Checksum",
+        "name" : "Compute Checksum",
         "type" : "PROCESSOR"
       },
       "flowFileExpiration" : "0 sec",
@@ -315,9 +315,9 @@
     "defaultFlowFileExpiration" : "0 sec",
     "executionEngine" : "INHERITED",
     "externalControllerServiceReferences" : {
-      "262ed805-9442-3381-b2e0-374fbf70a40b" : {
-        "identifier" : "262ed805-9442-3381-b2e0-374fbf70a40b",
-        "name" : "Seaweed Credentials"
+      "600a8c74-8588-3893-9c4b-cd4d6033827f" : {
+        "identifier" : "600a8c74-8588-3893-9c4b-cd4d6033827f",
+        "name" : "AWS Credentials"
       }
     },
     "flowFileConcurrency" : "UNBOUNDED",
@@ -429,7 +429,7 @@
       "groupIdentifier" : "flow-contents-group",
       "identifier" : "37b758f8-019f-1000-4d85-f1ce5a991240",
       "maxBackoffPeriod" : "10 mins",
-      "name" : "Compute SHA256 Checksum",
+      "name" : "Compute Checksum",
       "penaltyDuration" : "30 sec",
       "position" : {
         "x" : -824.0,
@@ -504,7 +504,7 @@
         "Temporary Directory Multipart State" : "${java.io.tmpdir}",
         "Bucket" : "${s3_bucket}",
         "Multipart Upload AgeOff Interval" : "60 min",
-        "AWS Credentials Provider Service" : "262ed805-9442-3381-b2e0-374fbf70a40b",
+        "AWS Credentials Provider Service" : "600a8c74-8588-3893-9c4b-cd4d6033827f",
         "Communications Timeout" : "30 secs",
         "Region" : "eu-west-2",
         "Read Permission User List" : "${s3.permissions.read.users}"
@@ -1026,6 +1026,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Seaweed-Write",
-    "timestamp" : 1783415221284
+    "timestamp" : 1785237622614
   }
 }
