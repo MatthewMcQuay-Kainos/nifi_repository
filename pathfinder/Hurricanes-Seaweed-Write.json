@@ -1,7 +1,7 @@
 {
   "externalControllerServices" : {
-    "600a8c74-8588-3893-9c4b-cd4d6033827f" : {
-      "identifier" : "600a8c74-8588-3893-9c4b-cd4d6033827f",
+    "1abbd5dd-43fd-3b8a-84d2-d2df116481de" : {
+      "identifier" : "1abbd5dd-43fd-3b8a-84d2-d2df116481de",
       "name" : "AWS Credentials"
     }
   },
@@ -315,8 +315,8 @@
     "defaultFlowFileExpiration" : "0 sec",
     "executionEngine" : "INHERITED",
     "externalControllerServiceReferences" : {
-      "600a8c74-8588-3893-9c4b-cd4d6033827f" : {
-        "identifier" : "600a8c74-8588-3893-9c4b-cd4d6033827f",
+      "1abbd5dd-43fd-3b8a-84d2-d2df116481de" : {
+        "identifier" : "1abbd5dd-43fd-3b8a-84d2-d2df116481de",
         "name" : "AWS Credentials"
       }
     },
@@ -333,8 +333,8 @@
       "name" : "Seaweed Input",
       "portFunction" : "STANDARD",
       "position" : {
-        "x" : -128.0,
-        "y" : 8.0
+        "x" : -136.0,
+        "y" : -384.0
       },
       "scheduledState" : "ENABLED",
       "type" : "INPUT_PORT"
@@ -410,7 +410,7 @@
         "bucketId" : "pathfinder",
         "flowId" : "Write-to-File-Ingestion",
         "storageLocation" : "git@github.com:MatthewMcQuay-Kainos/nifi_repository.git",
-        "version" : "9a16351c69e0209cb72aaea74c02ae3ce598ada0"
+        "version" : "76b52dc71a0482c71ae7bc6493bb7608f1fc2ec6"
       }
     } ],
     "processors" : [ {
@@ -432,8 +432,8 @@
       "name" : "Compute Checksum",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -824.0,
-        "y" : 168.0
+        "x" : -520.0,
+        "y" : 144.0
       },
       "properties" : {
         "Hash Algorithm" : "SHA-256",
@@ -483,8 +483,8 @@
       "name" : "Write to Seaweed",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -184.0,
-        "y" : 168.0
+        "x" : -192.0,
+        "y" : -200.0
       },
       "properties" : {
         "FullControl User List" : "${s3.permissions.full.users}",
@@ -504,7 +504,7 @@
         "Temporary Directory Multipart State" : "${java.io.tmpdir}",
         "Bucket" : "${s3_bucket}",
         "Multipart Upload AgeOff Interval" : "60 min",
-        "AWS Credentials Provider Service" : "600a8c74-8588-3893-9c4b-cd4d6033827f",
+        "AWS Credentials Provider Service" : "1abbd5dd-43fd-3b8a-84d2-d2df116481de",
         "Communications Timeout" : "30 secs",
         "Region" : "eu-west-2",
         "Read Permission User List" : "${s3.permissions.read.users}"
@@ -749,8 +749,8 @@
       "name" : "Set Success",
       "penaltyDuration" : "30 sec",
       "position" : {
-        "x" : -464.0,
-        "y" : 440.0
+        "x" : -520.0,
+        "y" : 448.0
       },
       "properties" : {
         "bytes_written" : "${fileSize}",
@@ -1026,6 +1026,6 @@
   "snapshotMetadata" : {
     "author" : "admin",
     "flowIdentifier" : "Hurricanes-Seaweed-Write",
-    "timestamp" : 1785237622614
+    "timestamp" : 1785247613554
   }
 }
